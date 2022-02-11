@@ -1,0 +1,35 @@
+@import '../main.scss';
+
+.headerContainer {
+	display: flex;
+	align-items: center;
+	background-color: white;
+	height: 5rem;
+	width: 100%;
+	position: relative;
+	padding: 0 3rem;
+	flex-direction: row-reverse;
+	justify-content: center;
+
+	@include breakpoint($xsLaptop) {
+		height: 7.5rem;
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+
+	.logoContainer {
+		height: 50%;
+		width: 70%;
+		@include breakpoint($xsLaptop) {
+			width: 20%;
+			height: 60%;
+		}
+
+		.logo {
+			height: 100%;
+			width: 100%;
+			z-index: 9;
+			position: relative;
+		}
+	}
+}

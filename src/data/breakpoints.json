@@ -1,0 +1,17 @@
+{
+	"breakpoints": {
+		"xsPhone": 320,
+		"sPhone": 360,
+		"phone": 375,
+		"lPhone": 400,
+		"tablet": 768,
+		"xsLaptop": 1024,
+		"sLaptop": 1280,
+		"laptop": 1366,
+		"lLaptop": 1440,
+		"sDesktop": 1680,
+		"desktop": 1920,
+		"desktop2K": 2560,
+		"desktop4K": 3840
+	}
+}

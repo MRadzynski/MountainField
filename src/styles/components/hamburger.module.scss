@@ -1,0 +1,28 @@
+.hamburgerContainer {
+	display: flex;
+	flex-direction: column;
+	height: 1rem;
+	justify-content: space-between;
+	position: absolute;
+	width: 2rem;
+	z-index: 10;
+	left: 1.5rem;
+	cursor: pointer;
+	.bar {
+		background-color: black;
+		height: 0.1rem;
+		width: 1.5rem;
+	}
+
+	// &.open {
+	// 	.bar:first-child {
+	// 		transform: rotate(45deg) translate(-5px, 6px);
+	// 	}
+	// 	.bar:nth-child(2n) {
+	// 		display: none;
+	// 	}
+	// 	.bar:last-child {
+	// 		transform: rotate(-45deg) translate(-5px, -6px);
+	// 	}
+	// }
+}

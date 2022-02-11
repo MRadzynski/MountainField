@@ -1,0 +1,15 @@
+@mixin breakpoint($breakpoint) {
+	@media (min-width: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin no-selectable {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}

@@ -1,0 +1,54 @@
+@import '../main.scss';
+
+.navContainer {
+	align-items: center;
+	background-color: white;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100vw;
+	@include breakpoint($xsLaptop) {
+		height: 100%;
+		width: 100%;
+		position: relative;
+		justify-content: flex-end;
+		padding-right: 7rem;
+	}
+
+	.navList {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		height: 50%;
+		justify-content: space-evenly;
+		list-style: none;
+		width: 100%;
+		@include breakpoint($xsLaptop) {
+			flex-direction: row;
+			justify-content: flex-end;
+			gap: 5rem;
+		}
+		.navLink {
+			border: 0;
+			color: $secondaryColor;
+			font-size: 1.1rem;
+			font-weight: 600;
+			text-decoration: none;
+			@include no-selectable;
+			@include breakpoint($xsLaptop) {
+				color: black;
+				font-weight: 400;
+				font-size: 1.25rem;
+			}
+			&:hover {
+				border-top: 1px solid $secondaryColor;
+				border-bottom: 1px solid $secondaryColor;
+			}
+			.navItem {
+			}
+		}
+	}
+}
