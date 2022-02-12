@@ -12,10 +12,10 @@
 	width: 100vw;
 	@include breakpoint($xsLaptop) {
 		height: 100%;
-		width: 100%;
-		position: relative;
 		justify-content: flex-end;
 		padding-right: 7rem;
+		position: relative;
+		width: 100%;
 	}
 
 	.navList {
@@ -28,24 +28,26 @@
 		width: 100%;
 		@include breakpoint($xsLaptop) {
 			flex-direction: row;
-			justify-content: flex-end;
 			gap: 5rem;
+			justify-content: flex-end;
 		}
 		.navLink {
 			border: 0;
 			color: $secondaryColor;
+			font-family: 'BookmanOldStyle, Bookman Old Style';
 			font-size: 1.1rem;
 			font-weight: 600;
 			text-decoration: none;
 			@include no-selectable;
 			@include breakpoint($xsLaptop) {
 				color: black;
-				font-weight: 400;
 				font-size: 1.25rem;
+				font-weight: 400;
+				padding: 0.5rem 0;
 			}
 			&:hover {
-				border-top: 1px solid $secondaryColor;
-				border-bottom: 1px solid $secondaryColor;
+				border-bottom: 2px solid $secondaryColor;
+				border-top: 2px solid $secondaryColor;
 			}
 			.navItem {
 			}

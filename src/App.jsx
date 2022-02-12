@@ -11,6 +11,7 @@ function App() {
 		<div className={classes.appContainer}>
 			<Header />
 			<Welcome />
+			<Offer />
 			<Footer />
 		</div>
 	);

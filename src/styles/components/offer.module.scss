@@ -1,0 +1,70 @@
+@import '../main.scss';
+
+.offerContainer {
+	background-color: $primaryColor;
+	padding: 0 5rem;
+	.heading {
+		border-bottom: 2px solid $secondaryColor;
+		border-top: 2px solid $secondaryColor;
+		font-family: 'BookmanOldStyle, Bookman Old Style';
+		font-size: 3rem;
+		font-weight: 400;
+		width: max-content;
+		margin: 0 auto;
+	}
+
+	.cardsContainer {
+		align-items: center;
+		display: flex;
+		gap: 10rem;
+		margin-top: 10rem;
+
+		.cardContainer {
+			background-color: white;
+			border-radius: 3rem;
+			box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.1);
+			margin-top: 5rem;
+			position: relative;
+			.card {
+				display: flex;
+				flex-direction: column;
+				height: 30rem;
+				position: relative;
+				z-index: 3;
+				.cardHeading {
+					background: linear-gradient($secondaryColor, $gradientEnd);
+					border-radius: 2rem;
+					font-size: 2.5rem;
+					margin: 2rem auto;
+					padding: 0.5rem 1.5rem;
+					width: max-content;
+				}
+				.cardDescription {
+					font-family: 'AllRoundGothic-Book, All Round Gothic';
+					height: 30rem;
+					line-height: 2.5rem;
+					padding: 2rem;
+					text-align: center;
+				}
+				.cardImage {
+					height: 100%;
+					width: 100%;
+				}
+			}
+			.decorationLeavesLeft {
+				left: -80px;
+				position: absolute;
+				top: -100px;
+				transform: scale(0.75);
+				z-index: 1;
+			}
+			.decorationLeavesRight {
+				bottom: -100px;
+				position: absolute;
+				right: -80px;
+				transform: scale(0.75);
+				z-index: 1;
+			}
+		}
+	}
+}
