@@ -12,11 +12,10 @@ const Navbar = ({ closeMobileMenu }) => {
 						alt={`${link.label} section`}
 						className={classes.navLink}
 						href={link.path}
+						key={link.label}
 						onClick={closeMobileMenu}
 					>
-						<li className={classes.navItem} key={link.label}>
-							{link.label}
-						</li>
+						<li className={classes.navItem}>{link.label}</li>
 					</a>
 				))}
 			</ul>

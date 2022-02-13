@@ -7,6 +7,9 @@
 	height: calc(100vh - 5rem);
 	justify-content: space-evenly;
 	margin: 0 5rem;
+	@include breakpoint($xsLaptop) {
+		height: calc(100vh - 7.5rem);
+	}
 
 	.contentContainer {
 		display: flex;

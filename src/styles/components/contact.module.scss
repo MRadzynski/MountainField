@@ -1,0 +1,45 @@
+@import '../main.scss';
+
+.contactContainer {
+	align-items: center;
+	background: linear-gradient(#7fb8b4, #81c8a7);
+	display: flex;
+	flex-direction: column;
+	height: calc(100vh - 10rem);
+	justify-content: space-around;
+	.headingContainer {
+		.heading {
+			// font-family: 'BookmanOldStyle, Bookman Old Style';
+			// font-size: 2.5rem;
+		}
+	}
+	.contactBox {
+		align-items: center;
+		background-color: white;
+		border-radius: 3rem;
+		box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1);
+		display: flex;
+		flex-direction: column;
+		font-family: 'AllRoundGothic-Book, All Round Gothic';
+		font-size: 1.5rem;
+		gap: 2rem;
+		justify-content: center;
+		padding: 3rem;
+		width: 50%;
+		.emailInfo {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+		}
+		.calendarInfo {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+		}
+		.contactLink {
+			color: #0d9065;
+			display: flex;
+			text-decoration: none;
+		}
+	}
+}

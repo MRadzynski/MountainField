@@ -1,3 +1,5 @@
+@import '../main.scss';
+
 .footerContainer {
 	align-items: center;
 	background-color: white;
@@ -5,4 +7,17 @@
 	height: 4rem;
 	justify-content: center;
 	width: 100%;
+	@include breakpoint($xsLaptop) {
+		height: 6.5rem;
+	}
+	.logoContainer {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		width: 15%;
+		.logo {
+			height: 70%;
+			width: 100%;
+		}
+	}
 }
