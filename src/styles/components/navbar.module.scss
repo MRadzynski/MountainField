@@ -49,7 +49,9 @@
 				border-bottom: 2px solid $secondaryColor;
 				border-top: 2px solid $secondaryColor;
 			}
-			.navItem {
+			&.active {
+				border-bottom: 2px solid $secondaryColor;
+				border-top: 2px solid $secondaryColor;
 			}
 		}
 	}

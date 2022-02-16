@@ -13,7 +13,7 @@ const Header = () => {
 				<img
 					alt="Mountain Field"
 					className={classes.logo}
-					src="/assets/logo/logoMF.png"
+					src="/assets/logo/logo.svg"
 				/>
 			</div>
 			{window.innerWidth < breakpoints.xsLaptop ? <MobileNav /> : <Navbar />}

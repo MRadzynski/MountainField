@@ -6,11 +6,26 @@
 	display: flex;
 	flex-direction: column;
 	height: calc(100vh - 10rem);
-	justify-content: space-around;
+	justify-content: space-evenly;
+	overflow: hidden;
+	position: relative;
 	.headingContainer {
 		.heading {
-			// font-family: 'BookmanOldStyle, Bookman Old Style';
-			// font-size: 2.5rem;
+			font-family: 'BookmanOldStyle, Bookman Old Style';
+			font-size: 2.5rem;
+			font-weight: 400;
+			letter-spacing: 0.1rem;
+			margin: 0 auto;
+			text-align: center;
+			width: fit-content;
+			&:first-child {
+				border-top: 2px solid #bfddd8;
+				padding-top: 1rem;
+			}
+			&:last-child {
+				border-bottom: 2px solid #bfddd8;
+				padding-bottom: 1rem;
+			}
 		}
 	}
 	.contactBox {
@@ -24,7 +39,8 @@
 		font-size: 1.5rem;
 		gap: 2rem;
 		justify-content: center;
-		padding: 3rem;
+		margin-top: -4rem;
+		padding: 2rem 3rem;
 		width: 50%;
 		.emailInfo {
 			align-items: center;
@@ -41,5 +57,18 @@
 			display: flex;
 			text-decoration: none;
 		}
+	}
+	.decorationLeavesLeft {
+		filter: brightness(0) invert(1);
+		left: -50px;
+		position: absolute;
+		top: -40px;
+	}
+
+	.decorationLeavesRight {
+		bottom: -40px;
+		filter: brightness(0) invert(1);
+		position: absolute;
+		right: -50px;
 	}
 }

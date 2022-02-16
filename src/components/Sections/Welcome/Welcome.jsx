@@ -1,13 +1,17 @@
 import classes from '../../../styles/components/welcome.module.scss';
 
+import { useEffect } from 'react';
+
 const Welcome = () => {
-	const getSlider = () => {
+	useEffect(() => {
 		let index = 0;
-		return setInterval((index) => {
-			index++;
-			return <img src={`/assets/products/icecream${index - 1}.png`} />;
-		}, 3000);
-	};
+		setInterval(() => {
+			index = index > 2 ? 0 : index++;
+			return (
+				<img alt="product" src={`/assets/products/icecream${index - 1}.png`} />
+			);
+		}, 1000);
+	}, []);
 
 	return (
 		<section className={classes.welcomeContainer} id="home">
@@ -36,7 +40,7 @@ const Welcome = () => {
 				</div>
 			</div>
 			<div className={classes.sliderContainer}>
-				<div className={classes.slider}>
+				<div className={classes.slider} id="slider">
 					<img
 						alt="Highlighted product"
 						src={`/assets/products/icecream0.png`}

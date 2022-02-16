@@ -7,10 +7,13 @@ import Contact from './components/Sections/Contact/Contact';
 
 import { useEffect } from 'react';
 
+// import { intersectionHandler } from './utils/intersection';
+
 import classes from './styles/components/app.module.scss';
 
 const App = () => {
 	useEffect(() => {
+		// intersectionHandler();
 		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 			anchor.addEventListener('click', function (e) {
 				e.preventDefault();

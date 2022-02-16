@@ -7,7 +7,7 @@ const Footer = () => {
 				<img
 					alt="Mountain Field"
 					className={classes.logo}
-					src="assets/logo/logoMF.png"
+					src="assets/logo/logo.svg"
 					// onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}
 				/>
 			</div>

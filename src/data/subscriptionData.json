@@ -1,0 +1,52 @@
+{
+	"plans": {
+		"home": {
+			"name": "HOME OFFICE",
+			"priceFormat": "PLN/os./mies.",
+			"products": [
+				{
+					"name": "KAWA",
+					"dataName": "coffee",
+					"amount": "250g",
+					"price": 50
+				},
+				{
+					"name": "HERBATA",
+					"dataName": "tea",
+					"amount": "100g",
+					"price": 30
+				},
+				{
+					"name": "MATE",
+					"dataName": "mate",
+					"amount": "300g",
+					"price": 40
+				}
+			]
+		},
+		"standard": {
+			"name": "STANDARD",
+			"priceFormat": "PLN+VAT/mies.",
+			"products": [
+				{
+					"name": "KAWA",
+					"dataName": "coffee",
+					"defaultValue": 10,
+					"price": 50
+				},
+				{
+					"name": "HERBATA",
+					"dataName": "tea",
+					"defaultValue": 15,
+					"price": 30
+				},
+				{
+					"name": "MATE",
+					"dataName": "mate",
+					"defaultValue": 20,
+					"price": 40
+				}
+			]
+		}
+	}
+}

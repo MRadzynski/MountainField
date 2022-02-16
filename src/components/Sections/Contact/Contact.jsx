@@ -4,10 +4,10 @@ const Contact = () => {
 	return (
 		<section className={classes.contactContainer} id="contact">
 			<div className={classes.headingContainer}>
-				<h1 classes={classes.heading}>
-					Decyzja co do wyboru oferty już podjęta, <br />a może potrzebujesz
-					pomocy?
-				</h1>
+				<h2 className={classes.heading}>
+					Decyzja co do wyboru oferty już podjęta,
+				</h2>
+				<h2 className={classes.heading}>a może potrzebujesz pomocy?</h2>
 			</div>
 			<div className={classes.contactBox}>
 				<p className={classes.emailInfo}>
@@ -24,6 +24,16 @@ const Contact = () => {
 					</a>
 				</p>
 			</div>
+			<img
+				alt="Decoration leaves - right"
+				className={classes.decorationLeavesLeft}
+				src="/assets/leavesTopLeft.png"
+			/>
+			<img
+				alt="Decoration leaves - left"
+				className={classes.decorationLeavesRight}
+				src="/assets/leavesBottomRight.png"
+			/>
 		</section>
 	);
 };
