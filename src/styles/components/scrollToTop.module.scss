@@ -1,0 +1,26 @@
+@import '../main.scss';
+
+.scrollArrowContainer {
+	background-color: $secondaryColor;
+	border: 1px solid $gradientStart;
+	border-radius: 50%;
+	bottom: 32px;
+	box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	display: grid;
+	height: 60px;
+	place-content: center;
+	position: fixed;
+	right: 32px;
+	width: 60px;
+	z-index: 5;
+	&:hover {
+		.scrollArrow {
+			transform: translateY(-5px);
+		}
+	}
+	.scrollArrow {
+		font-size: 2.5rem;
+		transition: transform 0.3s ease-in;
+	}
+}
