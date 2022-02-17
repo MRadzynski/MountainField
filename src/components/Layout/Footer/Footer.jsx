@@ -1,3 +1,5 @@
+import { scrollToTop } from '../../../utils/scrollToTop';
+
 import classes from '../../../styles/components/footer.module.scss';
 
 const Footer = () => {
@@ -8,7 +10,7 @@ const Footer = () => {
 					alt="Mountain Field"
 					className={classes.logo}
 					src="assets/logo/logo.svg"
-					// onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}
+					onClick={scrollToTop}
 				/>
 			</div>
 		</footer>

@@ -4,24 +4,24 @@ import Welcome from './components/Sections/Welcome/Welcome';
 import About from './components/Sections/About/About';
 import Offer from './components/Sections/Offer/Offer';
 import Contact from './components/Sections/Contact/Contact';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import { smothNavScroll } from './utils/smothNavScroll';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // import { intersectionHandler } from './utils/intersection';
 
 import classes from './styles/components/app.module.scss';
 
 const App = () => {
+	const [displayArrow, setDisplayArrow] = useState(0);
+
 	useEffect(() => {
 		// intersectionHandler();
-		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-			anchor.addEventListener('click', function (e) {
-				e.preventDefault();
+		smothNavScroll();
 
-				document.querySelector(this.getAttribute('href')).scrollIntoView({
-					behavior: 'smooth',
-				});
-			});
+		document.addEventListener('scroll', () => {
+			window.scrollY > 500 ? setDisplayArrow(true) : setDisplayArrow(false);
 		});
 	}, []);
 
@@ -33,6 +33,7 @@ const App = () => {
 			<Offer />
 			<Contact />
 			<Footer />
+			{displayArrow && <ScrollToTop />}
 		</div>
 	);
 };

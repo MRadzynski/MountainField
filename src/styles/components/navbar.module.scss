@@ -10,6 +10,7 @@
 	position: absolute;
 	top: 0;
 	width: 100vw;
+	z-index: 3;
 	@include breakpoint($xsLaptop) {
 		height: 100%;
 		justify-content: flex-end;

@@ -1,10 +1,6 @@
 {
 	"navLinks": [
 		{
-			"label": "STRONA GŁÓWNA",
-			"path": "#home"
-		},
-		{
 			"label": "O NAS",
 			"path": "#about"
 		},

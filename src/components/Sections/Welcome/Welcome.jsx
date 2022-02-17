@@ -1,16 +1,14 @@
 import classes from '../../../styles/components/welcome.module.scss';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Welcome = () => {
+	const [slideIndex, setSlideIndex] = useState(0);
+
 	useEffect(() => {
-		let index = 0;
 		setInterval(() => {
-			index = index > 2 ? 0 : index++;
-			return (
-				<img alt="product" src={`/assets/products/icecream${index - 1}.png`} />
-			);
-		}, 1000);
+			setSlideIndex((slideNum) => (slideNum === 2 ? 0 : slideNum + 1));
+		}, 7000);
 	}, []);
 
 	return (
@@ -43,7 +41,8 @@ const Welcome = () => {
 				<div className={classes.slider} id="slider">
 					<img
 						alt="Highlighted product"
-						src={`/assets/products/icecream0.png`}
+						className={classes.slideImage}
+						src={`/assets/products/icecream${slideIndex}.png`}
 					/>
 				</div>
 			</div>

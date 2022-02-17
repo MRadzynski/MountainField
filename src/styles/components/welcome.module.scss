@@ -82,10 +82,18 @@
 			justify-content: center;
 			width: 70%;
 
-			img {
+			.slideImage {
 				height: 80%;
 				width: 80%;
+				transition: all 1s linear;
+				opacity: 1;
+				// &.activeSlide {
+				// 	opacity: 0;
+				// }
 			}
 		}
 	}
+}
+.activeSlide {
+	opacity: 1;
 }
