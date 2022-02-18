@@ -1,12 +1,9 @@
 import classes from '../../../styles/components/header.module.scss';
 import MobileNav from '../../MobileNav/MobileNav';
 import Navbar from '../../Navbar/Navbar';
-
-import breakpointsData from '../../../data/breakpoints.json';
+import { isMobile } from '../../../utils';
 
 const Header = () => {
-	const { breakpoints } = breakpointsData;
-
 	return (
 		<header className={classes.headerContainer}>
 			<div className={classes.logoContainer}>
@@ -16,7 +13,7 @@ const Header = () => {
 					src="/assets/logo/logo.svg"
 				/>
 			</div>
-			{window.innerWidth < breakpoints.xsLaptop ? <MobileNav /> : <Navbar />}
+			{isMobile() ? <MobileNav /> : <Navbar />}
 		</header>
 	);
 };

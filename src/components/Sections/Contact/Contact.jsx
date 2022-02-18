@@ -1,3 +1,5 @@
+import DecorationLeaves from '../../DecorationLeaves/DecorationLeaves';
+
 import classes from '../../../styles/components/contact.module.scss';
 
 const Contact = () => {
@@ -24,15 +26,10 @@ const Contact = () => {
 					</a>
 				</p>
 			</div>
-			<img
-				alt="Decoration leaves - right"
-				className={classes.decorationLeavesLeft}
-				src="/assets/leavesTopLeft.png"
-			/>
-			<img
-				alt="Decoration leaves - left"
-				className={classes.decorationLeavesRight}
-				src="/assets/leavesBottomRight.png"
+			<DecorationLeaves
+				classes={classes}
+				leftSrc="leavesTopLeft"
+				rightSrc="leavesBottomRight"
 			/>
 		</section>
 	);

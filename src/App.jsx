@@ -5,11 +5,8 @@ import About from './components/Sections/About/About';
 import Offer from './components/Sections/Offer/Offer';
 import Contact from './components/Sections/Contact/Contact';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
-import { smothNavScroll } from './utils/smothNavScroll';
-
+import { smoothNavScroll } from './utils/smoothNavScroll';
 import { useEffect, useState } from 'react';
-
-// import { intersectionHandler } from './utils/intersection';
 
 import classes from './styles/components/app.module.scss';
 
@@ -17,13 +14,14 @@ const App = () => {
 	const [displayArrow, setDisplayArrow] = useState(0);
 
 	useEffect(() => {
-		// intersectionHandler();
-		smothNavScroll();
+		smoothNavScroll();
+		document.addEventListener('scroll', displayArrowHandler);
 
-		document.addEventListener('scroll', () => {
-			window.scrollY > 500 ? setDisplayArrow(true) : setDisplayArrow(false);
-		});
+		return () => document.removeEventListener('scroll', displayArrowHandler);
 	}, []);
+
+	const displayArrowHandler = () =>
+		window.scrollY > 500 ? setDisplayArrow(true) : setDisplayArrow(false);
 
 	return (
 		<div className={classes.appContainer}>

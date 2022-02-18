@@ -5,14 +5,13 @@ export const intersectionHandler = () => {
 
 	const observer = new IntersectionObserver(
 		(entries) => {
-			console.log(entries);
 			entries.forEach((entry) => {
 				const targetId = entry.target.id;
 
-				const heh = document
+				document
 					.querySelector(`a[href="#${targetId}"]`)
 					.classList.toggle(classes.active, entry.isIntersecting);
-				console.log('heh', heh);
+
 				entry.target.classList.toggle('active', entry.isIntersecting);
 			});
 		},

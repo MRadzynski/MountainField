@@ -1,4 +1,6 @@
+import DecorationLeaves from '../../DecorationLeaves/DecorationLeaves';
 import SubscriptionPlan from '../../SubscriptionPlan/SubscriptionPlan';
+
 import classes from '../../../styles/components/offer.module.scss';
 
 const Offer = () => {
@@ -12,15 +14,10 @@ const Offer = () => {
 					<SubscriptionPlan planType="home" />
 					<SubscriptionPlan planType="standard" />
 				</div>
-				<img
-					alt="Decoration leaves - left"
-					className={classes.decorationLeavesLeft}
-					src="/assets/leavesSmallVerticalTopLeft.png"
-				/>
-				<img
-					alt="Decoration leaves - right"
-					className={classes.decorationLeavesRight}
-					src="/assets/leavesSmallVerticalRight.png"
+				<DecorationLeaves
+					classes={classes}
+					leftSrc="leavesVerticalTopLeft"
+					rightSrc="leavesVerticalBottomRight"
 				/>
 			</div>
 		</section>

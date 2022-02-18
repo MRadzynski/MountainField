@@ -127,7 +127,10 @@ const SubscriptionPlan = ({ planType }) => {
 					<p className={classes.productsHeading}>Dla każdego pracownika:</p>
 					<div className={classes.subscriptionsAmounts}>
 						{home.products.map((product) => (
-							<div className={classes.subscriptionAmount}>
+							<div
+								className={classes.subscriptionAmount}
+								key={product.dataName}
+							>
 								<p
 									className={classes.productType}
 								>{`${product.name} ${product.amount}`}</p>
@@ -171,7 +174,7 @@ const SubscriptionPlan = ({ planType }) => {
 					</h3>
 					<div className={classes.subscriptionsAmountsContainer}>
 						{standard.products.map((product) => (
-							<div className={classes.sliderContainer}>
+							<div className={classes.sliderContainer} key={product.dataName}>
 								<div className={classes.sliderText}>
 									<span className={classes.productTypeSlider}>
 										{product.name}

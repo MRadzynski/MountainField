@@ -1,0 +1,20 @@
+{
+	"cardsInfo": [
+		{
+			"link": "www.randomlink.com",
+			"description": "Wybierasz jedną z naszych ofert lub modyfikujesz jedną z nich do potrzeb swojej firmy z naszą pomocą.",
+			"heading": "KROK 1",
+			"imageName": "offer"
+		},
+		{
+			"description": "Subskrybujesz wybraną ofertę, która zwróciła twoją uwagę.",
+			"heading": "KROK 2",
+			"imageName": "subscribe"
+		},
+		{
+			"description": "Dostarczamy z wyznaczoną przez Ciebie częstotliwością nasze produkty do twojego biura, twoich zdalnych pracowników lub hotelu czy restauracji wraz z fakturą.",
+			"heading": "KROK 3",
+			"imageName": "delivery"
+		}
+	]
+}

@@ -63,37 +63,4 @@
 			}
 		}
 	}
-
-	.sliderContainer {
-		display: flex;
-		justify-content: flex-end;
-		width: 50%;
-		height: 100%;
-		margin-top: 10rem;
-		margin-right: 5rem;
-
-		.slider {
-			align-items: center;
-			background: linear-gradient($gradientStart, $gradientEnd);
-			border-radius: 3rem;
-			box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.1);
-			display: flex;
-			height: 70%;
-			justify-content: center;
-			width: 70%;
-
-			.slideImage {
-				height: 80%;
-				width: 80%;
-				transition: all 1s linear;
-				opacity: 1;
-				// &.activeSlide {
-				// 	opacity: 0;
-				// }
-			}
-		}
-	}
-}
-.activeSlide {
-	opacity: 1;
 }
