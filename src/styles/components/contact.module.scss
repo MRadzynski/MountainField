@@ -21,12 +21,19 @@
 		}
 		.heading {
 			font-family: 'BookmanOldStyle, Bookman Old Style';
-			font-size: 1.2rem;
+			font-size: 1.1rem;
 			font-weight: 400;
-			line-height: 1.5rem;
+			line-height: 1.25rem;
 			margin: 0 auto;
 			text-align: center;
 			width: fit-content;
+			@include breakpoint($xsPhone) {
+				font-size: 1.2rem;
+			}
+			@include breakpoint($phone) {
+				font-size: 1.3rem;
+				line-height: 1.5rem;
+			}
 			@include breakpoint($xsLaptop) {
 				font-size: 2.5rem;
 				letter-spacing: 0.1rem;
@@ -53,13 +60,21 @@
 		display: flex;
 		flex-direction: column;
 		font-family: 'AllRoundGothic-Book, All Round Gothic';
-		font-size: 1.25rem;
+		font-size: 1.1rem;
 		gap: 1.5rem;
 		justify-content: center;
 		margin: -4rem 0 3rem;
-		padding: 1.5rem 2.5rem;
+		padding: 1.5rem;
 		text-align: center;
 		width: 100%;
+
+		@include breakpoint($xsPhone) {
+			font-size: 1.2rem;
+		}
+		@include breakpoint($lPhone) {
+			font-size: 1.25rem;
+			padding: 1.5rem 2.5rem;
+		}
 		@include breakpoint($xsLaptop) {
 			font-size: 1.5rem;
 			gap: 2rem;
@@ -82,8 +97,11 @@
 			color: #0d9065;
 			cursor: pointer;
 			display: flex;
-			margin-top: 0.5rem;
+			margin-top: 0.25rem;
 			text-decoration: none;
+			@include breakpoint($lPhone) {
+				margin-top: 0.5rem;
+			}
 		}
 	}
 	.decorationLeavesLeft {

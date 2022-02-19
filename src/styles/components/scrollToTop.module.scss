@@ -1,27 +1,48 @@
 @import '../main.scss';
 
 .scrollArrowContainer {
-	background-color: $secondaryColor;
+	background: linear-gradient($gradientStart, $secondaryColor);
+	background: linear-gradient($secondaryColor, $gradientEnd);
+	background: linear-gradient($secondaryColor, $gradientStart);
+	// background-color: $secondaryColor;
 	border: 1px solid $gradientStart;
 	border-radius: 50%;
-	bottom: 32px;
+	bottom: 24px;
 	box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.1);
 	cursor: pointer;
 	display: grid;
-	height: 60px;
+	height: 50px;
 	place-content: center;
 	position: fixed;
-	right: 32px;
-	width: 60px;
+	right: 24px;
+	width: 50px;
 	z-index: 5;
 	@include no-selectable;
+	@include breakpoint($lPhone) {
+		bottom: 32px;
+		height: 60px;
+		right: 32px;
+		width: 60px;
+	}
 	&:hover {
 		.scrollArrow {
-			transform: translateY(-5px);
+			animation: 0.5s infinite alternate arrowUp;
 		}
 	}
 	.scrollArrow {
+		animation: 0.5s arrowDown;
 		font-size: 2.5rem;
-		transition: transform 0.3s ease-in;
+	}
+}
+
+@keyframes arrowDown {
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes arrowUp {
+	to {
+		transform: translateY(-5px);
 	}
 }

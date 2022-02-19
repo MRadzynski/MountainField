@@ -1,0 +1,16 @@
+.overlayContainer {
+	background-color: rgba(0, 0, 0, 0.95);
+	display: grid;
+	height: 100vh;
+	left: 0;
+	overflow: hidden;
+	place-content: center;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	z-index: 10;
+	.notAllowedMessage {
+		color: white;
+		font-size: 2rem;
+	}
+}

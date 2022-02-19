@@ -2,8 +2,11 @@
 
 .subscriptionHome,
 .subscriptionStandard {
-	height: 30rem;
+	height: 28rem;
 	width: 100%;
+	@include breakpoint($lPhone) {
+		height: 30rem;
+	}
 	@include breakpoint($xsLaptop) {
 		height: 30rem;
 		width: 30rem;
@@ -23,17 +26,32 @@
 		.subscriptionTitle {
 			color: white;
 			font-family: 'AllRoundGothic-Bold, All Round Gothic';
-			font-size: 1.25rem;
+			font-size: 1.1rem;
+			@include breakpoint($lPhone) {
+				font-size: 1.25rem;
+			}
 		}
 	}
 	.subscriptionBox {
 		display: flex;
 		flex-direction: column;
-		padding: 1.5rem;
+		padding: 1rem;
+		@include breakpoint($lPhone) {
+			padding: 1.5rem;
+		}
 		.subscriptionPrice {
 			font-family: 'AllRoundGothic-Demi, All Round Gothic';
-			font-size: 1.9rem;
+			font-size: 1.4rem;
 			font-weight: 400;
+			@include breakpoint($xsPhone) {
+				font-size: 1.5rem;
+			}
+			@include breakpoint($phone) {
+				font-size: 1.8rem;
+			}
+			@include breakpoint($lPhone) {
+				font-size: 1.9rem;
+			}
 			@include breakpoint($xsLaptop) {
 				font-size: 2.2rem;
 			}
@@ -43,9 +61,15 @@
 			display: flex;
 			justify-content: space-between;
 			font-family: 'AllRoundGothic-Demi, All Round Gothic';
-			font-size: 1.2rem;
+			font-size: 1rem;
 			padding-top: 1rem;
 			width: 100%;
+			@include breakpoint($xsPhone) {
+				font-size: 1.1rem;
+			}
+			@include breakpoint($phone) {
+				font-size: 1.2rem;
+			}
 			@include breakpoint($xsLaptop) {
 				font-size: 1.5rem;
 			}
@@ -54,12 +78,21 @@
 				gap: 0.5rem;
 
 				.peopleImage {
-					height: 2rem;
+					height: 1.75rem;
 					width: 50%;
+					@include breakpoint($lPhone) {
+						height: 2rem;
+					}
 				}
 				.subscriptionPeople {
 					font-family: 'AllRoundGothic-Demi, All Round Gothic';
-					font-size: 2rem;
+					font-size: 1.6rem;
+					@include breakpoint($phone) {
+						font-size: 1.8rem;
+					}
+					@include breakpoint($lPhone) {
+						font-size: 2rem;
+					}
 					@include breakpoint($xsLaptop) {
 						font-size: 2.2rem;
 					}
@@ -70,23 +103,39 @@
 			appearance: none;
 			background-color: $secondaryColor;
 			border-radius: 4px;
-			height: 8px;
+			height: 6px;
 			margin: 2rem 0;
 			width: 100%;
+			@include breakpoint($phone) {
+				height: 8px;
+			}
 
 			&::-webkit-slider-thumb {
 				background: $accentColor;
 				border-radius: 50%;
 				cursor: ew-resize;
-				height: 24px;
-				width: 24px;
+				height: 20px;
+				width: 20px;
 				-webkit-appearance: none;
+				@include breakpoint($phone) {
+					height: 24px;
+					width: 24px;
+				}
 			}
 		}
 		.productsHeading {
 			font-family: 'AllRoundGothic-Demi, All Round Gothic';
-			font-size: 1.5rem;
+			font-size: 1.1rem;
 			margin-bottom: 1rem;
+			@include breakpoint($xsPhone) {
+				font-size: 1.25rem;
+			}
+			@include breakpoint($phone) {
+				font-size: 1.35rem;
+			}
+			@include breakpoint($lPhone) {
+				font-size: 1.5rem;
+			}
 		}
 		.subscriptionsAmounts {
 			display: flex;
@@ -98,7 +147,10 @@
 				justify-content: space-between;
 				.productType {
 					font-family: 'AllRoundGothic-Demi, All Round Gothic';
-					font-size: 1.25rem;
+					font-size: 1.1rem;
+					@include breakpoint($xsPhone) {
+						font-size: 1.25rem;
+					}
 				}
 
 				.productControls {
@@ -136,7 +188,7 @@
 			font-family: 'BookmanOldStyle, Bookman Old Style';
 			font-size: 1rem;
 			margin: 1.5rem auto 0 auto;
-			padding: 0.5rem 1.25rem;
+			padding: 0.5rem 0.75rem;
 			width: fit-content;
 			cursor: pointer;
 			@include no-selectable;
@@ -144,51 +196,92 @@
 				background-color: white;
 				border: 2px solid $secondaryColor;
 			}
+			@include breakpoint($lPhone) {
+				padding: 0.5rem 1.25rem;
+			}
 		}
 	}
 }
 .subscriptionStandard {
 	background-color: #fafafa;
-	.subscriptionsAmountsContainer {
-		.sliderContainer {
-			.inputSlider {
-				margin: 1.5rem 0;
-				position: relative;
-				z-index: 5;
+	.subscriptionBox {
+		.subscriptionPrice {
+			font-size: 1.25rem;
+			@include breakpoint($xsPhone) {
+				font-size: 1.5rem;
 			}
-			.sliderText {
-				bottom: -30px;
-				display: flex;
-				justify-content: space-between;
-				position: relative;
-				.productTypeSlider {
-					font-family: 'AllRoundGothic-Demi, All Round Gothic';
-					font-size: 1.5rem;
-				}
-				.productAmountSlider {
-					bottom: 20px;
-					font-family: 'AllRoundGothic-Demi, All Round Gothic';
-					font-size: 2.25rem;
-					height: 39px;
+			@include breakpoint($phone) {
+				font-size: 1.8rem;
+			}
+			@include breakpoint($lPhone) {
+				font-size: 1.9rem;
+			}
+		}
+		.subscriptionsAmountsContainer {
+			.sliderContainer {
+				.inputSlider {
+					margin: 1.5rem 0;
 					position: relative;
+					z-index: 5;
+				}
+				.sliderText {
+					bottom: -30px;
+					display: flex;
+					justify-content: space-between;
+					position: relative;
+					.productTypeSlider {
+						font-family: 'AllRoundGothic-Demi, All Round Gothic';
+						font-size: 1.2rem;
+						@include breakpoint($xsPhone) {
+							font-size: 1.3rem;
+						}
+						@include breakpoint($phone) {
+							font-size: 1.4rem;
+						}
+						@include breakpoint($lPhone) {
+							font-size: 1.5rem;
+						}
+					}
+					.productAmountSlider {
+						bottom: 10px;
+						font-family: 'AllRoundGothic-Demi, All Round Gothic';
+						font-size: 1.5rem;
+						height: 39px;
+						position: relative;
+						@include breakpoint($phone) {
+							bottom: 15px;
+							font-size: 1.75rem;
+						}
+						@include breakpoint($lPhone) {
+							bottom: 20px;
+							font-size: 2.25rem;
+						}
+					}
 				}
 			}
 		}
-	}
-	.submitButton {
-		background: white;
-		border: 2px solid $secondaryColor;
-		border-radius: 3rem;
-		box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
-		cursor: pointer;
-		font-family: 'BookmanOldStyle, Bookman Old Style';
-		font-size: 1rem;
-		margin: 1.5rem auto 0 auto;
-		padding: 0.5rem 1.25rem;
-		width: fit-content;
-		@include no-selectable;
-		&:hover {
-			background-color: $secondaryColor;
+		.submitButton {
+			background: white;
+			border: 2px solid $secondaryColor;
+			border-radius: 3rem;
+			box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
+			cursor: pointer;
+			font-family: 'BookmanOldStyle, Bookman Old Style';
+			font-size: 1rem;
+			margin: 1.5rem auto 0 auto;
+			padding: 0.5rem 0.75rem;
+			width: fit-content;
+			@include no-selectable;
+			&:hover {
+				background-color: $secondaryColor;
+			}
+			@include breakpoint($phone) {
+				margin-top: 1rem;
+			}
+			@include breakpoint($lPhone) {
+				margin: 1.5rem auto 0 auto;
+				padding: 0.5rem 1.25rem;
+			}
 		}
 	}
 }
