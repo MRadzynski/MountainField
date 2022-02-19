@@ -2,5 +2,8 @@
 
 .appContainer {
 	background-color: $primaryColor;
-	height: 100vh;
+	overflow-x: hidden;
+	@include breakpoint($xsLaptop) {
+		overflow-x: auto;
+	}
 }

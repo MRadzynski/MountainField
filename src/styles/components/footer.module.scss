@@ -14,7 +14,11 @@
 		align-items: center;
 		display: flex;
 		height: 100%;
-		width: 15%;
+		width: 40%;
+		@include no-selectable;
+		@include breakpoint($xsLaptop) {
+			width: 15%;
+		}
 		.logo {
 			cursor: pointer;
 			height: 70%;

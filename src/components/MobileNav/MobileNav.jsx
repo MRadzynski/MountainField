@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import Hamburger from '../Hamburger/Hamburger';
 import Navbar from '../Navbar/Navbar';
+import { useState } from 'react';
 
 const MobileNav = () => {
 	const [isOpen, setIsOpen] = useState(false);

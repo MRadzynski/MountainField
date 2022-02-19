@@ -6,14 +6,26 @@
 	box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.1);
 	margin-top: 5rem;
 	position: relative;
-	width: 30rem;
+	width: 100%;
+	@include breakpoint($xsLaptop) {
+		width: 30rem;
+	}
 
 	&:after {
+		bottom: -130px;
 		content: '>';
 		font-size: 6rem;
+		left: calc(50% - 1rem);
 		position: absolute;
-		right: -120px;
-		top: 40%;
+		transform: rotate(90deg);
+
+		@include breakpoint($xsLaptop) {
+			bottom: unset;
+			left: unset;
+			right: -120px;
+			top: 40%;
+			transform: unset;
+		}
 	}
 
 	&:last-child {
@@ -25,17 +37,24 @@
 	.card {
 		display: flex;
 		flex-direction: column;
-		height: 32rem;
+		height: 30rem;
 		position: relative;
 		z-index: 3;
+		@include breakpoint($xsLaptop) {
+			height: 32rem;
+		}
+
 		.cardHeading {
 			background: linear-gradient($secondaryColor, $gradientEnd);
 			border-radius: 2rem;
-			font-size: 2.3rem;
-			height: 4rem;
-			margin: 2rem auto;
+			font-size: 2rem;
+			margin: 2rem auto 0 auto;
 			padding: 0.5rem 1.5rem;
 			width: max-content;
+			@include breakpoint($xsLaptop) {
+				height: 4rem;
+				font-size: 2.3rem;
+			}
 		}
 		.cardDescription {
 			align-items: center;
@@ -46,9 +65,18 @@
 			gap: 1rem;
 			justify-content: center;
 			line-height: 2.5rem;
+			margin: 0.5rem 0;
 			min-height: 16rem;
-			padding: 0 4rem;
+			padding: 0 2rem;
 			text-align: center;
+			a {
+				color: $secondaryColor;
+				text-decoration: none;
+			}
+			@include breakpoint($xsLaptop) {
+				margin: 0;
+				padding: 0 4rem;
+			}
 		}
 		.cardImage {
 			height: 12rem;
@@ -63,10 +91,14 @@
 		z-index: 1;
 	}
 	.decorationLeavesRight {
-		bottom: -160px;
+		bottom: -135px;
 		position: absolute;
-		right: -80px;
+		right: -75px;
 		transform: scale(0.75);
 		z-index: 1;
+		@include breakpoint($xsLaptop) {
+			bottom: -145px;
+			right: -80px;
+		}
 	}
 }

@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 import classes from './styles/components/app.module.scss';
 
 const App = () => {
-	const [displayArrow, setDisplayArrow] = useState(0);
+	const [displayArrow, setDisplayArrow] = useState(false);
 
 	useEffect(() => {
 		smoothNavScroll();
@@ -20,7 +20,7 @@ const App = () => {
 		return () => document.removeEventListener('scroll', displayArrowHandler);
 	}, []);
 
-	const displayArrowHandler = () =>
+	const displayArrowHandler = (e) =>
 		window.scrollY > 500 ? setDisplayArrow(true) : setDisplayArrow(false);
 
 	return (

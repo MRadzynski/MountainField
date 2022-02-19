@@ -1,50 +1,74 @@
 @import '../main.scss';
 
 .welcomeContainer {
-	align-items: center;
-	background-color: $primaryColor;
 	display: flex;
-	height: calc(100vh - 5rem);
-	justify-content: space-evenly;
-	margin: 0 5rem;
+	flex-direction: column;
+	height: fit-content;
+	padding: 0 2rem;
 	@include breakpoint($xsLaptop) {
+		align-items: center;
+		background-color: $primaryColor;
+		display: flex;
+		flex-direction: row;
 		height: calc(100vh - 7.5rem);
+		justify-content: space-evenly;
+		margin: 0 5rem;
+		padding: 0;
 	}
 
 	.contentContainer {
-		display: flex;
-		align-items: flex-end;
-		flex-direction: column;
-		gap: 2rem;
-		height: 100%;
-		width: 50%;
-		margin-top: 20rem;
+		margin-top: 1rem;
+		@include breakpoint($xsLaptop) {
+			display: flex;
+			align-items: flex-end;
+			flex-direction: column;
+			gap: 2rem;
+			height: 100%;
+			width: 50%;
+			margin-top: 20rem;
+		}
 
 		.heading {
 			border-bottom: 2px solid $secondaryColor;
 			border-top: 2px solid $secondaryColor;
 			font-family: 'BookmanOldStyle, Bookman Old Style';
-			font-size: 2.5rem;
+			font-size: 1.4rem;
 			font-weight: 400;
-			text-align: center;
+			line-height: 3rem;
+			margin: 2rem auto;
 			width: max-content;
+			@include breakpoint($xsLaptop) {
+				font-size: 2.5rem;
+				line-height: unset;
+				text-align: center;
+				margin: unset;
+			}
 		}
 		.descriptionContainer {
 			position: relative;
-			width: 75%;
+			@include breakpoint($xsLaptop) {
+				width: 75%;
+			}
 
 			.descriptionBox {
 				background-color: white;
 				border-radius: 2rem;
 				box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.1);
-				padding: 3rem;
+				padding: 2rem;
 				position: relative;
 				z-index: 2;
+				@include breakpoint($xsLaptop) {
+					padding: 3rem;
+				}
 
 				.description {
 					font-family: 'AllRoundGothic-Book, All Round Gothic';
 					font-size: 1.25rem;
-					line-height: 2.5rem;
+					line-height: 1.8rem;
+					text-align: center;
+					@include breakpoint($xsLaptop) {
+						line-height: 2.5rem;
+					}
 				}
 			}
 
@@ -52,14 +76,22 @@
 				bottom: -100px;
 				left: -75px;
 				position: absolute;
+				transform: scale(0.75);
 				z-index: 1;
+				@include breakpoint($xsLaptop) {
+					transform: scale(1);
+				}
 			}
 
 			.decorationLeavesRight {
 				bottom: -100px;
 				position: absolute;
 				right: -75px;
+				transform: scale(0.75);
 				z-index: 1;
+				@include breakpoint($xsLaptop) {
+					transform: scale(1);
+				}
 			}
 		}
 	}

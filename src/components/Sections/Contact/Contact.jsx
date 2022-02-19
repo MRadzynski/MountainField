@@ -20,9 +20,13 @@ const Contact = () => {
 				</p>
 				<p className={classes.calendarInfo}>
 					Lub umów się z nami na spotkanie przez wybór wolnego terminu w
-					kalendarzu:
-					<a className={classes.contactLink} href="/">
-						https://calendly.com/szymonst_mf
+					<a
+						className={classes.contactLink}
+						href="https://calendly.com/szymonst_mf"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Kalendarzu 📅
 					</a>
 				</p>
 			</div>

@@ -14,6 +14,7 @@
 	right: 32px;
 	width: 60px;
 	z-index: 5;
+	@include no-selectable;
 	&:hover {
 		.scrollArrow {
 			transform: translateY(-5px);

@@ -1,7 +1,8 @@
-import classes from '../../../styles/components/header.module.scss';
 import MobileNav from '../../MobileNav/MobileNav';
 import Navbar from '../../Navbar/Navbar';
 import { isMobile } from '../../../utils';
+
+import classes from '../../../styles/components/header.module.scss';
 
 const Header = () => {
 	return (

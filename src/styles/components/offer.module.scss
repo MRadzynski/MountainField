@@ -5,26 +5,39 @@
 	background-color: $primaryColor;
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
-	padding-top: 3rem;
+	height: max-content;
+	margin: 2rem 0 6rem;
+	padding: 0 2rem;
 	position: relative;
+	@include breakpoint($xsLaptop) {
+		height: 100vh;
+		margin: 0;
+	}
 
 	.headingContainer {
 		background-color: white;
 		border-radius: 3rem;
 		box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.1);
-		margin-bottom: 3rem;
-		padding: 2rem 4.5rem;
+		margin-bottom: 5rem;
 		width: max-content;
+		padding: 1.5rem 4rem;
+		@include breakpoint($xsLaptop) {
+			margin-bottom: 3rem;
+			padding: 2rem 4.5rem;
+		}
 
 		.heading {
 			border-bottom: 2px solid $secondaryColor;
 			border-top: 2px solid $secondaryColor;
 			font-family: 'BookmanOldStyle, Bookman Old Style';
-			font-size: 3rem;
+			font-size: 1.5rem;
 			font-weight: 400;
-			margin: 0 auto;
-			width: max-content;
+			line-height: 3rem;
+			@include breakpoint($xsLaptop) {
+				font-size: 3rem;
+				margin: 0 auto;
+				width: max-content;
+			}
 		}
 	}
 
@@ -33,33 +46,55 @@
 		background: linear-gradient($gradientStart, $gradientEnd);
 		border-radius: 3rem;
 		display: flex;
-		height: 65%;
 		justify-content: center;
 		position: relative;
-		width: 68%;
+		width: 100%;
+		@include breakpoint($xsLaptop) {
+			height: 65%;
+			width: 68%;
+		}
 
 		.subscriptionsBox {
 			background-color: white;
 			border-radius: 3rem;
+			box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.1);
 			display: flex;
+			flex-direction: column;
 			height: max-content;
 			position: relative;
 			overflow: hidden;
+			width: 100%;
 			z-index: 2;
+			@include breakpoint($xsLaptop) {
+				box-shadow: unset;
+				flex-direction: row;
+				width: fit-content;
+			}
 		}
 
 		.decorationLeavesLeft {
 			left: -90px;
 			position: absolute;
-			top: -100px;
+			top: -105px;
+			transform: scale(0.75);
 			z-index: 1;
+			@include breakpoint($xsLaptop) {
+				left: -90px;
+				top: -100px;
+				transform: scale(1);
+			}
 		}
 
 		.decorationLeavesRight {
-			bottom: -100px;
+			bottom: -110px;
 			position: absolute;
 			right: -75px;
+			transform: scale(0.75);
 			z-index: 1;
+			@include breakpoint($xsLaptop) {
+				bottom: -100px;
+				transform: scale(1);
+			}
 		}
 	}
 }
