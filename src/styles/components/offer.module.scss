@@ -9,7 +9,14 @@
 	margin: 2rem 0 6rem;
 	padding: 0 2rem;
 	position: relative;
+	@include breakpoint($tablet) {
+		margin-top: 4rem;
+	}
 	@include breakpoint($xsLaptop) {
+		height: 100vh;
+		margin: 0 0 3rem;
+	}
+	@include breakpoint($sLaptop) {
 		height: 100vh;
 		margin: 0;
 	}
@@ -27,6 +34,10 @@
 		}
 		@include breakpoint($xsLaptop) {
 			margin-bottom: 3rem;
+			padding: 1.75rem 3.5rem;
+		}
+		@include breakpoint($sLaptop) {
+			margin-bottom: 3rem;
 			padding: 2rem 4.5rem;
 		}
 
@@ -41,10 +52,17 @@
 				font-size: 1.5rem;
 				line-height: 3rem;
 			}
+			@include breakpoint($tablet) {
+				font-size: 2.2rem;
+				line-height: 3rem;
+			}
 			@include breakpoint($xsLaptop) {
-				font-size: 3rem;
+				font-size: 2.75rem;
 				margin: 0 auto;
 				width: max-content;
+			}
+			@include breakpoint($sLaptop) {
+				font-size: 3rem;
 			}
 		}
 	}
@@ -57,7 +75,14 @@
 		justify-content: center;
 		position: relative;
 		width: 100%;
+		@include breakpoint($tablet) {
+			width: 70%;
+		}
 		@include breakpoint($xsLaptop) {
+			height: 75%;
+			width: 80%;
+		}
+		@include breakpoint($sLaptop) {
 			height: 65%;
 			width: 68%;
 		}
@@ -76,6 +101,10 @@
 			@include breakpoint($xsLaptop) {
 				box-shadow: unset;
 				flex-direction: row;
+				height: 85%;
+				width: 85%;
+			}
+			@include breakpoint($sLaptop) {
 				width: fit-content;
 			}
 		}
@@ -89,6 +118,8 @@
 			@include breakpoint($xsLaptop) {
 				left: -90px;
 				top: -100px;
+			}
+			@include breakpoint($sLaptop) {
 				transform: scale(1);
 			}
 		}
@@ -101,6 +132,8 @@
 			z-index: 1;
 			@include breakpoint($xsLaptop) {
 				bottom: -100px;
+			}
+			@include breakpoint($sLaptop) {
 				transform: scale(1);
 			}
 		}

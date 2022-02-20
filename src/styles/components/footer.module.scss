@@ -20,6 +20,9 @@
 			width: 40%;
 		}
 		@include breakpoint($xsLaptop) {
+			width: 25%;
+		}
+		@include breakpoint($sLaptop) {
 			width: 15%;
 		}
 		.logo {

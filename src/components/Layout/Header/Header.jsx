@@ -14,7 +14,7 @@ const Header = () => {
 					src="/assets/logo/logo.svg"
 				/>
 			</div>
-			{isMobile() ? <MobileNav /> : <Navbar />}
+			{isMobile() && window.innerWidth < 1024 ? <MobileNav /> : <Navbar />}
 		</header>
 	);
 };

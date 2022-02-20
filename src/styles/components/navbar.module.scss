@@ -14,9 +14,12 @@
 	@include breakpoint($xsLaptop) {
 		height: 100%;
 		justify-content: flex-end;
-		padding-right: 7rem;
+		padding-right: 3rem;
 		position: relative;
 		width: 100%;
+	}
+	@include breakpoint($sLaptop) {
+		padding-right: 7rem;
 	}
 
 	.navList {
@@ -47,6 +50,9 @@
 			@include breakpoint($lPhone) {
 				font-size: 1.5rem;
 				font-weight: 600;
+			}
+			@include breakpoint($tablet) {
+				font-size: 2rem;
 			}
 			@include breakpoint($xsLaptop) {
 				color: black;

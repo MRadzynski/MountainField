@@ -7,6 +7,9 @@
 	@include breakpoint($lPhone) {
 		height: 30rem;
 	}
+	@include breakpoint($tablet) {
+		height: 32rem;
+	}
 	@include breakpoint($xsLaptop) {
 		height: 30rem;
 		width: 30rem;
@@ -30,6 +33,12 @@
 			@include breakpoint($lPhone) {
 				font-size: 1.25rem;
 			}
+			@include breakpoint($tablet) {
+				font-size: 1.5rem;
+			}
+			@include breakpoint($xsLaptop) {
+				font-size: 1.3rem;
+			}
 		}
 	}
 	.subscriptionBox {
@@ -38,6 +47,12 @@
 		padding: 1rem;
 		@include breakpoint($lPhone) {
 			padding: 1.5rem;
+		}
+		@include breakpoint($tablet) {
+			padding: 2rem 2.5rem;
+		}
+		@include breakpoint($xsLaptop) {
+			padding: 2rem 1.5rem;
 		}
 		.subscriptionPrice {
 			font-family: 'AllRoundGothic-Demi, All Round Gothic';
@@ -52,7 +67,13 @@
 			@include breakpoint($lPhone) {
 				font-size: 1.9rem;
 			}
+			@include breakpoint($tablet) {
+				font-size: 2.2rem;
+			}
 			@include breakpoint($xsLaptop) {
+				font-size: 1.9rem;
+			}
+			@include breakpoint($sLaptop) {
 				font-size: 2.2rem;
 			}
 		}
@@ -70,8 +91,11 @@
 			@include breakpoint($phone) {
 				font-size: 1.2rem;
 			}
-			@include breakpoint($xsLaptop) {
+			@include breakpoint($tablet) {
 				font-size: 1.5rem;
+			}
+			@include breakpoint($xsLaptop) {
+				font-size: 1.2rem;
 			}
 			.workersAmount {
 				display: flex;
@@ -93,8 +117,11 @@
 					@include breakpoint($lPhone) {
 						font-size: 2rem;
 					}
-					@include breakpoint($xsLaptop) {
+					@include breakpoint($tablet) {
 						font-size: 2.2rem;
+					}
+					@include breakpoint($xsLaptop) {
+						font-size: 1.75rem;
 					}
 				}
 			}
@@ -109,6 +136,9 @@
 			@include breakpoint($phone) {
 				height: 8px;
 			}
+			@include breakpoint($xsLaptop) {
+				height: 6px;
+			}
 
 			&::-webkit-slider-thumb {
 				background: $accentColor;
@@ -118,6 +148,14 @@
 				width: 20px;
 				-webkit-appearance: none;
 				@include breakpoint($phone) {
+					height: 24px;
+					width: 24px;
+				}
+				@include breakpoint($tablet) {
+					height: 28px;
+					width: 28px;
+				}
+				@include breakpoint($xsLaptop) {
 					height: 24px;
 					width: 24px;
 				}
@@ -136,6 +174,12 @@
 			@include breakpoint($lPhone) {
 				font-size: 1.5rem;
 			}
+			@include breakpoint($tablet) {
+				font-size: 1.7rem;
+			}
+			@include breakpoint($xsLaptop) {
+				font-size: 1.3rem;
+			}
 		}
 		.subscriptionsAmounts {
 			display: flex;
@@ -151,6 +195,12 @@
 					@include breakpoint($xsPhone) {
 						font-size: 1.25rem;
 					}
+					@include breakpoint($tablet) {
+						font-size: 1.4rem;
+					}
+					@include breakpoint($xsLaptop) {
+						font-size: 1.2rem;
+					}
 				}
 
 				.productControls {
@@ -165,17 +215,37 @@
 						margin: 0 0.5rem;
 						text-align: center;
 						width: 24px;
+						@include breakpoint($tablet) {
+							font-size: 1.4rem;
+							height: 32px;
+							width: 32px;
+						}
+						@include breakpoint($xsLaptop) {
+							font-size: 1.3rem;
+							height: 28px;
+							width: 28px;
+						}
 					}
 					.minusButton {
 						cursor: pointer;
 						height: 100%;
 						@include no-selectable;
+						@include breakpoint($tablet) {
+							font-size: 1.5rem;
+							position: relative;
+							top: -5px;
+						}
 					}
 					.plusButton {
 						cursor: pointer;
 						font-size: 1rem;
 						height: 100%;
 						@include no-selectable;
+						@include breakpoint($tablet) {
+							font-size: 1.4rem;
+							position: relative;
+							top: -2px;
+						}
 					}
 				}
 			}
@@ -199,6 +269,15 @@
 			@include breakpoint($lPhone) {
 				padding: 0.5rem 1.25rem;
 			}
+			@include breakpoint($tablet) {
+				font-size: 1.25rem;
+				margin-top: 1rem;
+				padding: 0.6rem 1.5rem;
+			}
+			@include breakpoint($xsLaptop) {
+				font-size: 1.1rem;
+				padding: 0.5rem 1.25rem;
+			}
 		}
 	}
 }
@@ -214,6 +293,12 @@
 				font-size: 1.8rem;
 			}
 			@include breakpoint($lPhone) {
+				font-size: 1.9rem;
+			}
+			@include breakpoint($tablet) {
+				font-size: 2.2rem;
+			}
+			@include breakpoint($xsLaptop) {
 				font-size: 1.9rem;
 			}
 		}
@@ -241,6 +326,15 @@
 						@include breakpoint($lPhone) {
 							font-size: 1.5rem;
 						}
+						@include breakpoint($tablet) {
+							bottom: 5px;
+							font-size: 1.7rem;
+							position: relative;
+						}
+						@include breakpoint($xsLaptop) {
+							bottom: 0;
+							font-size: 1.4rem;
+						}
 					}
 					.productAmountSlider {
 						bottom: 10px;
@@ -255,6 +349,13 @@
 						@include breakpoint($lPhone) {
 							bottom: 20px;
 							font-size: 2.25rem;
+						}
+						@include breakpoint($tablet) {
+							bottom: 23px;
+						}
+						@include breakpoint($xsLaptop) {
+							bottom: 13px;
+							font-size: 1.75rem;
 						}
 					}
 				}
@@ -280,6 +381,15 @@
 			}
 			@include breakpoint($lPhone) {
 				margin: 1.5rem auto 0 auto;
+				padding: 0.5rem 1.25rem;
+			}
+			@include breakpoint($tablet) {
+				font-size: 1.25rem;
+				padding: 0.6rem 1.5rem;
+			}
+			@include breakpoint($xsLaptop) {
+				font-size: 1.1rem;
+				margin-top: 2rem;
 				padding: 0.5rem 1.25rem;
 			}
 		}

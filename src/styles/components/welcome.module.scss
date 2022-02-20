@@ -8,7 +8,6 @@
 	@include breakpoint($xsLaptop) {
 		align-items: center;
 		background-color: $primaryColor;
-		display: flex;
 		flex-direction: row;
 		height: calc(100vh - 7.5rem);
 		justify-content: space-evenly;
@@ -24,10 +23,12 @@
 			flex-direction: column;
 			gap: 2rem;
 			height: 100%;
-			width: 50%;
+			margin-top: 4rem;
+			width: 55%;
+		}
+		@include breakpoint($sLaptop) {
 			margin-top: 20rem;
 		}
-
 		.heading {
 			border-bottom: 2px solid $secondaryColor;
 			border-top: 2px solid $secondaryColor;
@@ -42,7 +43,15 @@
 				line-height: 3rem;
 				width: max-content;
 			}
+			@include breakpoint($tablet) {
+				font-size: 2.2rem;
+			}
 			@include breakpoint($xsLaptop) {
+				font-size: 2rem;
+				line-height: 2.5rem;
+				width: auto;
+			}
+			@include breakpoint($sLaptop) {
 				font-size: 2.5rem;
 				line-height: unset;
 				text-align: center;
@@ -51,7 +60,15 @@
 		}
 		.descriptionContainer {
 			position: relative;
+			@include breakpoint($tablet) {
+				margin: 0 auto;
+				width: 90%;
+			}
 			@include breakpoint($xsLaptop) {
+				margin: 0;
+				width: 100%;
+			}
+			@include breakpoint($sLaptop) {
 				width: 75%;
 			}
 
@@ -63,6 +80,9 @@
 				position: relative;
 				z-index: 2;
 				@include breakpoint($xsLaptop) {
+					padding: 2rem;
+				}
+				@include breakpoint($sLaptop) {
 					padding: 3rem;
 				}
 
@@ -80,7 +100,14 @@
 					@include breakpoint($lPhone) {
 						font-size: 1.25rem;
 					}
+					@include breakpoint($tablet) {
+						font-size: 1.5rem;
+						line-height: 2rem;
+					}
 					@include breakpoint($xsLaptop) {
+						font-size: 1.2rem;
+					}
+					@include breakpoint($sLaptop) {
 						line-height: 2.5rem;
 					}
 				}
@@ -96,6 +123,9 @@
 					bottom: -100px;
 				}
 				@include breakpoint($xsLaptop) {
+					bottom: -110px;
+				}
+				@include breakpoint($sLaptop) {
 					transform: scale(1);
 				}
 			}
@@ -110,6 +140,9 @@
 					bottom: -100px;
 				}
 				@include breakpoint($xsLaptop) {
+					bottom: -110px;
+				}
+				@include breakpoint($sLaptop) {
 					transform: scale(1);
 				}
 			}

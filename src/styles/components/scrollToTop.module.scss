@@ -24,6 +24,16 @@
 		right: 32px;
 		width: 60px;
 	}
+	@include breakpoint($tablet) {
+		bottom: 32px;
+		height: 70px;
+		right: 32px;
+		width: 70px;
+	}
+	@include breakpoint($xsLaptop) {
+		height: 60px;
+		width: 60px;
+	}
 	&:hover {
 		.scrollArrow {
 			animation: 0.5s infinite alternate arrowUp;

@@ -18,13 +18,20 @@
 		left: calc(50% - 1rem);
 		position: absolute;
 		transform: rotate(90deg);
-
+		@include breakpoint($tablet) {
+			bottom: -200px;
+		}
 		@include breakpoint($xsLaptop) {
 			bottom: unset;
+			font-size: 4rem;
 			left: unset;
-			right: -120px;
+			right: -45px;
 			top: 40%;
 			transform: unset;
+		}
+		@include breakpoint($sLaptop) {
+			font-size: 6rem;
+			right: -120px;
 		}
 	}
 
@@ -41,6 +48,10 @@
 		position: relative;
 		z-index: 3;
 		@include breakpoint($xsLaptop) {
+			height: 30rem;
+			width: 16rem;
+		}
+		@include breakpoint($sLaptop) {
 			height: 32rem;
 		}
 
@@ -58,9 +69,18 @@
 			@include breakpoint($lPhone) {
 				font-size: 2rem;
 			}
-			@include breakpoint($xsLaptop) {
-				height: 4rem;
+			@include breakpoint($tablet) {
 				font-size: 2.3rem;
+			}
+			@include breakpoint($xsLaptop) {
+				align-items: center;
+				display: flex;
+				font-size: 1.8rem;
+				height: 4rem;
+				padding: 0.25rem 1.25rem;
+			}
+			@include breakpoint($sLaptop) {
+				padding: 0.5rem 1.5rem;
 			}
 		}
 		.cardDescription {
@@ -94,14 +114,30 @@
 				line-height: 2.5rem;
 				margin: 0.5rem 0;
 			}
+			@include breakpoint($tablet) {
+				font-size: 1.5rem;
+				line-height: 2.75rem;
+			}
 			@include breakpoint($xsLaptop) {
+				font-size: 1.2rem;
+				line-height: 1.5rem;
 				margin: 0;
+				padding: 0 2rem;
+			}
+			@include breakpoint($sLaptop) {
 				padding: 0 4rem;
 			}
 		}
 		.cardImage {
 			height: 12rem;
 			width: 100%;
+
+			@include breakpoint($xsLaptop) {
+				height: 8rem;
+			}
+			@include breakpoint($sLaptop) {
+				height: 12rem;
+			}
 		}
 	}
 	.decorationLeavesLeft {
@@ -127,7 +163,13 @@
 		@include breakpoint($lPhone) {
 			bottom: -130px;
 		}
+		@include breakpoint($tablet) {
+			bottom: -185px;
+		}
 		@include breakpoint($xsLaptop) {
+			bottom: -110px;
+		}
+		@include breakpoint($sLaptop) {
 			bottom: -145px;
 			right: -80px;
 		}

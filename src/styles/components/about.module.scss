@@ -4,8 +4,14 @@
 	background-color: $primaryColor;
 	height: max-content;
 	padding: 4rem 2rem;
+	@include breakpoint($tablet) {
+		padding: 6rem 2rem;
+	}
 	@include breakpoint($xsLaptop) {
 		height: 100vh;
+		padding: 0 5rem;
+	}
+	@include breakpoint($sLaptop) {
 		padding: 2rem 5rem 0 5rem;
 	}
 	.heading {
@@ -30,7 +36,13 @@
 			line-height: 3rem;
 			width: max-content;
 		}
+		@include breakpoint($tablet) {
+			font-size: 2.2rem;
+		}
 		@include breakpoint($xsLaptop) {
+			font-size: 2.5rem;
+		}
+		@include breakpoint($sLaptop) {
 			font-size: 3rem;
 		}
 	}
@@ -39,9 +51,18 @@
 		display: flex;
 		flex-direction: column;
 		gap: 3rem;
+		@include breakpoint($tablet) {
+			gap: 7rem;
+			margin: 2rem auto 0;
+			width: 70%;
+		}
 		@include breakpoint($xsLaptop) {
 			align-items: center;
 			flex-direction: row;
+			gap: 3rem;
+			width: 100%;
+		}
+		@include breakpoint($sLaptop) {
 			gap: 10rem;
 			margin-top: 7rem;
 		}

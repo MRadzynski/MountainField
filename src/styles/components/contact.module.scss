@@ -34,6 +34,10 @@
 				font-size: 1.3rem;
 				line-height: 1.5rem;
 			}
+			@include breakpoint($tablet) {
+				font-size: 1.8rem;
+				line-height: 2rem;
+			}
 			@include breakpoint($xsLaptop) {
 				font-size: 2.5rem;
 				letter-spacing: 0.1rem;
@@ -75,11 +79,18 @@
 			font-size: 1.25rem;
 			padding: 1.5rem 2.5rem;
 		}
+		@include breakpoint($tablet) {
+			font-size: 1.4rem;
+			width: 90%;
+		}
 		@include breakpoint($xsLaptop) {
 			font-size: 1.5rem;
 			gap: 2rem;
 			margin: -4rem 0 0 0;
 			padding: 2rem 3rem;
+			width: 70%;
+		}
+		@include breakpoint($sLaptop) {
 			width: 50%;
 		}
 		.emailInfo {
@@ -92,6 +103,11 @@
 			display: flex;
 			flex-direction: column;
 			width: 100%;
+			.contactLink {
+				@include breakpoint($tablet) {
+					font-size: 1.5rem;
+				}
+			}
 		}
 		.contactLink {
 			color: #0d9065;
