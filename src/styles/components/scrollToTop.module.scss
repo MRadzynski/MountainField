@@ -1,10 +1,7 @@
 @import '../main.scss';
 
 .scrollArrowContainer {
-	background: linear-gradient($gradientStart, $secondaryColor);
-	background: linear-gradient($secondaryColor, $gradientEnd);
 	background: linear-gradient($secondaryColor, $gradientStart);
-	// background-color: $secondaryColor;
 	border: 1px solid $gradientStart;
 	border-radius: 50%;
 	bottom: 24px;
@@ -33,6 +30,14 @@
 	@include breakpoint($xsLaptop) {
 		height: 60px;
 		width: 60px;
+	}
+	@include breakpointIPadProPortrait() {
+		height: 80px;
+		width: 80px;
+	}
+	@include breakpointIPadProLandscape() {
+		height: 75px;
+		width: 75px;
 	}
 	&:hover {
 		.scrollArrow {

@@ -16,9 +16,19 @@
 		height: 100vh;
 		margin: 0 0 3rem;
 	}
+	@include breakpointIPadProPortrait() {
+		height: 50rem;
+		margin-bottom: 8rem;
+	}
 	@include breakpoint($sLaptop) {
 		height: 100vh;
-		margin: 0;
+		margin-bottom: 6rem;
+	}
+	@include breakpointIPadProLandscape() {
+		margin-bottom: -4rem;
+	}
+	@include breakpoint($laptop) {
+		margin-bottom: 6rem;
 	}
 
 	.headingContainer {
@@ -39,6 +49,9 @@
 		@include breakpoint($sLaptop) {
 			margin-bottom: 3rem;
 			padding: 2rem 4.5rem;
+		}
+		@include breakpointIPadProLandscape() {
+			margin-bottom: 5rem;
 		}
 
 		.heading {
@@ -83,8 +96,17 @@
 			width: 80%;
 		}
 		@include breakpoint($sLaptop) {
-			height: 65%;
-			width: 68%;
+			height: 75%;
+			width: 75%;
+		}
+		@include breakpointIPadProLandscape() {
+			height: 60%;
+		}
+		@include breakpoint($laptop) {
+			height: 70%;
+		}
+		@include breakpoint($sDesktop) {
+			width: 70%;
 		}
 
 		.subscriptionsBox {
@@ -101,11 +123,14 @@
 			@include breakpoint($xsLaptop) {
 				box-shadow: unset;
 				flex-direction: row;
-				height: 85%;
+				height: max-content;
 				width: 85%;
 			}
 			@include breakpoint($sLaptop) {
-				width: fit-content;
+				width: 80%;
+			}
+			@include breakpointIPadProLandscape() {
+				height: 30rem;
 			}
 		}
 

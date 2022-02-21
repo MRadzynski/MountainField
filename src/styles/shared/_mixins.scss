@@ -4,6 +4,18 @@
 	}
 }
 
+@mixin breakpointIPadProPortrait() {
+	@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+		@content;
+	}
+}
+
+@mixin breakpointIPadProLandscape() {
+	@media only screen and (min-device-width: 1366px) and (max-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+		@content;
+	}
+}
+
 @mixin no-selectable {
 	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none;

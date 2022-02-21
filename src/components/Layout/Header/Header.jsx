@@ -1,10 +1,12 @@
 import MobileNav from '../../MobileNav/MobileNav';
 import Navbar from '../../Navbar/Navbar';
+import useWindowWidth from '../../../hooks/useWindowWidth';
 import { isMobile } from '../../../utils';
 
 import classes from '../../../styles/components/header.module.scss';
 
 const Header = () => {
+	const windowWidth = useWindowWidth();
 	return (
 		<header className={classes.headerContainer}>
 			<div className={classes.logoContainer}>

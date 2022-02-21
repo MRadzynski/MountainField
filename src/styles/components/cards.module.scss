@@ -10,6 +10,9 @@
 	@include breakpoint($xsLaptop) {
 		width: 30rem;
 	}
+	@include breakpoint($laptop) {
+		width: auto;
+	}
 
 	&:after {
 		bottom: -130px;
@@ -31,7 +34,13 @@
 		}
 		@include breakpoint($sLaptop) {
 			font-size: 6rem;
-			right: -120px;
+			right: -75px;
+		}
+		@include breakpoint($laptop) {
+			right: -100px;
+		}
+		@include breakpoint($sDesktop) {
+			right: -105px;
 		}
 	}
 
@@ -49,10 +58,14 @@
 		z-index: 3;
 		@include breakpoint($xsLaptop) {
 			height: 30rem;
-			width: 16rem;
+			width: 100%;
 		}
 		@include breakpoint($sLaptop) {
 			height: 32rem;
+			width: 20rem;
+		}
+		@include breakpoint($sDesktop) {
+			width: 24rem;
 		}
 
 		.cardHeading {
@@ -125,7 +138,9 @@
 				padding: 0 2rem;
 			}
 			@include breakpoint($sLaptop) {
-				padding: 0 4rem;
+				font-size: 1.3rem;
+				line-height: 1.9rem;
+				padding: 0 2rem;
 			}
 		}
 		.cardImage {
@@ -170,7 +185,6 @@
 			bottom: -110px;
 		}
 		@include breakpoint($sLaptop) {
-			bottom: -145px;
 			right: -80px;
 		}
 	}

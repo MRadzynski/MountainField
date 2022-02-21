@@ -6,6 +6,7 @@ import Offer from './components/Sections/Offer/Offer';
 import Contact from './components/Sections/Contact/Contact';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import NotAllowedOverlay from './components/NotAllowedOverlay/NotAllowedOverlay';
+import useWindowWidth from './hooks/useWindowWidth';
 import { smoothNavScroll } from './utils/smoothNavScroll';
 import { useEffect, useState } from 'react';
 
@@ -18,6 +19,7 @@ const defaultWidth = window.innerWidth;
 const App = () => {
 	const [displayArrow, setDisplayArrow] = useState(false);
 	const [noSupportedOrientation, setNoSupportedOrientation] = useState(false);
+	const windowWidth = useWindowWidth();
 
 	const {
 		breakpoints: { tablet },
@@ -27,7 +29,7 @@ const App = () => {
 		smoothNavScroll();
 		document.addEventListener('scroll', displayArrowHandler);
 
-		window.screen.orientation.addEventListener('change', (e) => {
+		window.screen.orientation?.addEventListener('change', (e) => {
 			if (
 				e.currentTarget.type === 'landscape-primary' &&
 				defaultWidth < tablet

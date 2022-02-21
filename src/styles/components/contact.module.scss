@@ -14,6 +14,15 @@
 		height: calc(100vh - 10rem);
 		padding: 0;
 	}
+	@include breakpointIPadProPortrait() {
+		height: 40rem;
+	}
+	@include breakpoint($sLaptop) {
+		height: calc(100vh - 10rem);
+	}
+	@include breakpointIPadProLandscape() {
+		height: 50rem;
+	}
 	.headingContainer {
 		padding: 2rem 0 6rem;
 		@include breakpoint($xsLaptop) {
@@ -91,7 +100,7 @@
 			width: 70%;
 		}
 		@include breakpoint($sLaptop) {
-			width: 50%;
+			width: 60%;
 		}
 		.emailInfo {
 			align-items: center;

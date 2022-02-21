@@ -14,6 +14,12 @@
 		height: 30rem;
 		width: 30rem;
 	}
+	@include breakpointIPadProPortrait() {
+		height: 32rem;
+	}
+	@include breakpoint($sLaptop) {
+		height: 30rem;
+	}
 
 	.subscriptionTitleContainer {
 		align-items: center;
@@ -54,6 +60,9 @@
 		@include breakpoint($xsLaptop) {
 			padding: 2rem 1.5rem;
 		}
+		@include breakpoint($sDesktop) {
+			padding: 2rem;
+		}
 		.subscriptionPrice {
 			font-family: 'AllRoundGothic-Demi, All Round Gothic';
 			font-size: 1.4rem;
@@ -75,6 +84,9 @@
 			}
 			@include breakpoint($sLaptop) {
 				font-size: 2.2rem;
+			}
+			@include breakpoint($sDesktop) {
+				font-size: 2.3rem;
 			}
 		}
 		.subscriptionWorkers {
@@ -106,6 +118,16 @@
 					width: 50%;
 					@include breakpoint($lPhone) {
 						height: 2rem;
+						width: 3rem;
+					}
+					@include breakpoint($tablet) {
+						width: 3.5rem;
+					}
+					@include breakpointIPadProPortrait() {
+						width: 3rem;
+					}
+					@include breakpoint($sLaptop) {
+						width: 3.5rem;
 					}
 				}
 				.subscriptionPeople {
@@ -139,6 +161,9 @@
 			@include breakpoint($xsLaptop) {
 				height: 6px;
 			}
+			@include breakpointIPadProLandscape() {
+				height: 8px;
+			}
 
 			&::-webkit-slider-thumb {
 				background: $accentColor;
@@ -158,6 +183,10 @@
 				@include breakpoint($xsLaptop) {
 					height: 24px;
 					width: 24px;
+				}
+				@include breakpointIPadProLandscape() {
+					height: 28px;
+					width: 28px;
 				}
 			}
 		}
@@ -255,6 +284,7 @@
 			border: 2px solid transparent;
 			border-radius: 3rem;
 			box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
+			color: black;
 			font-family: 'BookmanOldStyle, Bookman Old Style';
 			font-size: 1rem;
 			margin: 1.5rem auto 0 auto;
@@ -278,6 +308,9 @@
 				font-size: 1.1rem;
 				padding: 0.5rem 1.25rem;
 			}
+			@include breakpointIPadProLandscape() {
+				margin-top: 0.5rem;
+			}
 		}
 	}
 }
@@ -300,6 +333,9 @@
 			}
 			@include breakpoint($xsLaptop) {
 				font-size: 1.9rem;
+			}
+			@include breakpoint($sDesktop) {
+				font-size: 2.3rem;
 			}
 		}
 		.subscriptionsAmountsContainer {
@@ -366,6 +402,7 @@
 			border: 2px solid $secondaryColor;
 			border-radius: 3rem;
 			box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
+			color: black;
 			cursor: pointer;
 			font-family: 'BookmanOldStyle, Bookman Old Style';
 			font-size: 1rem;
@@ -391,6 +428,12 @@
 				font-size: 1.1rem;
 				margin-top: 2rem;
 				padding: 0.5rem 1.25rem;
+			}
+			@include breakpointIPadProLandscape() {
+				margin-top: 1.6rem;
+			}
+			@include breakpoint($sDesktop) {
+				margin-top: 1.3rem;
 			}
 		}
 	}
