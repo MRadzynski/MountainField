@@ -39,6 +39,14 @@
 		height: 75px;
 		width: 75px;
 	}
+	@include breakpoint($desktop) {
+		height: 70px;
+		width: 70px;
+	}
+	@include breakpoint($desktop2K) {
+		height: 80px;
+		width: 80px;
+	}
 	&:hover {
 		.scrollArrow {
 			animation: 0.5s infinite alternate arrowUp;
@@ -47,6 +55,11 @@
 	.scrollArrow {
 		animation: 0.5s arrowDown;
 		font-size: 2.5rem;
+
+		@include breakpoint($desktop) {
+			height: 32px;
+			width: 32px;
+		}
 	}
 }
 

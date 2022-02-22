@@ -25,6 +25,12 @@
 		@include breakpoint($sLaptop) {
 			width: 20%;
 		}
+		@include breakpoint($desktop) {
+			width: 15%;
+		}
+		@include breakpoint($desktop2K) {
+			width: 12%;
+		}
 		.logo {
 			cursor: pointer;
 			height: 70%;

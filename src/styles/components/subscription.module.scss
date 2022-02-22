@@ -20,6 +20,12 @@
 	@include breakpoint($sLaptop) {
 		height: 30rem;
 	}
+	@include breakpoint($desktop) {
+		height: 32rem;
+	}
+	@include breakpoint($desktop) {
+		width: 100%;
+	}
 
 	.subscriptionTitleContainer {
 		align-items: center;
@@ -44,6 +50,9 @@
 			}
 			@include breakpoint($xsLaptop) {
 				font-size: 1.3rem;
+			}
+			@include breakpoint($desktop) {
+				font-size: 1.4rem;
 			}
 		}
 	}
@@ -88,6 +97,9 @@
 			@include breakpoint($sDesktop) {
 				font-size: 2.3rem;
 			}
+			@include breakpoint($desktop) {
+				font-size: 2.5rem;
+			}
 		}
 		.subscriptionWorkers {
 			align-items: center;
@@ -108,6 +120,9 @@
 			}
 			@include breakpoint($xsLaptop) {
 				font-size: 1.2rem;
+			}
+			@include breakpoint($desktop) {
+				font-size: 1.4rem;
 			}
 			.workersAmount {
 				display: flex;
@@ -164,6 +179,9 @@
 			@include breakpointIPadProLandscape() {
 				height: 8px;
 			}
+			@include breakpoint($desktop) {
+				height: 8px;
+			}
 
 			&::-webkit-slider-thumb {
 				background: $accentColor;
@@ -209,6 +227,9 @@
 			@include breakpoint($xsLaptop) {
 				font-size: 1.3rem;
 			}
+			@include breakpoint($desktop) {
+				font-size: 1.4rem;
+			}
 		}
 		.subscriptionsAmounts {
 			display: flex;
@@ -229,6 +250,9 @@
 					}
 					@include breakpoint($xsLaptop) {
 						font-size: 1.2rem;
+					}
+					@include breakpoint($desktop) {
+						font-size: 1.3rem;
 					}
 				}
 
@@ -337,6 +361,9 @@
 			@include breakpoint($sDesktop) {
 				font-size: 2.3rem;
 			}
+			@include breakpoint($desktop) {
+				font-size: 2.5rem;
+			}
 		}
 		.subscriptionsAmountsContainer {
 			.sliderContainer {
@@ -393,6 +420,9 @@
 							bottom: 13px;
 							font-size: 1.75rem;
 						}
+						@include breakpoint($desktop) {
+							font-size: 1.8rem;
+						}
 					}
 				}
 			}
@@ -434,6 +464,9 @@
 			}
 			@include breakpoint($sDesktop) {
 				margin-top: 1.3rem;
+			}
+			@include breakpoint($desktop) {
+				margin-top: 1.9rem;
 			}
 		}
 	}

@@ -24,6 +24,11 @@
 		height: max-content;
 		margin-bottom: 10rem;
 	}
+	@include breakpoint($desktop2K) {
+		height: 100vh;
+		margin: 0 auto;
+		max-width: 2000px;
+	}
 	.heading {
 		border-bottom: 2px solid $secondaryColor;
 		border-top: 2px solid $secondaryColor;
@@ -56,6 +61,10 @@
 			font-size: 3.2rem;
 			line-height: 4rem;
 		}
+		@include breakpoint($desktop2K) {
+			font-size: 3.6rem;
+			line-height: 4.2rem;
+		}
 	}
 
 	.cardsContainer {
@@ -82,6 +91,9 @@
 		}
 		@include breakpoint($sDesktop) {
 			justify-content: space-evenly;
+		}
+		@include breakpoint($desktop) {
+			margin-top: 5rem;
 		}
 	}
 }

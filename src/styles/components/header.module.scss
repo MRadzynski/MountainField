@@ -10,13 +10,14 @@
 	padding: 0 3rem;
 	position: relative;
 	width: 100%;
-
 	@include breakpoint($xsLaptop) {
 		flex-direction: row;
 		height: 7.5rem;
 		justify-content: flex-start;
 	}
-
+	@include breakpoint($desktop2K) {
+		padding: 0 5rem;
+	}
 	.logoContainer {
 		height: 50%;
 		width: 85%;
@@ -27,7 +28,13 @@
 			height: 70%;
 			width: 35%;
 		}
-
+		@include breakpoint($sDesktop) {
+			width: 25%;
+		}
+		@include breakpoint($desktop2K) {
+			height: 60%;
+			width: 20%;
+		}
 		.logo {
 			height: 100%;
 			position: relative;

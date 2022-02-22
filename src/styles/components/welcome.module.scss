@@ -25,6 +25,14 @@
 		height: max-content;
 		margin-bottom: 10rem;
 	}
+	@include breakpoint($desktop) {
+		height: calc(100vh - 7.5rem);
+		padding: 0 4rem;
+	}
+	@include breakpoint($desktop2K) {
+		margin: 0 auto;
+		max-width: 2000px;
+	}
 
 	.contentContainer {
 		margin-top: 1rem;
@@ -42,6 +50,12 @@
 		}
 		@include breakpointIPadProLandscape() {
 			margin-top: 5rem;
+		}
+		@include breakpoint($desktop) {
+			margin-top: 20rem;
+		}
+		@include breakpoint($desktop2K) {
+			margin-top: 25rem;
 		}
 		.heading {
 			border-bottom: 2px solid $secondaryColor;
@@ -72,6 +86,14 @@
 				margin: 0 auto;
 				width: max-content;
 			}
+			@include breakpoint($desktop) {
+				font-size: 3rem;
+				line-height: 3.5rem;
+			}
+			@include breakpoint($desktop2K) {
+				font-size: 3.2rem;
+				line-height: 4rem;
+			}
 		}
 		.descriptionContainer {
 			position: relative;
@@ -85,6 +107,10 @@
 			}
 			@include breakpoint($sLaptop) {
 				width: 100%;
+			}
+			@include breakpoint($desktop) {
+				margin: 0 auto;
+				width: 90%;
 			}
 
 			.descriptionBox {
@@ -127,6 +153,14 @@
 					}
 					@include breakpointIPadProLandscape() {
 						font-size: 1.5rem;
+					}
+					@include breakpoint($desktop) {
+						font-size: 1.4rem;
+						line-height: 2.4rem;
+					}
+					@include breakpoint($desktop2K) {
+						font-size: 1.6rem;
+						line-height: 2.8rem;
 					}
 				}
 			}

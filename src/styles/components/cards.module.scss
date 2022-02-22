@@ -13,6 +13,9 @@
 	@include breakpoint($laptop) {
 		width: auto;
 	}
+	@include breakpoint($desktop) {
+		height: 30rem;
+	}
 
 	&:after {
 		bottom: -130px;
@@ -41,6 +44,12 @@
 		}
 		@include breakpoint($sDesktop) {
 			right: -105px;
+		}
+		@include breakpoint($desktop) {
+			right: -130px;
+		}
+		@include breakpoint($desktop2K) {
+			right: -145px;
 		}
 	}
 
@@ -142,6 +151,11 @@
 				line-height: 1.9rem;
 				padding: 0 2rem;
 			}
+			@include breakpoint($desktop) {
+				font-size: 1.3rem;
+				line-height: 2.2rem;
+				padding: 0 2.5rem;
+			}
 		}
 		.cardImage {
 			height: 12rem;
@@ -186,6 +200,9 @@
 		}
 		@include breakpoint($sLaptop) {
 			right: -80px;
+		}
+		@include breakpoint($desktop) {
+			bottom: -140px;
 		}
 	}
 }

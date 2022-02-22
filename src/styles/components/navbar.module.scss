@@ -61,6 +61,9 @@
 				letter-spacing: unset;
 				padding: 0.5rem 0;
 			}
+			@include breakpoint($desktop2K) {
+				font-size: 1.3rem;
+			}
 			&:hover {
 				border-bottom: 2px solid $secondaryColor;
 				border-top: 2px solid $secondaryColor;

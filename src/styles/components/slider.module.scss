@@ -23,6 +23,9 @@
 		margin-top: 10rem;
 		padding: 0;
 	}
+	@include breakpoint($desktop) {
+		margin-top: 15rem;
+	}
 
 	.slider {
 		align-items: center;
@@ -40,6 +43,14 @@
 		@include breakpoint($sLaptop) {
 			height: 30vw;
 			width: 30vw;
+		}
+		@include breakpoint($desktop) {
+			height: 27vw;
+			width: 27vw;
+		}
+		@include breakpoint($desktop2K) {
+			height: 23vw;
+			width: 23vw;
 		}
 
 		.slideImage {
