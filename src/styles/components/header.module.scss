@@ -18,6 +18,14 @@
 	@include breakpoint($desktop2K) {
 		padding: 0 5rem;
 	}
+	@include breakpointExtended($desktop2K, $height2K) {
+		height: 9rem;
+		padding: 0 10rem;
+	}
+	@include breakpoint($desktop4K) {
+		height: 14rem;
+		padding: 0 25rem;
+	}
 	.logoContainer {
 		height: 50%;
 		width: 85%;
@@ -34,6 +42,12 @@
 		@include breakpoint($desktop2K) {
 			height: 60%;
 			width: 20%;
+		}
+		@include breakpointExtended($desktop2K, $height2K) {
+			height: 70%;
+		}
+		@include breakpoint($desktop4K) {
+			width: 25%;
 		}
 		.logo {
 			height: 100%;

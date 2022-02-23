@@ -16,6 +16,15 @@
 	@include breakpoint($desktop) {
 		height: 30rem;
 	}
+	@include breakpointExtended($desktop2K, $height2K) {
+		height: 42rem;
+		width: 30rem;
+	}
+	@include breakpoint($desktop4K) {
+		border-radius: 5rem;
+		height: 60rem;
+		width: 40rem;
+	}
 
 	&:after {
 		bottom: -130px;
@@ -51,6 +60,14 @@
 		@include breakpoint($desktop2K) {
 			right: -145px;
 		}
+		@include breakpointExtended($desktop2K, $height2K) {
+			font-size: 8rem;
+			right: -120px;
+		}
+		@include breakpoint($desktop4K) {
+			font-size: 12rem;
+			right: -210px;
+		}
 	}
 
 	&:last-child {
@@ -76,13 +93,17 @@
 		@include breakpoint($sDesktop) {
 			width: 24rem;
 		}
+		@include breakpointExtended($desktop2K, $height2K) {
+			height: 100%;
+			width: 100%;
+		}
 
 		.cardHeading {
 			background: linear-gradient($secondaryColor, $gradientEnd);
 			border-radius: 2rem;
 			font-size: 1.5rem;
 			height: 4rem;
-			margin: 2rem auto 0 auto;
+			margin: 2rem auto 0;
 			padding: 0.5rem 1.5rem;
 			width: max-content;
 			@include breakpoint($xsPhone) {
@@ -103,6 +124,19 @@
 			}
 			@include breakpoint($sLaptop) {
 				padding: 0.5rem 1.5rem;
+			}
+			@include breakpointExtended($desktop2K, $height2K) {
+				border-radius: 3rem;
+				font-size: 2.4rem;
+				height: 5rem;
+				padding: 0.5rem 2.5rem;
+			}
+			@include breakpoint($desktop4K) {
+				border-radius: 4rem;
+				font-size: 3.2rem;
+				height: 10rem;
+				margin-top: 4rem;
+				padding: 0.5rem 3rem;
 			}
 		}
 		.cardDescription {
@@ -156,6 +190,18 @@
 				line-height: 2.2rem;
 				padding: 0 2.5rem;
 			}
+			@include breakpointExtended($desktop2K, $height2K) {
+				font-size: 1.9rem;
+				height: 100%;
+				line-height: 2.8rem;
+				min-height: 23rem;
+				padding: 0 3rem;
+			}
+			@include breakpoint($desktop4K) {
+				font-size: 2.8rem;
+				line-height: 4rem;
+				padding: 0 4rem;
+			}
 		}
 		.cardImage {
 			height: 12rem;
@@ -166,6 +212,13 @@
 			}
 			@include breakpoint($sLaptop) {
 				height: 12rem;
+			}
+			@include breakpointExtended($desktop2K, $height2K) {
+				height: 14rem;
+			}
+			@include breakpoint($desktop4K) {
+				height: 16rem;
+				min-height: 16rem;
 			}
 		}
 	}
@@ -178,6 +231,12 @@
 		@include breakpoint($lPhone) {
 			left: -80px;
 			top: -100px;
+		}
+		@include breakpointExtended($desktop2K, $height2K) {
+			transform: scale(1);
+		}
+		@include breakpoint($desktop4K) {
+			transform: scale(1.5);
 		}
 	}
 	.decorationLeavesRight {
@@ -203,6 +262,13 @@
 		}
 		@include breakpoint($desktop) {
 			bottom: -140px;
+		}
+		@include breakpointExtended($desktop2K, $height2K) {
+			bottom: -110px;
+			transform: scale(1);
+		}
+		@include breakpoint($desktop4K) {
+			transform: scale(1.5);
 		}
 	}
 }

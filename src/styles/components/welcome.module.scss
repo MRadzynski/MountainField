@@ -33,6 +33,14 @@
 		margin: 0 auto;
 		max-width: 2000px;
 	}
+	@include breakpointExtended($desktop2K, $height2K) {
+		height: calc(100vh - 9rem);
+		padding: 0;
+	}
+	@include breakpoint($desktop4K) {
+		height: calc(100vh - 15rem);
+		max-width: 3000px;
+	}
 
 	.contentContainer {
 		margin-top: 1rem;
@@ -56,6 +64,10 @@
 		}
 		@include breakpoint($desktop2K) {
 			margin-top: 25rem;
+		}
+		@include breakpointExtended($desktop2K, $height2K) {
+			height: 50%;
+			margin: auto 0;
 		}
 		.heading {
 			border-bottom: 2px solid $secondaryColor;
@@ -94,6 +106,16 @@
 				font-size: 3.2rem;
 				line-height: 4rem;
 			}
+			@include breakpointExtended($desktop2K, $height2K) {
+				font-size: 3.8rem;
+				line-height: 5rem;
+				margin-bottom: 2rem;
+			}
+			@include breakpoint($desktop4K) {
+				font-size: 6rem;
+				line-height: 8rem;
+				margin-bottom: 4rem;
+			}
 		}
 		.descriptionContainer {
 			position: relative;
@@ -112,6 +134,9 @@
 				margin: 0 auto;
 				width: 90%;
 			}
+			@include breakpointExtended($desktop2K, $height2K) {
+				width: 100%;
+			}
 
 			.descriptionBox {
 				background-color: white;
@@ -125,6 +150,14 @@
 				}
 				@include breakpoint($sLaptop) {
 					padding: 3rem;
+				}
+				@include breakpointExtended($desktop2K, $height2K) {
+					border-radius: 3rem;
+					padding: 4rem;
+				}
+				@include breakpoint($desktop4K) {
+					border-radius: 4rem;
+					padding: 6rem;
 				}
 
 				.description {
@@ -162,6 +195,14 @@
 						font-size: 1.6rem;
 						line-height: 2.8rem;
 					}
+					@include breakpointExtended($desktop2K, $height2K) {
+						font-size: 2.4rem;
+						line-height: 3.6rem;
+					}
+					@include breakpoint($desktop4K) {
+						font-size: 3.5rem;
+						line-height: 5rem;
+					}
 				}
 			}
 
@@ -180,6 +221,12 @@
 				@include breakpoint($sLaptop) {
 					transform: scale(1);
 				}
+				@include breakpointExtended($desktop2K, $height2K) {
+					transform: scale(1.5);
+				}
+				@include breakpoint($desktop4K) {
+					transform: scale(2);
+				}
 			}
 
 			.decorationLeavesRight {
@@ -196,6 +243,12 @@
 				}
 				@include breakpoint($sLaptop) {
 					transform: scale(1);
+				}
+				@include breakpointExtended($desktop2K, $height2K) {
+					transform: scale(1.5);
+				}
+				@include breakpoint($desktop4K) {
+					transform: scale(2);
 				}
 			}
 		}

@@ -35,6 +35,9 @@
 			gap: 5rem;
 			justify-content: flex-end;
 		}
+		@include breakpoint($desktop4K) {
+			gap: 10rem;
+		}
 		.navLink {
 			border: 0;
 			color: $secondaryColor;
@@ -63,6 +66,12 @@
 			}
 			@include breakpoint($desktop2K) {
 				font-size: 1.3rem;
+			}
+			@include breakpointExtended($desktop2K, $height2K) {
+				font-size: 1.7rem;
+			}
+			@include breakpoint($desktop4K) {
+				font-size: 2.3rem;
 			}
 			&:hover {
 				border-bottom: 2px solid $secondaryColor;

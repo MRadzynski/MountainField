@@ -53,6 +53,15 @@
 		@include breakpointIPadProLandscape() {
 			margin-bottom: 5rem;
 		}
+		@include breakpointExtended($desktop2K, $height2K) {
+			border-radius: 4rem;
+			margin: 5rem 0 10rem;
+		}
+		@include breakpoint($desktop4K) {
+			border-radius: 5rem;
+			margin: 10rem 0 12rem;
+			padding: 3rem 6rem;
+		}
 
 		.heading {
 			border-bottom: 2px solid $secondaryColor;
@@ -76,6 +85,14 @@
 			}
 			@include breakpoint($sLaptop) {
 				font-size: 3rem;
+			}
+			@include breakpointExtended($desktop2K, $height2K) {
+				font-size: 4rem;
+				line-height: 4.8rem;
+			}
+			@include breakpoint($desktop4K) {
+				font-size: 5rem;
+				line-height: 7rem;
 			}
 		}
 	}
@@ -114,6 +131,15 @@
 		@include breakpoint($desktop2K) {
 			width: 50%;
 		}
+		@include breakpointExtended($desktop2K, $height2K) {
+			border-radius: 4rem;
+			height: 60%;
+			width: 55%;
+		}
+		@include breakpoint($desktop4K) {
+			border-radius: 7rem;
+			height: 60%;
+		}
 
 		.subscriptionsBox {
 			background-color: white;
@@ -141,6 +167,12 @@
 			@include breakpoint($desktop) {
 				height: 32rem;
 			}
+			@include breakpointExtended($desktop2K, $height2K) {
+				height: 70%;
+			}
+			@include breakpoint($desktop4K) {
+				height: 80%;
+			}
 		}
 
 		.decorationLeavesLeft {
@@ -156,6 +188,12 @@
 			@include breakpoint($sLaptop) {
 				transform: scale(1);
 			}
+			@include breakpointExtended($desktop2K, $height2K) {
+				transform: scale(1.5);
+			}
+			@include breakpoint($desktop4K) {
+				transform: scale(2);
+			}
 		}
 
 		.decorationLeavesRight {
@@ -169,6 +207,12 @@
 			}
 			@include breakpoint($sLaptop) {
 				transform: scale(1);
+			}
+			@include breakpointExtended($desktop2K, $height2K) {
+				transform: scale(1.5);
+			}
+			@include breakpoint($desktop4K) {
+				transform: scale(2);
 			}
 		}
 	}

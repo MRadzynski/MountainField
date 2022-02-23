@@ -26,6 +26,10 @@
 	@include breakpoint($desktop) {
 		margin-top: 15rem;
 	}
+	@include breakpointExtended($desktop2K, $height2K) {
+		height: 50%;
+		margin: auto;
+	}
 
 	.slider {
 		align-items: center;
@@ -51,6 +55,15 @@
 		@include breakpoint($desktop2K) {
 			height: 23vw;
 			width: 23vw;
+		}
+		@include breakpointExtended($desktop2K, $height2K) {
+			height: 27vw;
+			width: 27vw;
+		}
+		@include breakpoint($desktop4K) {
+			border-radius: 6rem;
+			height: 29vw;
+			width: 29vw;
 		}
 
 		.slideImage {

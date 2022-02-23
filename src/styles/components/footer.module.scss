@@ -10,6 +10,12 @@
 	@include breakpoint($xsLaptop) {
 		height: 6.5rem;
 	}
+	@include breakpointExtended($desktop2K, $height2K) {
+		height: 8rem;
+	}
+	@include breakpoint($desktop4K) {
+		height: 12rem;
+	}
 	.logoContainer {
 		align-items: center;
 		display: flex;
@@ -30,6 +36,9 @@
 		}
 		@include breakpoint($desktop2K) {
 			width: 12%;
+		}
+		@include breakpointExtended($desktop2K, $height2K) {
+			width: 15%;
 		}
 		.logo {
 			cursor: pointer;
