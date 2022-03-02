@@ -3,6 +3,8 @@ import SubscriptionPlan from '../../SubscriptionPlan/SubscriptionPlan';
 
 import classes from '../../../styles/components/offer.module.scss';
 
+import OrderForm from '../../Forms/OrderForm/OrderForm';
+
 const Offer = () => {
 	return (
 		<section className={classes.offerContainer} id="offer">
@@ -10,10 +12,11 @@ const Offer = () => {
 				<h1 className={classes.heading}>OFERTY DO WYBORU</h1>
 			</div>
 			<div className={classes.subscriptionsContainer}>
-				<div className={classes.subscriptionsBox}>
+				{/* <div className={classes.subscriptionsBox}>
 					<SubscriptionPlan planType="home" />
 					<SubscriptionPlan planType="standard" />
-				</div>
+				</div> */}
+				<OrderForm />
 				<DecorationLeaves
 					classes={classes}
 					leftSrc="leavesVerticalTopLeft"

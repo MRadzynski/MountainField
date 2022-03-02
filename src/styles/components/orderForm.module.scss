@@ -1,0 +1,10 @@
+@import '../main.scss';
+
+.formContainer {
+	background-color: $secondaryColor;
+	border-radius: 3rem;
+	display: grid;
+	height: 90%;
+	place-content: center;
+	width: 90%;
+}

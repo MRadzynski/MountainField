@@ -99,8 +99,10 @@
 
 	.subscriptionsContainer {
 		align-items: center;
-		background: linear-gradient($gradientStart, $gradientEnd);
+		// background: linear-gradient($gradientStart, $gradientEnd);
+		background-color: cadetblue;
 		border-radius: 3rem;
+		box-shadow: 4px 8px 8px 4px rgb(0 0 0 / 10%);
 		display: flex;
 		justify-content: center;
 		position: relative;

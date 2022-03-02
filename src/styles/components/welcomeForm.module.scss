@@ -1,0 +1,18 @@
+@import '../main.scss';
+
+.welcomeFormContainer {
+	display: grid;
+	gap: 4rem;
+	height: 100%;
+	padding: 2.5rem;
+	grid-template-rows: 1fr 4fr;
+
+	width: 100%;
+
+	.formDescription {
+		color: $primaryColor;
+	}
+
+	.formBody {
+	}
+}
