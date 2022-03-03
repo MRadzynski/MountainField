@@ -1,8 +1,25 @@
-import React from 'react';
+import FormButton from '../../FormButton/FormButton';
+import FormInput from '../../FormInput/FormInput';
+import { useEffect, useState } from 'react';
 
 import classes from '../../../styles/components/welcomeForm.module.scss';
 
-const WelcomeForm = ({ handleChange, nextStep }) => {
+const emailRegex =
+	/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+const WelcomeForm = ({ data, handleChange, nextStep }) => {
+	const [isFormValid, setIsFormValid] = useState(false);
+	const [wasFormSubmitted, setWasFormSubmitted] = useState(false);
+
+	useEffect(() => {
+		isFormValid && nextStep();
+	}, [isFormValid, nextStep]);
+
+	const validate = () => {
+		setWasFormSubmitted(true);
+		setIsFormValid(data.company && data.email);
+	};
+
 	return (
 		<div className={classes.welcomeFormContainer}>
 			<h2 className={classes.formDescription}>
@@ -11,14 +28,31 @@ const WelcomeForm = ({ handleChange, nextStep }) => {
 				minut.
 			</h2>
 			<div className={classes.formBody}>
-				<input
-					className={classes.inputField}
-					name="email"
-					onChange={handleChange}
+				<div className={classes.formFieldsContainer}>
+					<FormInput
+						classes={classes}
+						invalid={wasFormSubmitted && !data.company}
+						name="company"
+						onChange={handleChange}
+						placeholder="Nazwa Firmy"
+						type="text"
+					/>
+					<FormInput
+						classes={classes}
+						invalid={
+							wasFormSubmitted && (!data.email || !emailRegex.test(data.email))
+						}
+						name="email"
+						onChange={handleChange}
+						placeholder="firma@gmail.com"
+						type="email"
+					/>
+				</div>
+				<FormButton
+					classes={classes}
+					onClick={validate}
+					text="Rozpocznij tutaj &#8594;"
 				/>
-				<button className={classes.startButton} onClick={nextStep}>
-					Rozpocznij tutaj &#8594;
-				</button>
 			</div>
 		</div>
 	);

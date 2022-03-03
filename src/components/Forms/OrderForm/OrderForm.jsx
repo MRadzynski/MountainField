@@ -35,7 +35,11 @@ const OrderForm = () => {
 		switch (step) {
 			case 0:
 				return (
-					<WelcomeForm handleChange={handleFormChange} nextStep={nextStep} />
+					<WelcomeForm
+						data={formData}
+						handleChange={handleFormChange}
+						nextStep={nextStep}
+					/>
 				);
 			case 1:
 				return <PlansForm />;
