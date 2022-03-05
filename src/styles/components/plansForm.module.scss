@@ -1,4 +1,161 @@
+@import '../main.scss';
+
 .plansContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 6fr 1fr;
+  place-items: center;
+
+  .formButton {
+    background-color: $primaryColor;
+    border: 2px solid $gradientStart;
+    border-radius: 1rem;
+    color: $gradientStart;
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &:hover {
+      background-color: $gradientStart;
+      border-color: $primaryColor;
+      color: $primaryColor;
+    }
+  }
+
   .planTile {
+    background-color: rgba($primaryColor, 0.5);
+    border: 1px solid $gradientStart;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-rows: 2fr 6fr 2fr;
+    height: 80%;
+    width: 80%;
+
+    .planTitle {
+      align-items: center;
+      color: $accentColor;
+      display: flex;
+      margin-left: 1rem;
+      position: relative;
+
+      &:before {
+        background: $accentColor;
+        bottom: 10px;
+        content: '';
+        height: 4px;
+        position: absolute;
+        width: 15%;
+      }
+    }
+    .buttonContainer {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+
+      .formButton {
+        background-color: $primaryColor;
+        border: 2px solid $gradientStart;
+        border-radius: 1rem;
+        color: $gradientStart;
+        cursor: pointer;
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+        padding: 0.75rem 2rem;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        &:hover {
+          background-color: $gradientStart;
+          border-color: $primaryColor;
+          color: $primaryColor;
+        }
+      }
+    }
+
+    .inputsContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-left: 2rem;
+
+      .inputField {
+        background-color: white;
+        border: 0;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.1);
+        font-size: 1rem;
+        line-height: 1.3rem;
+        outline: 0;
+        padding: 0.5rem 1rem;
+
+        &:focus {
+          outline: 2px solid $gradientStart;
+        }
+      }
+    }
+
+    .sliderContainer {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      width: 90%;
+
+      .sliderInfo {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        top: 15px;
+
+        .sliderLabel {
+          font-weight: 500;
+        }
+        .sliderValue {
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+      }
+
+      .inputSlider {
+        appearance: none;
+        background-color: $secondaryColor;
+        border-radius: 4px;
+        height: 6px;
+        margin: 2rem 0;
+
+        @include breakpoint($phone) {
+          height: 8px;
+        }
+        @include breakpoint($xsLaptop) {
+          height: 6px;
+        }
+        @include breakpointIPadProLandscape() {
+          height: 8px;
+        }
+        @include breakpoint($desktop) {
+          height: 8px;
+        }
+        @include breakpointExtended($desktop2K, $height2K) {
+          height: 10px;
+        }
+        @include breakpoint($desktop4K) {
+          height: 12px;
+        }
+
+        &::-webkit-slider-thumb {
+          background: $accentColor;
+          border-radius: 50%;
+          cursor: ew-resize;
+          height: 20px;
+          width: 20px;
+          -webkit-appearance: none;
+        }
+      }
+    }
+  }
+  .pickedPlan {
+    outline: 3px solid $gradientStart;
   }
 }

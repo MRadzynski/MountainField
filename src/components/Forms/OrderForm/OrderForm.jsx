@@ -5,6 +5,8 @@ import { useState } from 'react';
 
 import classes from '../../../styles/components/orderForm.module.scss';
 
+const addressInfo = ['city', 'street', 'zipCode'];
+
 const OrderForm = () => {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({
@@ -24,7 +26,16 @@ const OrderForm = () => {
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
-    setFormData((formData) => ({ ...formData, [name]: value }));
+
+    addressInfo.includes(name)
+      ? setFormData((formData) => ({
+          ...formData,
+          address: {
+            ...formData.address,
+            [name]: value,
+          },
+        }))
+      : setFormData((formData) => ({ ...formData, [name]: value }));
   };
 
   const nextStep = () => setStep((currentStep) => currentStep + 1);
