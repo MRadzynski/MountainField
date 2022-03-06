@@ -1,7 +1,11 @@
-const FormButton = ({ classes, onClick, text }) => {
+const FormButton = ({ classes, disabled, onClick, text }) => {
 	return (
 		<div className={classes.buttonContainer}>
-			<button className={classes.formButton} onClick={onClick}>
+			<button
+				className={classes.formButton}
+				disabled={disabled}
+				onClick={onClick}
+			>
 				{text}
 			</button>
 		</div>

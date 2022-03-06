@@ -24,7 +24,7 @@ const Contact = () => {
 						className={classes.contactLink}
 						href="https://calendly.com/szymonst_mf"
 						target="_blank"
-						rel="noreferrer"
+						rel="noopener noreferrer"
 					>
 						Kalendarzu 📅
 					</a>
