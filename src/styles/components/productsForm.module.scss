@@ -1,0 +1,45 @@
+@import '../main.scss';
+
+.productsFormContainer {
+	display: grid;
+	grid-template-areas:
+		'summary  cart'
+		'summary  cart'
+		'button button';
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 4fr 4fr 1fr;
+	.cartContainer {
+		grid-area: cart;
+	}
+	.productsSummary {
+		border: 2px solid $primaryColor;
+		border-radius: 1rem;
+		display: grid;
+		grid-area: summary;
+		grid-template-rows: 2fr 3fr 1fr;
+		height: 80%;
+		padding: 1.5rem;
+		width: 80%;
+
+		.summaryInfo {
+			color: $primaryColor;
+			position: relative;
+			&:before {
+				background-color: $primaryColor;
+				bottom: 50%;
+				content: '';
+				height: 6px;
+				left: 0;
+				position: absolute;
+				width: 15%;
+			}
+			.summaryHeading {
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	.formButton {
+		grid-area: button;
+	}
+}

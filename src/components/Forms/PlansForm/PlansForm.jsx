@@ -15,13 +15,27 @@ const PlansForm = ({
 	const [isNextButtonDisabled, setIsNextButtonDisabled] = useState(false);
 
 	useEffect(() => {
-		if (data.homeOfficeOffer && Number(data.workersAmount) > 0) {
+		if (
+			!data.standardOffer &&
+			data.homeOfficeOffer &&
+			Number(data.workersAmount) > 0
+		) {
 			setIsNextButtonDisabled(false);
 		} else if (
+			!data.homeOfficeOffer &&
 			data.standardOffer &&
 			data.address.city &&
 			data.address.street &&
 			data.address.zipCode
+		) {
+			setIsNextButtonDisabled(false);
+		} else if (
+			data.homeOfficeOffer &&
+			data.standardOffer &&
+			data.address.city &&
+			data.address.street &&
+			data.address.zipCode &&
+			Number(data.workersAmount) > 0
 		) {
 			setIsNextButtonDisabled(false);
 		} else {
