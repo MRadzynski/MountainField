@@ -24,4 +24,46 @@
 			color: #bdbdbd;
 		}
 	}
+
+	.contentContainer {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		padding: 3rem;
+		width: 100%;
+
+		.modalTitle {
+			color: $primaryColor;
+			font-size: 1.8rem;
+		}
+
+		.productList {
+			margin: 3rem;
+			background-color: white;
+			width: 90%;
+			height: 70%;
+		}
+
+		.formButton {
+			background-color: $primaryColor;
+			border: 2px solid $gradientStart;
+			border-radius: 1rem;
+			color: $gradientStart;
+			cursor: pointer;
+			font-size: 1rem;
+			font-weight: 600;
+			grid-area: button;
+			letter-spacing: 0.1rem;
+			padding: 0.75rem 2rem;
+			position: relative;
+			transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+			&:hover {
+				background-color: $gradientStart;
+				border-color: $primaryColor;
+				color: $primaryColor;
+			}
+		}
+	}
 }

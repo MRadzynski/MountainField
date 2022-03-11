@@ -4,6 +4,7 @@ import WelcomeForm from '../WelcomeForm/WelcomeForm';
 import { useState } from 'react';
 
 import classes from '../../../styles/components/orderForm.module.scss';
+import RequestForm from '../RequestForm/RequestForm';
 
 const addressInfo = ['city', 'street', 'zipCode'];
 
@@ -100,7 +101,7 @@ const OrderForm = () => {
 					/>
 				);
 			case 4:
-				return <h1>Last Step</h1>;
+				return <RequestForm />;
 			default:
 				return null;
 		}

@@ -1,7 +1,7 @@
 import FormButton from '../../FormButton/FormButton';
 
 import classes from '../../../styles/components/productsForm.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AddProductModal from '../../AddProductModal/AddProductModal';
 
 const products = [
@@ -29,6 +29,16 @@ const products = [
 
 const ProductsForm = ({ type, nextStep, prevStep }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [productList, setProductList] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const data = await fetch('https://mfpr.toadres.pl/get_products');
+			const json = await data.json();
+			setProductList(json);
+		};
+		fetchData();
+	}, []);
 
 	const closeModal = () => setIsModalOpen(false);
 
@@ -95,7 +105,9 @@ const ProductsForm = ({ type, nextStep, prevStep }) => {
 
 			<FormButton classes={classes} onClick={prevStep} text="Wróć" />
 			<FormButton classes={classes} onClick={nextStep} text="Dalej" />
-			{isModalOpen && <AddProductModal onClose={closeModal} />}
+			{isModalOpen && (
+				<AddProductModal onClose={closeModal} products={productList} />
+			)}
 		</div>
 	);
 };
