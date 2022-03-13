@@ -1,7 +1,7 @@
 import ProductsForm from '../ProductsForm/ProductsForm';
 import PlansForm from '../PlansForm/PlansForm';
 import WelcomeForm from '../WelcomeForm/WelcomeForm';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import classes from '../../../styles/components/orderForm.module.scss';
 import RequestForm from '../RequestForm/RequestForm';
@@ -10,6 +10,7 @@ const addressInfo = ['city', 'street', 'zipCode'];
 
 const OrderForm = () => {
 	const [step, setStep] = useState(0);
+	const [productsList, setProductsList] = useState([]);
 	const [formData, setFormData] = useState({
 		company: '',
 		email: '',
@@ -24,6 +25,19 @@ const OrderForm = () => {
 		homeOfficeCart: [],
 		standardOfferCart: [],
 	});
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const data = await fetch('https://mfpr.toadres.pl/get_products');
+			const fetchedProducts = await data.json();
+			const updatedProducts = fetchedProducts.map((product) => ({
+				...product,
+				quantity: 0,
+			}));
+			setProductsList(updatedProducts);
+		};
+		fetchData();
+	}, []);
 
 	const handleFormChange = (e) => {
 		const { name, value } = e.target;
@@ -90,7 +104,12 @@ const OrderForm = () => {
 				);
 			case 2:
 				return (
-					<ProductsForm type="home" nextStep={nextStep} prevStep={prevStep} />
+					<ProductsForm
+						type="home"
+						nextStep={nextStep}
+						prevStep={prevStep}
+						productsList={productsList}
+					/>
 				);
 			case 3:
 				return (

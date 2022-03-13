@@ -1,49 +1,53 @@
-import FormButton from '../../FormButton/FormButton';
-
-import classes from '../../../styles/components/productsForm.module.scss';
-import { useEffect, useState } from 'react';
 import AddProductModal from '../../AddProductModal/AddProductModal';
+import classes from '../../../styles/components/productsForm.module.scss';
+import FormButton from '../../FormButton/FormButton';
+import { useState } from 'react';
 
-const products = [
-	{
-		name: 'Czarna Herbata MountainField',
-		description: '100g',
-		imgPath: 'assets/products/icecream0.png',
-	},
-	{
-		name: 'Czarna Herbata MountainField',
-		description: '100g',
-		imgPath: 'assets/products/icecream1.png',
-	},
-	{
-		name: 'Czarna Herbata MountainField',
-		description: '100g',
-		imgPath: 'assets/products/icecream2.png',
-	},
-	{
-		name: 'Czarna Herbata MountainField',
-		description: '100g',
-		imgPath: 'assets/products/icecream0.png',
-	},
-];
-
-const ProductsForm = ({ type, nextStep, prevStep }) => {
+const ProductsForm = ({ type, nextStep, prevStep, productsList }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
-	const [productList, setProductList] = useState([]);
-
-	useEffect(() => {
-		const fetchData = async () => {
-			const data = await fetch('https://mfpr.toadres.pl/get_products');
-			const json = await data.json();
-			setProductList(json);
-		};
-		fetchData();
-	}, []);
+	const [cartList, setCartList] = useState([]);
 
 	const closeModal = () => setIsModalOpen(false);
 
 	const headingText = type === 'home' ? 'Home Office' : 'Standard';
 	const subHeadingText = type === 'home' ? 'Na osobę' : 'Do Twojego biura';
+
+	const decreaseQuantity = (e) => {
+		const selectedProductId = e.target.closest('li').id;
+		const selectedProduct = cartList.find(
+			(cartItem) => cartItem.id === selectedProductId
+		);
+
+		selectedProduct.quantity =
+			selectedProduct.quantity - 1 > 0 ? selectedProduct.quantity - 1 : 0;
+
+		let updatedProducts;
+
+		if (!selectedProduct.quantity) {
+			updatedProducts = productsList.filter((product) => product.quantity);
+		} else {
+			updatedProducts = cartList.map((cartItem) =>
+				cartItem.id !== selectedProduct.id ? cartItem : selectedProduct
+			);
+		}
+
+		setCartList(updatedProducts);
+	};
+
+	const increaseQuantity = (e) => {
+		const selectedProductId = e.target.closest('li').id;
+		const selectedProduct = cartList.find(
+			(cartItem) => cartItem.id === selectedProductId
+		);
+
+		selectedProduct.quantity = selectedProduct.quantity + 1;
+
+		const updatedProducts = cartList.map((cartItem) =>
+			cartItem.id !== selectedProduct.id ? cartItem : selectedProduct
+		);
+
+		setCartList(updatedProducts);
+	};
 
 	return (
 		<div className={classes.productsFormContainer}>
@@ -73,23 +77,25 @@ const ProductsForm = ({ type, nextStep, prevStep }) => {
 			<div className={classes.cartContainer}>
 				<h3 className={classes.cartHeading}>Koszyk</h3>
 				<ul className={classes.cartList}>
-					{products.map((product, i) => (
-						<li className={classes.cartListItem} key={i}>
+					{cartList.map((cartItem, i) => (
+						<li className={classes.cartListItem} id={cartItem.id} key={i}>
 							<img
-								alt={product.name}
+								alt={cartItem.name}
 								className={classes.productImg}
-								src={product.imgPath}
+								src={cartItem.photoBin}
 							/>
 							<div className={classes.productInfoContainer}>
-								<h4 className={classes.productName}>{product.name}</h4>
-								<h5 className={classes.productDescription}>
-									{product.description}
-								</h5>
+								<h4 className={classes.productName}>{cartItem.name}</h4>
+								<h5 className={classes.productDescription}>{cartItem.size}</h5>
 							</div>
 							<div className={classes.productControls}>
-								<span className={classes.minusSign}>-</span>
-								<p className={classes.productQuantity}>0</p>
-								<span className={classes.plusSign}>+</span>
+								<span className={classes.minusSign} onClick={decreaseQuantity}>
+									-
+								</span>
+								<p className={classes.productQuantity}>{cartItem.quantity}</p>
+								<span className={classes.plusSign} onClick={increaseQuantity}>
+									+
+								</span>
 							</div>
 						</li>
 					))}
@@ -106,7 +112,11 @@ const ProductsForm = ({ type, nextStep, prevStep }) => {
 			<FormButton classes={classes} onClick={prevStep} text="Wróć" />
 			<FormButton classes={classes} onClick={nextStep} text="Dalej" />
 			{isModalOpen && (
-				<AddProductModal onClose={closeModal} products={productList} />
+				<AddProductModal
+					onClose={closeModal}
+					products={productsList}
+					setCartList={setCartList}
+				/>
 			)}
 		</div>
 	);
