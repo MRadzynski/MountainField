@@ -105,18 +105,23 @@ const OrderForm = () => {
 			case 2:
 				return (
 					<ProductsForm
-						type="home"
+						formData={formData}
 						nextStep={nextStep}
 						prevStep={prevStep}
 						productsList={productsList}
+						setFormData={setFormData}
+						type="home"
 					/>
 				);
 			case 3:
 				return (
 					<ProductsForm
-						type="standard"
+						formData={formData}
 						nextStep={nextStep}
 						prevStep={prevStep}
+						productsList={productsList}
+						setFormData={setFormData}
+						type="standard"
 					/>
 				);
 			case 4:

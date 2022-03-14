@@ -74,6 +74,7 @@
 				padding: 1rem;
 
 				.productImg {
+					border-radius: 0.5rem;
 					height: 70px;
 					width: 70px;
 				}
@@ -96,6 +97,7 @@
 					align-items: center;
 					display: flex;
 					gap: 0.5rem;
+					@include no-selectable;
 
 					.minusSign {
 						cursor: pointer;
