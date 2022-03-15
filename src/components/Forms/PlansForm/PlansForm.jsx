@@ -5,6 +5,8 @@ import FormInput from '../../FormInput/FormInput';
 import classes from '../../../styles/components/plansForm.module.scss';
 import { useEffect, useState } from 'react';
 
+const zipCodeRegex = /^[0-9]{2}-[0-9]{3}$/;
+
 const PlansForm = ({
 	data,
 	handleChange,
@@ -24,17 +26,17 @@ const PlansForm = ({
 		} else if (
 			!data.homeOfficeOffer &&
 			data.standardOffer &&
-			data.address.city &&
-			data.address.street &&
-			data.address.zipCode
+			data.address.city.length > 2 &&
+			data.address.street.length > 2 &&
+			zipCodeRegex.test(data.address.zipCode)
 		) {
 			setIsNextButtonDisabled(false);
 		} else if (
 			data.homeOfficeOffer &&
 			data.standardOffer &&
-			data.address.city &&
-			data.address.street &&
-			data.address.zipCode &&
+			data.address.city.length > 2 &&
+			data.address.street.length > 2 &&
+			zipCodeRegex.test(data.address.zipCode) &&
 			Number(data.workersAmount) > 0
 		) {
 			setIsNextButtonDisabled(false);

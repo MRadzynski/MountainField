@@ -66,6 +66,8 @@ const OrderForm = () => {
 	const prevStep = () => {
 		if (step === 2 || (step === 3 && !formData.homeOfficeOffer)) {
 			setStep(1);
+		} else if (step === 4 && !formData.standardOffer) {
+			setStep(2);
 		} else {
 			setStep((currentStep) => currentStep - 1);
 		}
@@ -125,7 +127,7 @@ const OrderForm = () => {
 					/>
 				);
 			case 4:
-				return <RequestForm />;
+				return <RequestForm formData={formData} prevStep={prevStep} />;
 			default:
 				return null;
 		}

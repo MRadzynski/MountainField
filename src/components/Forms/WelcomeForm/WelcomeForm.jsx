@@ -18,7 +18,7 @@ const WelcomeForm = ({ data, handleChange, nextStep }) => {
 
 	const validate = () => {
 		setWasFormSubmitted(true);
-		setIsFormValid(data.company && data.email);
+		setIsFormValid(data.company && emailRegex.test(data.email));
 	};
 
 	return (

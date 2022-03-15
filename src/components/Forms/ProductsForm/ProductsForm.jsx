@@ -11,6 +11,7 @@ const ProductsForm = ({
 	setFormData,
 	type,
 }) => {
+	// const fetchedProducts = productsList.map((u) => Object.assign({}, u));
 	const formDataField =
 		type === 'home' ? 'homeOfficeCart' : 'standardOfferCart';
 	const headingText = type === 'home' ? 'Home Office' : 'Standard';
@@ -23,6 +24,10 @@ const ProductsForm = ({
 		mate: 0,
 		sum: 0,
 	});
+	useEffect(() => {
+		console.log('cs', type, formData[formDataField]);
+		setCartList(formData[formDataField]);
+	}, [type]);
 
 	useEffect(() => {
 		const newSummaryData = cartList.reduce(

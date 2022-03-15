@@ -7,14 +7,14 @@
 		'planL planR'
 		'button button';
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 6fr 1fr;
+	grid-template-rows: 1fr 7fr 1fr;
 	place-items: center;
 
 	.stepTitle {
-		color: $accentColor;
+		color: $primaryColor;
 		font-size: 2rem;
 		grid-area: title;
-		text-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.1);
+		text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 	}
 
 	> .buttonContainer {
