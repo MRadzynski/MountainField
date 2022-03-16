@@ -11,11 +11,10 @@ const ProductsForm = ({
 	setFormData,
 	type,
 }) => {
-	// const fetchedProducts = productsList.map((u) => Object.assign({}, u));
-	const formDataField =
-		type === 'home' ? 'homeOfficeCart' : 'standardOfferCart';
+	const formDataField = type === 'home' ? 'homeOfficeCart' : 'standardCart';
 	const headingText = type === 'home' ? 'Home Office' : 'Standard';
 	const subHeadingText = type === 'home' ? 'Na osobę' : 'Do Twojego biura';
+
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [cartList, setCartList] = useState(formData[formDataField]);
 	const [summaryData, setSummaryData] = useState({
@@ -64,7 +63,9 @@ const ProductsForm = ({
 		let updatedProducts;
 
 		if (!selectedProduct.quantity) {
-			updatedProducts = productsList.filter((product) => product.quantity);
+			updatedProducts = cartList.filter(
+				(cartItem) => cartItem.id !== selectedProduct.id
+			);
 		} else {
 			updatedProducts = cartList.map((cartItem) =>
 				cartItem.id !== selectedProduct.id ? cartItem : selectedProduct
@@ -88,6 +89,11 @@ const ProductsForm = ({
 
 		setCartList(updatedProducts);
 	};
+
+	const isNextButtonDisabled =
+		type === 'home'
+			? formData.homeOfficeCart.length === 0
+			: formData.standardCart.length === 0;
 
 	return (
 		<div className={classes.productsFormContainer}>
@@ -150,9 +156,15 @@ const ProductsForm = ({
 			</div>
 
 			<FormButton classes={classes} onClick={prevStep} text="Wróć" />
-			<FormButton classes={classes} onClick={nextStep} text="Dalej" />
+			<FormButton
+				classes={classes}
+				disabled={isNextButtonDisabled}
+				onClick={nextStep}
+				text="Dalej"
+			/>
 			{isModalOpen && (
 				<AddProductModal
+					cartList={cartList}
 					onClose={closeModal}
 					products={productsList}
 					setCartList={setCartList}

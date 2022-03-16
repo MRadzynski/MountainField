@@ -1,10 +1,9 @@
-import ProductsForm from '../ProductsForm/ProductsForm';
+import classes from '../../../styles/components/orderForm.module.scss';
 import PlansForm from '../PlansForm/PlansForm';
+import ProductsForm from '../ProductsForm/ProductsForm';
+import RequestForm from '../RequestForm/RequestForm';
 import WelcomeForm from '../WelcomeForm/WelcomeForm';
 import { useEffect, useState } from 'react';
-
-import classes from '../../../styles/components/orderForm.module.scss';
-import RequestForm from '../RequestForm/RequestForm';
 
 const addressInfo = ['city', 'street', 'zipCode'];
 
@@ -23,7 +22,7 @@ const OrderForm = () => {
 		homeOfficeOffer: false,
 		standardOffer: false,
 		homeOfficeCart: [],
-		standardOfferCart: [],
+		standardCart: [],
 	});
 
 	useEffect(() => {

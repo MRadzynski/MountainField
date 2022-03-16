@@ -1,7 +1,11 @@
-import FormButton from '../../FormButton/FormButton';
 import classes from '../../../styles/components/requestForm.module.scss';
+import FormButton from '../../FormButton/FormButton';
 
 const RequestForm = ({ formData, prevStep }) => {
+	const formatRequestData = () => {
+		const reqBody = {};
+	};
+
 	const handleSubmit = () => console.log('submitted');
 
 	return (

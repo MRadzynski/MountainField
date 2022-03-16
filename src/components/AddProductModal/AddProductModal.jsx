@@ -1,10 +1,24 @@
 import classes from '../../styles/components/addProductModal.module.scss';
 import clsx from 'clsx';
 import FormButton from '../FormButton/FormButton';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const AddProductModal = ({ onClose, products, setCartList }) => {
-	const [productsList, setProductsList] = useState(products);
+const AddProductModal = ({ cartList, onClose, products, setCartList }) => {
+	const [productsList, setProductsList] = useState([]);
+
+	useEffect(() => {
+		const fetchedProducts = products.map((u) => Object.assign({}, u));
+
+		const updatedProductsList = fetchedProducts.map((product) => {
+			const modifiedProduct = cartList.find(
+				(cartItem) => cartItem.id === product.id
+			);
+
+			if (modifiedProduct) return modifiedProduct;
+			return product;
+		});
+		setProductsList(updatedProductsList);
+	}, []);
 
 	const decreaseQuantity = (e) => {
 		const selectedProductId = e.target.closest('li').id;
