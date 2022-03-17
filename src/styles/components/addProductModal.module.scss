@@ -143,12 +143,6 @@
 			position: relative;
 			transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 
-			&:hover {
-				background-color: $gradientStart;
-				border-color: $primaryColor;
-				color: $primaryColor;
-			}
-
 			&:disabled {
 				cursor: not-allowed;
 
@@ -157,6 +151,14 @@
 					border: 2px solid $gradientStart;
 					color: $gradientStart;
 				}
+			}
+
+			&:focus-visible,
+			&:hover {
+				background-color: $gradientStart;
+				border-color: $primaryColor;
+				color: $primaryColor;
+				outline: transparent;
 			}
 		}
 	}

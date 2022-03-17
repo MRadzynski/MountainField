@@ -132,10 +132,12 @@
 						width: 100%;
 						transition: background-color 0.15s ease-out;
 
+						&:focus-visible,
 						&:hover {
 							background-color: $gradientStart;
 							border-color: $primaryColor;
 							color: $primaryColor;
+							outline: transparent;
 						}
 					}
 				}
@@ -239,10 +241,12 @@
 				}
 			}
 
+			&:focus-visible,
 			&:hover {
 				background-color: $gradientStart;
 				border-color: $primaryColor;
 				color: $primaryColor;
+				outline: transparent;
 			}
 		}
 	}
