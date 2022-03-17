@@ -23,6 +23,8 @@ const OrderForm = () => {
 		standardOffer: false,
 		homeOfficeCart: [],
 		standardCart: [],
+		homeOfficeSum: 0,
+		standardSum: 0,
 	});
 
 	useEffect(() => {
@@ -136,9 +138,3 @@ const OrderForm = () => {
 };
 
 export default OrderForm;
-
-//step 0
-//step 1
-// if(home) step 2 <ProductsForm type="home" />
-// if(standard) step 3 <ProductsForm type="standard" />
-// step 4 <SummaryForm />

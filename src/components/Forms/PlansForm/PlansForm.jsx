@@ -53,10 +53,10 @@ const PlansForm = ({
 					[classes.pickedPlan]: data.homeOfficeOffer,
 				})}
 			>
-				<h2 className={classes.planTitle}>Oferta HOME OFFICE</h2>
+				<h2 className={classes.planTitle}>Oferta HOME OFFICE 🏡</h2>
 				<div className={classes.sliderContainer}>
 					<div className={classes.sliderInfo}>
-						<h3 className={classes.sliderLabel}>Liczba pracowników</h3>
+						<h3 className={classes.sliderLabel}>Liczba pracowników 👥</h3>
 						<span className={classes.sliderValue}>x{data.workersAmount}</span>
 					</div>
 					<input
@@ -81,13 +81,14 @@ const PlansForm = ({
 					[classes.pickedPlan]: data.standardOffer,
 				})}
 			>
-				<h2 className={classes.planTitle}>Oferta STANDARD</h2>
+				<h2 className={classes.planTitle}>Oferta STANDARD 🏢</h2>
 				<div className={classes.inputsContainer}>
 					<FormInput
 						classes={classes}
 						name="city"
 						onChange={handleChange}
 						placeholder="Miasto"
+						title="Miasto"
 						type="text"
 						value={data.address.city}
 					/>
@@ -96,6 +97,7 @@ const PlansForm = ({
 						name="street"
 						onChange={handleChange}
 						placeholder="Ulica i numer lokalu"
+						title="Ulica"
 						type="text"
 						value={data.address.street}
 					/>
@@ -104,17 +106,18 @@ const PlansForm = ({
 						name="zipCode"
 						onChange={handleChange}
 						placeholder="Kod pocztowy 04-457"
+						title="Kod pocztowy"
 						type="text"
 						value={data.address.zipCode}
 					/>
 				</div>
 				<FormButton classes={classes} onClick={handleChoose} text="Wybieram" />
 			</div>
-			<FormButton classes={classes} onClick={() => prevStep()} text="Wróć" />
+			<FormButton classes={classes} onClick={prevStep} text="Wróć" />
 			<FormButton
 				classes={classes}
 				disabled={isNextButtonDisabled}
-				onClick={() => nextStep()}
+				onClick={nextStep}
 				text="Dalej"
 			/>
 		</div>

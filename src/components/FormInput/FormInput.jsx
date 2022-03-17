@@ -1,19 +1,17 @@
 import clsx from 'clsx';
 
-const FormInput = (
-	{
-		autoComplete,
-		classes,
-		id,
-		invalid,
-		name,
-		onChange,
-		placeholder,
-		type,
-		value,
-	},
-	props
-) => {
+const FormInput = ({
+	autoComplete,
+	classes,
+	id,
+	invalid,
+	name,
+	onChange,
+	placeholder,
+	title,
+	type,
+	value,
+}) => {
 	return (
 		<div className={classes.inputContainer}>
 			<input
@@ -23,9 +21,9 @@ const FormInput = (
 				name={name}
 				onChange={onChange}
 				placeholder={placeholder}
+				title={title}
 				type={type}
 				value={value}
-				{...props}
 			/>
 		</div>
 	);

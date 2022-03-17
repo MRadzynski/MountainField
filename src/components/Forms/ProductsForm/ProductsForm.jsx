@@ -12,6 +12,7 @@ const ProductsForm = ({
 	type,
 }) => {
 	const formDataField = type === 'home' ? 'homeOfficeCart' : 'standardCart';
+	const formDataSum = type === 'home' ? 'homeOfficeSum' : 'standardSum';
 	const headingText = type === 'home' ? 'Home Office' : 'Standard';
 	const subHeadingText = type === 'home' ? 'Na osobę' : 'Do Twojego biura';
 
@@ -24,8 +25,8 @@ const ProductsForm = ({
 		sum: 0,
 	});
 	useEffect(() => {
-		console.log('cs', type, formData[formDataField]);
 		setCartList(formData[formDataField]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [type]);
 
 	useEffect(() => {
@@ -46,8 +47,12 @@ const ProductsForm = ({
 		);
 
 		setSummaryData(newSummaryData);
-		setFormData((prevData) => ({ ...prevData, [formDataField]: cartList }));
-	}, [cartList, formDataField, setFormData]);
+		setFormData((prevData) => ({
+			...prevData,
+			[formDataField]: cartList,
+			[formDataSum]: newSummaryData.sum,
+		}));
+	}, [cartList, formDataField, formDataSum, setFormData]);
 
 	const closeModal = () => setIsModalOpen(false);
 
@@ -106,22 +111,22 @@ const ProductsForm = ({
 				</div>
 				<div className={classes.summaryProducts}>
 					<div className={classes.summaryProduct}>
-						<span className={classes.productType}>KAWA</span>
+						<span className={classes.productType}>KAWA ☕</span>
 						<span className={classes.productAmount}>x{summaryData.coffee}</span>
 					</div>
 					<div className={classes.summaryProduct}>
-						<span className={classes.productType}>HERBATA</span>
+						<span className={classes.productType}>HERBATA 🍵</span>
 						<span className={classes.productAmount}>x{summaryData.tea}</span>
 					</div>
 					<div className={classes.summaryProduct}>
-						<span className={classes.productType}>MATE</span>
+						<span className={classes.productType}>MATE 🧉</span>
 						<span className={classes.productAmount}>x{summaryData.mate}</span>
 					</div>
 				</div>
 				<p className={classes.summaryPrice}>{summaryData.sum} PLN/msc/os</p>
 			</div>
 			<div className={classes.cartContainer}>
-				<h3 className={classes.cartHeading}>Koszyk</h3>
+				<h3 className={classes.cartHeading}>Koszyk &#128722;</h3>
 				<ul className={classes.cartList}>
 					{cartList.map((cartItem, i) => (
 						<li className={classes.cartListItem} id={cartItem.id} key={i}>

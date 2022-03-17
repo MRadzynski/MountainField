@@ -1,25 +1,14 @@
+import classes from '../../../styles/components/welcomeForm.module.scss';
 import FormButton from '../../FormButton/FormButton';
 import FormInput from '../../FormInput/FormInput';
-import { useEffect, useState } from 'react';
-
-import classes from '../../../styles/components/welcomeForm.module.scss';
 
 const emailRegex =
 	// eslint-disable-next-line no-useless-escape
 	/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 const WelcomeForm = ({ data, handleChange, nextStep }) => {
-	const [isFormValid, setIsFormValid] = useState(false);
-	const [wasFormSubmitted, setWasFormSubmitted] = useState(false);
-
-	useEffect(() => {
-		isFormValid && nextStep();
-	}, [isFormValid, nextStep]);
-
-	const validate = () => {
-		setWasFormSubmitted(true);
-		setIsFormValid(data.company && emailRegex.test(data.email));
-	};
+	const isNextButtonDisabled =
+		!data.company || !data.email || !emailRegex.test(data.email);
 
 	return (
 		<div className={classes.welcomeFormContainer}>
@@ -32,28 +21,27 @@ const WelcomeForm = ({ data, handleChange, nextStep }) => {
 				<div className={classes.formFieldsContainer}>
 					<FormInput
 						classes={classes}
-						invalid={wasFormSubmitted && !data.company}
 						name="company"
 						onChange={handleChange}
 						placeholder="Nazwa Firmy"
+						title="Nazwa Firmy"
 						type="text"
 						value={data.company}
 					/>
 					<FormInput
 						classes={classes}
-						invalid={
-							wasFormSubmitted && (!data.email || !emailRegex.test(data.email))
-						}
 						name="email"
 						onChange={handleChange}
 						placeholder="firma@gmail.com"
+						title="Adres e-mail"
 						type="email"
 						value={data.email}
 					/>
 				</div>
 				<FormButton
 					classes={classes}
-					onClick={validate}
+					disabled={isNextButtonDisabled}
+					onClick={nextStep}
 					text="Rozpocznij tutaj &#8594;"
 				/>
 			</div>

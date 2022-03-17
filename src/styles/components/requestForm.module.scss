@@ -66,4 +66,13 @@
 			}
 		}
 	}
+	.responseMessage {
+		align-self: center;
+		color: $primaryColor;
+		display: flex;
+		font-size: 1.7rem;
+		font-weight: 500;
+		justify-self: center;
+		text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+	}
 }
