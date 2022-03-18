@@ -69,6 +69,11 @@ const PlansForm = ({
 						step="1"
 						type="range"
 					/>
+					<p className={classes.inputSliderDescription}>
+						Podaj liczbę pracowników, którzy pracują w trybie zdalnym a co
+						miesiąc otrzymasz daną liczbę kodów do realizacji zamówień na adresy
+						pracowników.
+					</p>
 				</div>
 				<FormButton
 					classes={classes}

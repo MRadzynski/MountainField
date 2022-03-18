@@ -21,7 +21,7 @@
 		@include no-selectable;
 
 		&:hover {
-			color: #bdbdbd;
+			color: $accentColor;
 		}
 	}
 
@@ -30,6 +30,7 @@
 		display: flex;
 		flex-direction: column;
 		height: 100%;
+		justify-content: space-evenly;
 		padding: 3rem;
 		width: 100%;
 
@@ -37,6 +38,10 @@
 			color: $primaryColor;
 			font-size: 2rem;
 			text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+
+			@include breakpoint($desktop2K) {
+				font-size: 2.4rem;
+			}
 		}
 
 		.productList {
@@ -98,10 +103,18 @@
 				.productDescription {
 					font-size: 0.9rem;
 					letter-spacing: 0.05rem;
+
+					@include breakpoint($desktop2K) {
+						font-size: 1rem;
+					}
 				}
 
 				.productName {
 					font-size: 1.3rem;
+
+					@include breakpoint($desktop2K) {
+						font-size: 1.5rem;
+					}
 				}
 			}
 			.productControls {
@@ -114,52 +127,35 @@
 					cursor: pointer;
 					font-size: 1.4rem;
 					font-weight: 500;
+
+					@include breakpoint($desktop2K) {
+						font-size: 1.5rem;
+					}
 				}
 
 				.plusSign {
 					cursor: pointer;
 					font-size: 1.4rem;
 					font-weight: 500;
+
+					@include breakpoint($desktop2K) {
+						font-size: 1.5rem;
+					}
 				}
 
 				.productQuantity {
 					font-size: 1.4rem;
 					font-weight: 500;
+
+					@include breakpoint($desktop2K) {
+						font-size: 1.5rem;
+					}
 				}
 			}
 		}
 
 		.formButton {
-			background-color: $primaryColor;
-			border: 2px solid $gradientStart;
-			border-radius: 1rem;
-			color: $gradientStart;
-			cursor: pointer;
-			font-size: 1rem;
-			font-weight: 600;
 			grid-area: button;
-			letter-spacing: 0.1rem;
-			padding: 0.75rem 2rem;
-			position: relative;
-			transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-
-			&:disabled {
-				cursor: not-allowed;
-
-				&:hover {
-					background-color: #9e9e9e;
-					border: 2px solid $gradientStart;
-					color: $gradientStart;
-				}
-			}
-
-			&:focus-visible,
-			&:hover {
-				background-color: $gradientStart;
-				border-color: $primaryColor;
-				color: $primaryColor;
-				outline: transparent;
-			}
 		}
 	}
 	.selectedItem {

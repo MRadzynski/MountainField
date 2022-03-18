@@ -1,8 +1,13 @@
+import clsx from 'clsx';
+import defaultStyles from '../../styles/components/formButton.module.scss';
+
 const FormButton = ({ classes, disabled, id, onClick, text }) => {
 	return (
-		<div className={classes.buttonContainer}>
+		<div
+			className={clsx(defaultStyles.buttonContainer, classes.buttonContainer)}
+		>
 			<button
-				className={classes.formButton}
+				className={clsx(defaultStyles.formButton, classes.formButton)}
 				disabled={disabled}
 				id={id}
 				onClick={onClick}
