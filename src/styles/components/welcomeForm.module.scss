@@ -2,66 +2,95 @@
 
 .welcomeFormContainer {
 	display: grid;
-	grid-template-rows: 1.5fr 5fr;
+	grid-template-rows: 1.5fr 3fr;
 	place-items: center;
+	padding: 1.5rem 0 0;
+	@include breakpoint($sPhone) {
+		padding: 0;
+	}
+	@include breakpoint($xsLaptop) {
+		grid-template-rows: 1.5fr 5fr;
+	}
 
 	.formDescription {
 		color: $primaryColor;
-		font-size: 1.7rem;
+		font-size: 0.9rem;
 		font-weight: 500;
-		line-height: 2.9rem;
+		line-height: 1.5rem;
 		position: relative;
 		text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-
+		width: 80%;
+		@include breakpoint($sPhone) {
+			font-size: 1.3rem;
+			line-height: 1.8rem;
+			width: 100%;
+		}
+		@include breakpoint($xsLaptop) {
+			font-size: 1.7rem;
+			line-height: 2.9rem;
+		}
 		@include breakpoint($desktop2K) {
 			font-size: 1.8rem;
 		}
 
 		&::before {
 			content: '';
-			width: 15%;
-			height: 0.5rem;
+			width: 35%;
+			height: 0.25rem;
 			background-color: $primaryColor;
 			box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
 			position: absolute;
-			bottom: -2rem;
+			bottom: -1rem;
 			left: 0;
+			@include breakpoint($sPhone) {
+				bottom: -2rem;
+				height: 0.5rem;
+			}
+			@include breakpoint($xsLaptop) {
+				width: 15%;
+			}
 		}
 	}
 
 	.formBody {
 		display: grid;
-		gap: 3rem;
+		gap: 2rem;
 		place-items: center;
-		width: 40%;
+		@include breakpoint($xsLaptop) {
+			gap: 3rem;
+			width: 40%;
+		}
 
 		.formFieldsContainer {
 			display: grid;
-			gap: 2rem;
-			width: 100%;
+			gap: 1rem;
+			width: 80%;
+			@include breakpoint($xsLaptop) {
+				gap: 2rem;
+				width: 100%;
+			}
 
 			.inputContainer {
 				.inputField {
-					background-color: white;
-					border: 0;
-					border-radius: 0.75rem;
-					box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.1);
-					font-size: 1.5rem;
-					line-height: 2rem;
-					outline: 0;
-					padding: 0.5rem 1rem;
+					font-size: 1rem;
+					line-height: 1rem;
 					width: 100%;
-
-					&:focus {
-						outline: 2px solid $gradientStart;
+					@include breakpoint($xsLaptop) {
+						font-size: 1.5rem;
+						line-height: 2rem;
 					}
 				}
 			}
 		}
 		.formButton {
-			font-size: 1.5rem;
+			border-radius: 0.75rem;
+			font-size: 0.8rem;
 			font-weight: 500;
-			padding: 0.75rem 2.5rem;
+			padding: 0.6rem 0.75rem;
+			@include breakpoint($xsLaptop) {
+				font-size: 1.5rem;
+				padding: 0.75rem 2.5rem;
+			}
 		}
 	}
 }

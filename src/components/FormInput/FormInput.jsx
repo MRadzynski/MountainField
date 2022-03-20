@@ -1,10 +1,10 @@
 import clsx from 'clsx';
+import defaultStyles from '../../styles/components/formInput.module.scss';
 
 const FormInput = ({
 	autoComplete,
 	classes,
 	id,
-	invalid,
 	name,
 	onChange,
 	placeholder,
@@ -13,10 +13,10 @@ const FormInput = ({
 	value,
 }) => {
 	return (
-		<div className={classes.inputContainer}>
+		<div className={clsx(defaultStyles.inputContainer, classes.inputContainer)}>
 			<input
 				autoComplete={autoComplete ? 'on' : 'off'}
-				className={clsx(classes.inputField, { [classes.invalid]: invalid })}
+				className={clsx(defaultStyles.inputField, classes.inputField)}
 				id={id}
 				name={name}
 				onChange={onChange}

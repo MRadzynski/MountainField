@@ -53,7 +53,9 @@ const PlansForm = ({
 					[classes.pickedPlan]: data.homeOfficeOffer,
 				})}
 			>
-				<h2 className={classes.planTitle}>Oferta HOME OFFICE 🏡</h2>
+				<h2 className={classes.planTitle}>
+					{window.innerWidth > 450 && 'Oferta'} HOME OFFICE 🏡
+				</h2>
 				<div className={classes.sliderContainer}>
 					<div className={classes.sliderInfo}>
 						<h3 className={classes.sliderLabel}>Liczba pracowników 👥</h3>
@@ -86,7 +88,9 @@ const PlansForm = ({
 					[classes.pickedPlan]: data.standardOffer,
 				})}
 			>
-				<h2 className={classes.planTitle}>Oferta STANDARD 🏢</h2>
+				<h2 className={classes.planTitle}>
+					{window.innerWidth > 450 && 'Oferta'} STANDARD 🏢
+				</h2>
 				<div className={classes.inputsContainer}>
 					<FormInput
 						classes={classes}

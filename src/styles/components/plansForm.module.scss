@@ -3,19 +3,34 @@
 .plansContainer {
 	display: grid;
 	grid-template-areas:
-		'title title'
-		'planL planR'
-		'button button';
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 7fr 1fr;
+		'title'
+		'planL'
+		'planR'
+		'button';
+	padding: 2rem 0;
 	place-items: center;
+
+	@include breakpoint($xsLaptop) {
+		grid-template-areas:
+			'title title'
+			'planL planR'
+			'button button';
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 7fr 1fr;
+		padding: unset;
+	}
 
 	.stepTitle {
 		color: $primaryColor;
-		font-size: 2rem;
+		font-size: 1.5rem;
 		grid-area: title;
 		text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+		text-align: center;
 
+		@include breakpoint($xsLaptop) {
+			font-size: 2rem;
+			text-align: unset;
+		}
 		@include breakpoint($desktop2K) {
 			font-size: 2.4rem;
 		}
@@ -35,15 +50,21 @@
 	}
 
 	.planTile {
-		grid-area: plan;
 		background-color: rgba($primaryColor, 0.5);
 		border: 1px solid $gradientStart;
 		border-radius: 1rem;
 		display: grid;
-		grid-template-rows: 2fr 6fr 2fr;
+		grid-area: plan;
+		grid-template-rows: 2fr 6.5fr 2.5fr;
 		height: 90%;
 		transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
-		width: 75%;
+		width: 85%;
+		min-height: 420px;
+
+		@include breakpoint($xsLaptop) {
+			grid-template-rows: 2fr 6fr 2fr;
+			width: 75%;
+		}
 
 		@include breakpoint($desktop2K) {
 			border-radius: 1.5rem;
@@ -65,8 +86,13 @@
 			align-items: center;
 			color: $gradientStart;
 			display: flex;
-			margin-left: 1rem;
+			font-size: 1.25rem;
+			margin: 0 auto;
 			position: relative;
+			@include breakpoint($xsLaptop) {
+				font-size: 1.6rem;
+				margin: 0 0 0 1rem;
+			}
 
 			&:before {
 				background: $gradientStart;
@@ -74,7 +100,10 @@
 				content: '';
 				height: 4px;
 				position: absolute;
-				width: 15%;
+				width: 20%;
+				@include breakpoint($xsLaptop) {
+					width: 15%;
+				}
 			}
 		}
 		.buttonContainer {
@@ -83,8 +112,13 @@
 			justify-content: center;
 
 			.formButton {
+				border-radius: 0.75rem;
 				font-weight: 600;
-				padding: 0.75rem 2rem;
+				padding: 0.6rem 1.5rem;
+				@include breakpoint($xsLaptop) {
+					border-radius: 1rem;
+					padding: 0.75rem 2rem;
+				}
 			}
 		}
 
@@ -94,20 +128,30 @@
 			flex-direction: column;
 			gap: 1.5rem;
 			justify-content: center;
+			width: 100%;
 
-			.inputField {
-				background-color: white;
-				border: 0;
-				border-radius: 0.75rem;
-				box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.1);
-				color: $accentColor;
-				font-size: 1rem;
-				line-height: 1.3rem;
-				outline: 0;
-				padding: 0.5rem 1rem;
+			@include breakpoint($xsLaptop) {
+				width: unset;
+			}
+			.inputContainer {
+				width: 80%;
 
-				&:focus {
-					outline: 2px solid $gradientStart;
+				.inputField {
+					font-size: 0.9rem;
+					padding: 0.5rem 0.75rem;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					white-space: nowrap;
+					width: 100%;
+					@include breakpoint($xsLaptop) {
+						padding: 0.5rem 1rem;
+					}
+					&::placeholder {
+						font-size: 0.75rem;
+						@include breakpoint($xsLaptop) {
+							font-size: 1rem;
+						}
+					}
 				}
 			}
 		}
@@ -118,7 +162,11 @@
 			flex-direction: column;
 			gap: 0.5rem;
 			margin: 0 auto;
+			padding: 0 0.25rem;
 			width: 90%;
+			@include breakpoint($xsLaptop) {
+				padding: 0;
+			}
 
 			.sliderInfo {
 				align-items: center;
@@ -128,16 +176,23 @@
 				top: 15px;
 
 				.sliderLabel {
+					font-size: 1rem;
 					font-weight: 500;
-
+					width: 80%;
+					@include breakpoint($xsLaptop) {
+						font-size: unset;
+						width: unset;
+					}
 					@include breakpoint($desktop2K) {
 						font-size: 1.2rem;
 					}
 				}
 				.sliderValue {
-					font-size: 1.2rem;
+					font-size: 1.1rem;
 					font-weight: 500;
-
+					@include breakpoint($xsLaptop) {
+						font-size: 1.2rem;
+					}
 					@include breakpoint($desktop2K) {
 						font-size: 1.3rem;
 					}
@@ -150,13 +205,13 @@
 				border-radius: 4px;
 				box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.1);
 				height: 6px;
-				margin: 2rem 0;
-
+				margin: 2rem 0 1rem;
 				@include breakpoint($phone) {
 					height: 8px;
 				}
 				@include breakpoint($xsLaptop) {
 					height: 6px;
+					margin: 2rem 0;
 				}
 				@include breakpointIPadProLandscape() {
 					height: 8px;
@@ -183,10 +238,11 @@
 
 			.inputSliderDescription {
 				color: $accentColor;
-				font-size: 1.1rem;
-				padding: 0 0.25rem;
+				font-size: 0.9rem;
 				text-align: center;
-
+				@include breakpoint($xsLaptop) {
+					font-size: 1.1rem;
+				}
 				@include breakpoint($desktop2K) {
 					font-size: 1.15rem;
 				}

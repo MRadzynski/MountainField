@@ -5,8 +5,15 @@
 	border-radius: 3rem;
 	display: grid;
 	height: 100%;
-	padding: 2rem 4rem;
+	// padding: 1.5rem;
 	position: relative;
-	width: 100%;
+	// width: 90%;
 	z-index: 4;
+	@include breakpoint($sPhone) {
+		padding: 2rem;
+		width: 100%;
+	}
+	@include breakpoint($xsLaptop) {
+		padding: 2rem 4rem;
+	}
 }
