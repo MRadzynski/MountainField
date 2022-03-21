@@ -7,8 +7,11 @@
 	flex-direction: column;
 	height: max-content;
 	margin: 2rem 0 6rem;
-	padding: 0 2rem;
+	padding: 0 1rem;
 	position: relative;
+	@include breakpoint($phone) {
+		padding: 0 2rem;
+	}
 	@include breakpoint($tablet) {
 		margin-top: 4rem;
 	}

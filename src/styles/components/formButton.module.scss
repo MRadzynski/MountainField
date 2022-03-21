@@ -7,12 +7,16 @@
 		border-radius: 1rem;
 		color: $gradientStart;
 		cursor: pointer;
-		font-size: 1rem;
+		font-size: 0.9rem;
 		font-weight: 600;
 		letter-spacing: 0.1rem;
 		padding: 0.75rem 2rem;
 		transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 		@include no-selectable;
+
+		@include breakpoint($xsLaptop) {
+			font-size: 1rem;
+		}
 
 		@include breakpoint($desktop2K) {
 			font-size: 1.1rem;

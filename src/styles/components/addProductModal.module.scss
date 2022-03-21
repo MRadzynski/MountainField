@@ -2,7 +2,7 @@
 
 .modalContainer {
 	background: linear-gradient(#81c8a7f8, #7fb8b4f6);
-	border-radius: 3rem;
+	border-radius: 2rem;
 	display: flex;
 	height: 100%;
 	left: 0;
@@ -10,15 +10,23 @@
 	top: 0;
 	width: 100%;
 	z-index: 5;
+	@include breakpoint($xsLaptop) {
+		border-radius: 3rem;
+	}
 
 	.exitCross {
 		color: $primaryColor;
 		cursor: pointer;
 		font-size: 2.2rem;
 		position: absolute;
-		right: 2.5rem;
-		top: 1.5rem;
+		right: 1rem;
+		top: 0.5rem;
 		@include no-selectable;
+
+		@include breakpoint($xsLaptop) {
+			right: 2.5rem;
+			top: 1.5rem;
+		}
 
 		&:hover {
 			color: $accentColor;

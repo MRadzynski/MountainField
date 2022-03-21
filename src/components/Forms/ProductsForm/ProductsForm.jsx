@@ -104,7 +104,9 @@ const ProductsForm = ({
 		<div className={classes.productsFormContainer}>
 			<div className={classes.productsSummary}>
 				<div className={classes.summaryInfo}>
-					<h3 className={classes.summaryHeading}>Oferta {headingText}</h3>
+					<h3 className={classes.summaryHeading}>
+						{window.innerWidth > 450 && 'Oferta'} {headingText}
+					</h3>
 					<h4 className={classes.summarySubHeading}>
 						{subHeadingText} co miesiąc
 					</h4>
