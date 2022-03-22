@@ -17,13 +17,14 @@
 	.exitCross {
 		color: $primaryColor;
 		cursor: pointer;
-		font-size: 2.2rem;
+		font-size: 1.5rem;
 		position: absolute;
-		right: 1rem;
-		top: 0.5rem;
+		right: 1.25rem;
+		top: 0.75rem;
 		@include no-selectable;
 
 		@include breakpoint($xsLaptop) {
+			font-size: 2.2rem;
 			right: 2.5rem;
 			top: 1.5rem;
 		}
@@ -38,15 +39,24 @@
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		justify-content: space-evenly;
-		padding: 3rem;
+		// justify-content: space-evenly;
+		padding: 1.5rem 0;
 		width: 100%;
+		@include breakpoint($xsLaptop) {
+			justify-content: space-evenly;
+			padding: 3rem;
+		}
 
 		.modalTitle {
 			color: $primaryColor;
-			font-size: 2rem;
+			font-size: 1.7rem;
 			text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-
+			width: 80%;
+			text-align: center;
+			@include breakpoint($xsLaptop) {
+				font-size: 2rem;
+				width: unset;
+			}
 			@include breakpoint($desktop2K) {
 				font-size: 2.4rem;
 			}
@@ -59,11 +69,15 @@
 			height: 85%;
 			list-style: none;
 			margin: 2rem 3rem 3rem;
-			max-height: 400px;
+			max-height: 80%;
 			overflow-y: auto;
-			padding: 0.25rem 1rem 0.25rem 0.25rem;
+			padding: 0.25rem 0.5rem 0.25rem 0.25rem;
 			width: 90%;
 			position: relative;
+			@include breakpoint($xsLaptop) {
+				max-height: 400px;
+				padding-right: 1rem;
+			}
 
 			&::-webkit-scrollbar-track {
 				background-color: #f5f5f5;
@@ -75,7 +89,10 @@
 			&::-webkit-scrollbar {
 				background-color: #f5f5f5;
 				border-radius: 10px;
-				width: 12px;
+				width: 10px;
+				@include breakpoint($xsLaptop) {
+					width: 12px;
+				}
 			}
 
 			&::-webkit-scrollbar-thumb {
@@ -92,13 +109,22 @@
 				color: $primaryColor;
 				display: flex;
 				justify-content: space-between;
-				gap: 1.5rem;
-				padding: 1rem;
+				gap: 0.5rem;
+				padding: 0.75rem 0.5rem;
+				@include breakpoint($xsLaptop) {
+					gap: 1.5rem;
+					padding: 1rem;
+				}
 
 				.productImg {
-					border-radius: 1rem;
-					height: 80px;
-					width: 80px;
+					border-radius: 0.5rem;
+					height: 50px;
+					width: 50px;
+					@include breakpoint($xsLaptop) {
+						border-radius: 1rem;
+						height: 80px;
+						width: 80px;
+					}
 				}
 			}
 			.productInfoContainer {
@@ -106,20 +132,24 @@
 				flex-direction: column;
 				gap: 0.2rem;
 				text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-				width: calc(100% - 100px);
+				// width: calc(100% - 100px);
 
 				.productDescription {
-					font-size: 0.9rem;
+					font-size: 0.55rem;
 					letter-spacing: 0.05rem;
-
+					@include breakpoint($xsLaptop) {
+						font-size: 0.9rem;
+					}
 					@include breakpoint($desktop2K) {
 						font-size: 1rem;
 					}
 				}
 
 				.productName {
-					font-size: 1.3rem;
-
+					font-size: 0.75rem;
+					@include breakpoint($xsLaptop) {
+						font-size: 1.3rem;
+					}
 					@include breakpoint($desktop2K) {
 						font-size: 1.5rem;
 					}
@@ -128,14 +158,19 @@
 			.productControls {
 				align-items: center;
 				display: flex;
-				gap: 0.5rem;
+				gap: 0.25rem;
 				@include no-selectable;
+				@include breakpoint($xsLaptop) {
+					gap: 0.5rem;
+				}
 
 				.minusSign {
 					cursor: pointer;
-					font-size: 1.4rem;
+					font-size: 0.9rem;
 					font-weight: 500;
-
+					@include breakpoint($xsLaptop) {
+						font-size: 1.4rem;
+					}
 					@include breakpoint($desktop2K) {
 						font-size: 1.5rem;
 					}
@@ -143,18 +178,22 @@
 
 				.plusSign {
 					cursor: pointer;
-					font-size: 1.4rem;
+					font-size: 0.9rem;
 					font-weight: 500;
-
+					@include breakpoint($xsLaptop) {
+						font-size: 1.4rem;
+					}
 					@include breakpoint($desktop2K) {
 						font-size: 1.5rem;
 					}
 				}
 
 				.productQuantity {
-					font-size: 1.4rem;
+					font-size: 0.9rem;
 					font-weight: 500;
-
+					@include breakpoint($xsLaptop) {
+						font-size: 1.4rem;
+					}
 					@include breakpoint($desktop2K) {
 						font-size: 1.5rem;
 					}

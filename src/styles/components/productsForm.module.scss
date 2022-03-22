@@ -15,7 +15,8 @@
 			'button button';
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 4fr 4fr 1fr;
-		padding: 1.5rem 0;
+		// padding: 1.5rem 0;
+		padding: 0;
 	}
 
 	.cartContainer {
@@ -103,6 +104,9 @@
 				justify-content: space-between;
 				margin-right: 0.5rem;
 				padding: 0.5rem;
+				@include breakpoint($xsPhone) {
+					gap: 0.5rem;
+				}
 				@include breakpoint($xsLaptop) {
 					border-radius: 1rem;
 					gap: 1rem;
@@ -123,7 +127,10 @@
 					display: flex;
 					flex-direction: column;
 					gap: 0;
-					@include breakpoint($desktop2K) {
+					@include breakpoint($xsPhone) {
+						width: 100%;
+					}
+					@include breakpoint($xsLaptop) {
 						gap: 0.5rem;
 						width: calc(100% - 100px);
 					}
@@ -132,7 +139,7 @@
 						font-size: 0.8rem;
 						letter-spacing: 0.05rem;
 						font-weight: normal;
-						@include breakpoint($desktop2K) {
+						@include breakpoint($xsLaptop) {
 							font-size: 1rem;
 						}
 						@include breakpoint($desktop2K) {
@@ -143,7 +150,7 @@
 					.productName {
 						font-size: 0.8rem;
 						@include breakpoint($xsLaptop) {
-							font-size: 1.1rem;
+							font-size: 1.2rem;
 						}
 
 						@include breakpoint($desktop2K) {
@@ -202,7 +209,11 @@
 			.addNewProductContainer {
 				.buttonContainer {
 					height: 50px;
+					padding-right: 0.5rem;
 					width: 100%;
+					@include breakpoint($xsLaptop) {
+						padding: 0;
+					}
 					.formButton {
 						border-radius: 0.75rem;
 						font-size: 0.8rem;
@@ -231,7 +242,7 @@
 		padding: 0.75rem;
 		width: 80%;
 		@include breakpoint($xsLaptop) {
-			padding: 1rem;
+			padding: 1.5rem;
 		}
 		@include breakpoint($desktop2K) {
 			border-radius: 1.5rem;
@@ -252,6 +263,9 @@
 				left: 0;
 				position: absolute;
 				width: 20%;
+				@include breakpoint($xsPhone) {
+					bottom: 0.5rem;
+				}
 				@include breakpoint($xsLaptop) {
 					bottom: 15%;
 					height: 6px;
@@ -263,6 +277,9 @@
 				text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 				text-align: center;
 				width: fit-content;
+				@include breakpoint($xsPhone) {
+					font-size: 1.6rem;
+				}
 				@include breakpoint($xsLaptop) {
 					font-size: 1.7rem;
 				}
@@ -292,7 +309,9 @@
 		font-weight: 500;
 		justify-self: flex-end;
 		text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-
+		@include breakpoint($xsPhone) {
+			font-size: 1.4rem;
+		}
 		@include breakpoint($xsLaptop) {
 			font-size: 1.7rem;
 		}
@@ -304,8 +323,12 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
+		@include breakpoint($xsPhone) {
+			padding: 0 0.5rem;
+		}
 		@include breakpoint($xsLaptop) {
-			padding: 0 3rem 0 1rem;
+			padding: 0 1rem;
+			// padding: 0 3rem 0 1rem;
 		}
 
 		.summaryProduct {
@@ -336,6 +359,9 @@
 			}
 			.formButton {
 				padding: 0.75rem 1rem;
+				@include breakpoint($xsLaptop) {
+					padding: 0.75rem 2rem;
+				}
 			}
 		}
 		&:nth-of-type(4) {
@@ -343,10 +369,13 @@
 			justify-self: flex-end;
 			margin-right: 1.5rem;
 			@include breakpoint($xsLaptop) {
-				margin-left: 3rem;
+				margin-right: 3rem;
 			}
 			.formButton {
 				padding: 0.75rem 1rem;
+				@include breakpoint($xsLaptop) {
+					padding: 0.75rem 2rem;
+				}
 			}
 		}
 		.formButton {

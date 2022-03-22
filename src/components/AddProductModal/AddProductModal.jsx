@@ -1,10 +1,13 @@
 import classes from '../../styles/components/addProductModal.module.scss';
 import clsx from 'clsx';
 import FormButton from '../FormButton/FormButton';
+import useWindowWidth from '../../hooks/useWindowWidth';
 import { useEffect, useState } from 'react';
 
 const AddProductModal = ({ cartList, onClose, products, setCartList }) => {
 	const [productsList, setProductsList] = useState([]);
+
+	const { width: windowWidth } = useWindowWidth();
 
 	useEffect(() => {
 		const fetchedProducts = products.map((u) => Object.assign({}, u));
@@ -84,10 +87,10 @@ const AddProductModal = ({ cartList, onClose, products, setCartList }) => {
 							/>
 							<div className={classes.productInfoContainer}>
 								<h4 className={classes.productName}>
-									{product.name} - {product.size}
+									{product.name} {windowWidth >= 360 && `- ${product.size}`}
 								</h4>
 								<h5 className={classes.productDescription}>
-									{product.description}
+									{windowWidth >= 360 ? product.description : product.size}
 								</h5>
 							</div>
 							<div className={classes.productControls}>

@@ -1,3 +1,5 @@
+import breakpointsData from './data/breakpoints.json';
+import classes from './styles/components/app.module.scss';
 import Header from './components/Layout/Header/Header';
 import Footer from './components/Layout/Footer/Footer';
 import Welcome from './components/Sections/Welcome/Welcome';
@@ -6,24 +8,16 @@ import Offer from './components/Sections/Offer/Offer';
 import Contact from './components/Sections/Contact/Contact';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import NotAllowedOverlay from './components/NotAllowedOverlay/NotAllowedOverlay';
-import useWindowWidth from './hooks/useWindowWidth';
 import { smoothNavScroll } from './utils/smoothNavScroll';
 import { useEffect, useState } from 'react';
 
-import classes from './styles/components/app.module.scss';
-
-import breakpointsData from './data/breakpoints.json';
-
-const defaultWidth = window.innerWidth;
+const {
+	breakpoints: { tablet },
+} = breakpointsData;
 
 const App = () => {
 	const [displayArrow, setDisplayArrow] = useState(false);
 	const [noSupportedOrientation, setNoSupportedOrientation] = useState(false);
-	const windowWidth = useWindowWidth();
-
-	const {
-		breakpoints: { tablet },
-	} = breakpointsData;
 
 	useEffect(() => {
 		smoothNavScroll();
@@ -32,7 +26,7 @@ const App = () => {
 		window.screen.orientation?.addEventListener('change', (e) => {
 			if (
 				e.currentTarget.type === 'landscape-primary' &&
-				defaultWidth < tablet
+				window.screen.height < tablet
 			) {
 				document.querySelector('#app').classList.add(classes.stopScrolling);
 				setNoSupportedOrientation(true);

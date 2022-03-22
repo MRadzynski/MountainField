@@ -5,11 +5,15 @@
 	grid-template-rows: 1.5fr 3fr;
 	place-items: center;
 	padding: 1.5rem 0 0;
+	@include breakpoint($xsPhone) {
+		grid-template-rows: 1.5fr 4fr;
+	}
 	@include breakpoint($sPhone) {
 		padding: 0;
 	}
 	@include breakpoint($xsLaptop) {
 		grid-template-rows: 1.5fr 5fr;
+		padding: 0 1rem;
 	}
 
 	.formDescription {
@@ -20,6 +24,9 @@
 		position: relative;
 		text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 		width: 80%;
+		@include breakpoint($xsPhone) {
+			line-height: 1.3rem;
+		}
 		@include breakpoint($sPhone) {
 			font-size: 1.3rem;
 			line-height: 1.8rem;

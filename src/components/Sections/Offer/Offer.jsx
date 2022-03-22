@@ -1,5 +1,4 @@
 import DecorationLeaves from '../../DecorationLeaves/DecorationLeaves';
-import SubscriptionPlan from '../../SubscriptionPlan/SubscriptionPlan';
 
 import classes from '../../../styles/components/offer.module.scss';
 
@@ -12,10 +11,6 @@ const Offer = () => {
 				<h1 className={classes.heading}>OFERTY DO WYBORU</h1>
 			</div>
 			<div className={classes.subscriptionsContainer}>
-				{/* <div className={classes.subscriptionsBox}>
-					<SubscriptionPlan planType="home" />
-					<SubscriptionPlan planType="standard" />
-				</div> */}
 				<OrderForm />
 				<DecorationLeaves
 					classes={classes}

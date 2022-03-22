@@ -7,16 +7,28 @@
 		'heading'
 		'submitBtn'
 		'backBtn';
-	grid-template-rows: 1.5fr 6.5fr 1fr;
+	grid-template-rows: 1.5fr 4.5fr 1fr;
 	position: relative;
+	padding: 1.25rem 0 1.5rem;
+	@include breakpoint($xsLaptop) {
+		grid-template-rows: 1.5fr 6.5fr 1fr;
+		padding: 0;
+	}
 	.heading {
 		color: $primaryColor;
-		font-size: 1.8rem;
+		font-size: 1.3rem;
+		font-weight: 500;
 		grid-area: heading;
-		margin: 1rem 0 0 1rem;
+		margin: 1rem 0 0 1.5rem;
 		position: relative;
 		text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-		width: 50%;
+		width: 80%;
+		@include breakpoint($xsLaptop) {
+			font-size: 1.8rem;
+			font-weight: 600;
+			margin-left: 1rem;
+			width: 50%;
+		}
 		@include breakpoint($desktop2K) {
 			font-size: 2rem;
 			width: 60%;
@@ -26,17 +38,23 @@
 			bottom: -1rem;
 			box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
 			content: '';
-			height: 0.5rem;
+			height: 0.25rem;
 			left: 0;
 			position: absolute;
 			width: 20%;
+			@include breakpoint($xsLaptop) {
+				height: 0.5rem;
+			}
 		}
 	}
 
 	.buttonContainer {
 		display: grid;
 		height: 100%;
-		width: 100%;
+		// width: 100%;
+		@include breakpoint($xsLaptop) {
+			width: 100%;
+		}
 		.formButton {
 			grid-area: button;
 			position: absolute;
@@ -44,13 +62,22 @@
 			&#back {
 				align-self: center;
 				grid-area: backBtn;
-				margin-left: 3rem;
+				margin-left: 1.5rem;
+				padding: 0.75rem 1rem;
+				@include breakpoint($xsLaptop) {
+					margin-left: 3rem;
+					padding: 0.75rem 2rem;
+				}
 			}
 			&#submit {
-				font-size: 1.5rem;
+				font-size: 1rem;
 				grid-area: submitBtn;
-				padding: 1rem 3rem;
+				padding: 1rem;
 				place-self: center;
+				@include breakpoint($xsLaptop) {
+					font-size: 1.5rem;
+					padding: 1rem 3rem;
+				}
 				@include breakpoint($desktop2K) {
 					font-size: 1.9rem;
 					line-height: 2.4rem;
@@ -62,9 +89,17 @@
 		align-self: center;
 		color: $primaryColor;
 		display: flex;
-		font-size: 1.7rem;
+		font-size: 1.2rem;
 		font-weight: 500;
 		justify-self: center;
 		text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+		text-align: center;
+		padding: 0 1rem;
+		@include breakpoint($xsLaptop) {
+			font-size: 1.7rem;
+			padding: 0;
+
+			text-align: unset;
+		}
 	}
 }

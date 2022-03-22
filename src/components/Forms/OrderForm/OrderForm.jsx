@@ -4,6 +4,8 @@ import ProductsForm from '../ProductsForm/ProductsForm';
 import RequestForm from '../RequestForm/RequestForm';
 import WelcomeForm from '../WelcomeForm/WelcomeForm';
 import { useEffect, useState } from 'react';
+import { isMobile } from '../../../utils';
+import { smoothOfferFormScroll } from '../../../utils/smoothNavScroll';
 
 const addressInfo = ['city', 'street', 'zipCode'];
 
@@ -62,6 +64,7 @@ const OrderForm = () => {
 		} else {
 			setStep((currentStep) => currentStep + 1);
 		}
+		isMobile() && smoothOfferFormScroll();
 	};
 
 	const prevStep = () => {
@@ -72,6 +75,7 @@ const OrderForm = () => {
 		} else {
 			setStep((currentStep) => currentStep - 1);
 		}
+		isMobile() && smoothOfferFormScroll();
 	};
 
 	const toggleOfferStatus = (context) =>

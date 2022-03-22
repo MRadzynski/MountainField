@@ -4,7 +4,7 @@ const NotAllowedOverlay = () => {
 	return (
 		<div className={classes.overlayContainer}>
 			<h1 className={classes.notAllowedMessage}>
-				Obróć telefon, aby moć swobodnie korzystać ze strony
+				Obróć urządzenie, aby moć swobodnie korzystać ze strony
 			</h1>
 		</div>
 	);

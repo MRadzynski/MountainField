@@ -28,10 +28,13 @@
 		grid-area: title;
 		text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 		text-align: center;
-
+		@include breakpoint($xsPhone) {
+			width: 80%;
+		}
 		@include breakpoint($xsLaptop) {
 			font-size: 2rem;
 			text-align: unset;
+			width: unset;
 		}
 		@include breakpoint($desktop2K) {
 			font-size: 2.4rem;
@@ -49,6 +52,9 @@
 			}
 			.formButton {
 				padding: 0.75rem 1rem;
+				@include breakpoint($xsLaptop) {
+					padding: 0.75rem 2rem;
+				}
 			}
 		}
 		&:nth-of-type(4) {
@@ -59,6 +65,9 @@
 			}
 			.formButton {
 				padding: 0.75rem 1rem;
+				@include breakpoint($xsLaptop) {
+					padding: 0.75rem 2rem;
+				}
 			}
 		}
 	}
@@ -74,10 +83,13 @@
 		transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 		width: 85%;
 		min-height: 420px;
+		@include breakpoint($xsPhone) {
+			min-height: 360px;
+		}
 
 		@include breakpoint($xsLaptop) {
 			grid-template-rows: 2fr 6fr 2fr;
-			width: 75%;
+			width: 70%;
 		}
 
 		@include breakpoint($desktop2K) {
@@ -105,6 +117,10 @@
 			position: relative;
 			min-width: 175px;
 			text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+			@include breakpoint($xsPhone) {
+				font-size: 1.5rem;
+				min-width: 200px;
+			}
 			@include breakpoint($phone) {
 				min-width: unset;
 			}
@@ -153,8 +169,10 @@
 				width: unset;
 			}
 			.inputContainer {
-				width: 80%;
-
+				width: 75%;
+				@include breakpoint($xsLaptop) {
+					width: 70%;
+				}
 				.inputField {
 					font-size: 0.9rem;
 					padding: 0.5rem 0.75rem;
@@ -198,6 +216,9 @@
 					font-size: 1rem;
 					font-weight: 500;
 					width: 80%;
+					@include breakpoint($xsPhone) {
+						width: 85%;
+					}
 					@include breakpoint($xsLaptop) {
 						font-size: unset;
 						width: unset;

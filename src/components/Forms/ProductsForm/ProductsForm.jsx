@@ -125,7 +125,9 @@ const ProductsForm = ({
 						<span className={classes.productAmount}>x{summaryData.mate}</span>
 					</div>
 				</div>
-				<p className={classes.summaryPrice}>{summaryData.sum} PLN/msc/os</p>
+				<p className={classes.summaryPrice}>
+					{summaryData.sum} PLN{type === 'home' && `/msc/os`}
+				</p>
 			</div>
 			<div className={classes.cartContainer}>
 				<h3 className={classes.cartHeading}>Koszyk &#128722;</h3>

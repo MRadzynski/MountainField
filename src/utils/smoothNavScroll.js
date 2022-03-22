@@ -8,3 +8,7 @@ export const smoothNavScroll = () =>
 			});
 		});
 	});
+
+export const smoothOfferFormScroll = () => {
+	document.getElementById('offer').scrollIntoView({ behavior: 'smooth' });
+};
