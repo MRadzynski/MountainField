@@ -10,6 +10,13 @@
 	grid-template-rows: 1.5fr 4.5fr 1fr;
 	position: relative;
 	padding: 1.25rem 0 1.5rem;
+	@include breakpoint($sPhone) {
+		grid-template-rows: 1.5fr 5.5fr 1fr;
+	}
+	@include breakpoint($phone) {
+		grid-template-rows: 1.5fr 5fr 1fr;
+		padding: 1.5rem 0;
+	}
 	@include breakpoint($xsLaptop) {
 		grid-template-rows: 1.5fr 6.5fr 1fr;
 		padding: 0;
@@ -19,10 +26,13 @@
 		font-size: 1.3rem;
 		font-weight: 500;
 		grid-area: heading;
-		margin: 1rem 0 0 1.5rem;
+		margin-left: 1.5rem;
 		position: relative;
 		text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 		width: 80%;
+		@include breakpoint($phone) {
+			margin-left: 1.75rem;
+		}
 		@include breakpoint($xsLaptop) {
 			font-size: 1.8rem;
 			font-weight: 600;
@@ -72,7 +82,7 @@
 			&#submit {
 				font-size: 1rem;
 				grid-area: submitBtn;
-				padding: 1rem;
+				padding: 0.75rem 1rem;
 				place-self: center;
 				@include breakpoint($xsLaptop) {
 					font-size: 1.5rem;
@@ -95,6 +105,10 @@
 		text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 		text-align: center;
 		padding: 0 1rem;
+		@include breakpoint($phone) {
+			font-size: 1.3rem;
+			padding: 0 1.5rem;
+		}
 		@include breakpoint($xsLaptop) {
 			font-size: 1.7rem;
 			padding: 0;

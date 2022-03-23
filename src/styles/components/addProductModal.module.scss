@@ -53,6 +53,9 @@
 			text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 			width: 80%;
 			text-align: center;
+			@include breakpoint($phone) {
+				padding: 0.75rem 0 0;
+			}
 			@include breakpoint($xsLaptop) {
 				font-size: 2rem;
 				width: unset;
@@ -111,7 +114,16 @@
 				justify-content: space-between;
 				gap: 0.5rem;
 				padding: 0.75rem 0.5rem;
+				@include breakpoint($xsPhone) {
+					height: 80px;
+					min-height: 80px;
+				}
+				@include breakpoint($phone) {
+					height: 110px;
+					min-height: 110px;
+				}
 				@include breakpoint($xsLaptop) {
+					height: unset;
 					gap: 1.5rem;
 					padding: 1rem;
 				}
@@ -132,11 +144,23 @@
 				flex-direction: column;
 				gap: 0.2rem;
 				text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-				// width: calc(100% - 100px);
+				width: 100%;
+				@include breakpoint($xsPhone) {
+					gap: 0.4rem;
+				}
+				@include breakpoint($phone) {
+					gap: 0;
+				}
 
 				.productDescription {
 					font-size: 0.55rem;
 					letter-spacing: 0.05rem;
+					@include breakpoint($xsPhone) {
+						font-size: 0.8rem;
+					}
+					@include breakpoint($phone) {
+						font-size: 0.5rem;
+					}
 					@include breakpoint($xsLaptop) {
 						font-size: 0.9rem;
 					}
@@ -147,6 +171,12 @@
 
 				.productName {
 					font-size: 0.75rem;
+					@include breakpoint($xsPhone) {
+						font-size: 1rem;
+					}
+					@include breakpoint($phone) {
+						font-size: 0.8rem;
+					}
 					@include breakpoint($xsLaptop) {
 						font-size: 1.3rem;
 					}
@@ -168,6 +198,9 @@
 					cursor: pointer;
 					font-size: 0.9rem;
 					font-weight: 500;
+					@include breakpoint($xsPhone) {
+						font-size: 1.1rem;
+					}
 					@include breakpoint($xsLaptop) {
 						font-size: 1.4rem;
 					}
@@ -180,6 +213,9 @@
 					cursor: pointer;
 					font-size: 0.9rem;
 					font-weight: 500;
+					@include breakpoint($xsPhone) {
+						font-size: 1.1rem;
+					}
 					@include breakpoint($xsLaptop) {
 						font-size: 1.4rem;
 					}
@@ -191,6 +227,9 @@
 				.productQuantity {
 					font-size: 0.9rem;
 					font-weight: 500;
+					@include breakpoint($xsPhone) {
+						font-size: 1.1rem;
+					}
 					@include breakpoint($xsLaptop) {
 						font-size: 1.4rem;
 					}

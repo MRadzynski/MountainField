@@ -87,10 +87,10 @@ const AddProductModal = ({ cartList, onClose, products, setCartList }) => {
 							/>
 							<div className={classes.productInfoContainer}>
 								<h4 className={classes.productName}>
-									{product.name} {windowWidth >= 360 && `- ${product.size}`}
+									{product.name} {windowWidth > 360 && `- ${product.size}`}
 								</h4>
 								<h5 className={classes.productDescription}>
-									{windowWidth >= 360 ? product.description : product.size}
+									{windowWidth > 360 ? product.description : product.size}
 								</h5>
 							</div>
 							<div className={classes.productControls}>
