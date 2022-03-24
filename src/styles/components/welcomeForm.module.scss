@@ -12,6 +12,12 @@
 		grid-template-rows: 1.5fr 3fr;
 		padding: 1.5rem 1.5rem 0;
 	}
+	@include breakpoint($lPhone) {
+		grid-template-rows: 1.5fr 3.5fr;
+	}
+	@include breakpoint($tablet) {
+		grid-template-rows: 1.5fr 5.5fr;
+	}
 	@include breakpoint($xsLaptop) {
 		grid-template-rows: 1.5fr 5fr;
 		padding: 0 1rem;
@@ -36,6 +42,9 @@
 		@include breakpoint($phone) {
 			font-size: 1.2rem;
 		}
+		@include breakpoint($tablet) {
+			font-size: 1.3rem;
+		}
 		@include breakpoint($xsLaptop) {
 			font-size: 1.7rem;
 			line-height: 2.9rem;
@@ -55,10 +64,13 @@
 			left: 0;
 			@include breakpoint($sPhone) {
 				bottom: -2rem;
-				height: 0.5rem;
+				height: 0.35rem;
 			}
 			@include breakpoint($phone) {
 				bottom: -1.5rem;
+			}
+			@include breakpoint($tablet) {
+				width: 25%;
 			}
 			@include breakpoint($xsLaptop) {
 				width: 15%;
@@ -82,6 +94,9 @@
 			@include breakpoint($phone) {
 				gap: 1.25rem;
 			}
+			@include breakpoint($tablet) {
+				width: 90%;
+			}
 			@include breakpoint($xsLaptop) {
 				gap: 2rem;
 				width: 100%;
@@ -94,6 +109,9 @@
 					width: 100%;
 					@include breakpoint($sPhone) {
 						font-size: 1.1rem;
+					}
+					@include breakpoint($tablet) {
+						font-size: 1.2rem;
 					}
 					@include breakpoint($xsLaptop) {
 						font-size: 1.5rem;
@@ -113,6 +131,9 @@
 			}
 			@include breakpoint($phone) {
 				font-size: 1rem;
+			}
+			@include breakpoint($tablet) {
+				font-size: 1.1rem;
 			}
 			@include breakpoint($xsLaptop) {
 				border-radius: 1rem;

@@ -17,6 +17,9 @@
 		grid-template-rows: 1.5fr 5fr 1fr;
 		padding: 1.5rem 0;
 	}
+	@include breakpoint($tablet) {
+		grid-template-rows: 1.5fr 7fr 1fr;
+	}
 	@include breakpoint($xsLaptop) {
 		grid-template-rows: 1.5fr 6.5fr 1fr;
 		padding: 0;
@@ -30,8 +33,15 @@
 		position: relative;
 		text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 		width: 80%;
+		@include breakpoint($sPhone) {
+			width: 70%;
+		}
 		@include breakpoint($phone) {
 			margin-left: 1.75rem;
+			width: 65%;
+		}
+		@include breakpoint($lPhone) {
+			width: 70%;
 		}
 		@include breakpoint($xsLaptop) {
 			font-size: 1.8rem;
@@ -80,10 +90,13 @@
 				}
 			}
 			&#submit {
-				font-size: 1rem;
+				font-size: 0.9rem;
 				grid-area: submitBtn;
 				padding: 0.75rem 1rem;
 				place-self: center;
+				@include breakpoint($xsPhone) {
+					font-size: 1rem;
+				}
 				@include breakpoint($xsLaptop) {
 					font-size: 1.5rem;
 					padding: 1rem 3rem;

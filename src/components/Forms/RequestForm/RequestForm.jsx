@@ -82,7 +82,7 @@ const RequestForm = ({ formData, prevStep }) => {
 					classes={classes}
 					id={classes.submit}
 					onClick={handleSubmit}
-					text="Wyślij Zapytanie ✉"
+					text="Wyślij Zapytanie 📧"
 				/>
 			)}
 			<FormButton

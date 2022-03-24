@@ -42,6 +42,9 @@
 		// justify-content: space-evenly;
 		padding: 1.5rem 0;
 		width: 100%;
+		@include breakpoint($tablet) {
+			padding: 0.75rem 0 1.5rem;
+		}
 		@include breakpoint($xsLaptop) {
 			justify-content: space-evenly;
 			padding: 3rem;
@@ -77,6 +80,9 @@
 			padding: 0.25rem 0.5rem 0.25rem 0.25rem;
 			width: 90%;
 			position: relative;
+			@include breakpoint($tablet) {
+				margin: 1rem 3rem;
+			}
 			@include breakpoint($xsLaptop) {
 				max-height: 400px;
 				padding-right: 1rem;
@@ -122,6 +128,16 @@
 					height: 110px;
 					min-height: 110px;
 				}
+				@include breakpoint($lPhone) {
+					height: 100px;
+					min-height: 100px;
+				}
+				@include breakpoint($tablet) {
+					gap: 0.75rem;
+					height: 75px;
+					min-height: 75px;
+					padding: 0.75rem;
+				}
 				@include breakpoint($xsLaptop) {
 					height: unset;
 					gap: 1.5rem;
@@ -132,6 +148,10 @@
 					border-radius: 0.5rem;
 					height: 50px;
 					width: 50px;
+					@include breakpoint($tablet) {
+						height: 55px;
+						width: 55px;
+					}
 					@include breakpoint($xsLaptop) {
 						border-radius: 1rem;
 						height: 80px;
@@ -151,6 +171,9 @@
 				@include breakpoint($phone) {
 					gap: 0;
 				}
+				@include breakpoint($lPhone) {
+					gap: 0.25rem;
+				}
 
 				.productDescription {
 					font-size: 0.55rem;
@@ -160,6 +183,9 @@
 					}
 					@include breakpoint($phone) {
 						font-size: 0.5rem;
+					}
+					@include breakpoint($tablet) {
+						font-size: 0.6rem;
 					}
 					@include breakpoint($xsLaptop) {
 						font-size: 0.9rem;
@@ -176,6 +202,9 @@
 					}
 					@include breakpoint($phone) {
 						font-size: 0.8rem;
+					}
+					@include breakpoint($tablet) {
+						font-size: 0.9rem;
 					}
 					@include breakpoint($xsLaptop) {
 						font-size: 1.3rem;

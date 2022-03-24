@@ -13,6 +13,13 @@
 	@include breakpoint($sPhone) {
 		gap: 2rem;
 	}
+	@include breakpoint($tablet) {
+		grid-template-areas:
+			'title title'
+			'planL planR'
+			'button button';
+		padding: 1.5rem 2rem;
+	}
 	@include breakpoint($xsLaptop) {
 		gap: 0;
 		grid-template-areas:
@@ -36,6 +43,9 @@
 		@include breakpoint($sPhone) {
 			font-size: 1.7rem;
 		}
+		@include breakpoint($tablet) {
+			font-size: 1.9rem;
+		}
 		@include breakpoint($xsLaptop) {
 			font-size: 2rem;
 			text-align: unset;
@@ -57,6 +67,9 @@
 			}
 			.formButton {
 				padding: 0.75rem 1rem;
+				@include breakpoint($tablet) {
+					padding: 0.75rem 1.25rem;
+				}
 				@include breakpoint($xsLaptop) {
 					padding: 0.75rem 2rem;
 				}
@@ -70,6 +83,9 @@
 			}
 			.formButton {
 				padding: 0.75rem 1rem;
+				@include breakpoint($tablet) {
+					padding: 0.75rem 1.25rem;
+				}
 				@include breakpoint($xsLaptop) {
 					padding: 0.75rem 2rem;
 				}
@@ -90,6 +106,9 @@
 		min-height: 420px;
 		@include breakpoint($xsPhone) {
 			min-height: 360px;
+		}
+		@include breakpoint($tablet) {
+			width: 250px;
 		}
 
 		@include breakpoint($xsLaptop) {
@@ -144,6 +163,9 @@
 				height: 4px;
 				position: absolute;
 				width: 25%;
+				@include breakpoint($tablet) {
+					bottom: 8px;
+				}
 				@include breakpoint($xsLaptop) {
 					width: 15%;
 				}

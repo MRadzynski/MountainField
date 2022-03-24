@@ -54,7 +54,7 @@ const PlansForm = ({
 				})}
 			>
 				<h2 className={classes.planTitle}>
-					{window.innerWidth > 450 && 'Oferta'} HOME OFFICE 🏡
+					{window.innerWidth > 768 && 'Oferta'} HOME OFFICE 🏡
 				</h2>
 				<div className={classes.sliderContainer}>
 					<div className={classes.sliderInfo}>
@@ -89,7 +89,7 @@ const PlansForm = ({
 				})}
 			>
 				<h2 className={classes.planTitle}>
-					{window.innerWidth > 450 && 'Oferta'} STANDARD 🏢
+					{window.innerWidth > 768 && 'Oferta'} STANDARD 🏢
 				</h2>
 				<div className={classes.inputsContainer}>
 					<FormInput
