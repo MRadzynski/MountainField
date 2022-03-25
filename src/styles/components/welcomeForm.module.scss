@@ -19,8 +19,11 @@
 		grid-template-rows: 1.5fr 5.5fr;
 	}
 	@include breakpoint($xsLaptop) {
-		grid-template-rows: 1.5fr 5fr;
+		grid-template-rows: 1.5fr 4fr;
 		padding: 0 1rem;
+	}
+	@include breakpoint($desktop) {
+		grid-template-rows: 1.5fr 5fr;
 	}
 
 	.formDescription {
@@ -46,6 +49,11 @@
 			font-size: 1.3rem;
 		}
 		@include breakpoint($xsLaptop) {
+			font-size: 1.5rem;
+			line-height: 2.2rem;
+			margin-top: 0;
+		}
+		@include breakpoint($desktop) {
 			font-size: 1.7rem;
 			line-height: 2.9rem;
 		}
@@ -83,6 +91,9 @@
 		gap: 2rem;
 		place-items: center;
 		@include breakpoint($xsLaptop) {
+			width: 50%;
+		}
+		@include breakpoint($desktop) {
 			gap: 3rem;
 			width: 40%;
 		}
@@ -98,8 +109,11 @@
 				width: 90%;
 			}
 			@include breakpoint($xsLaptop) {
-				gap: 2rem;
+				gap: 1.5rem;
 				width: 100%;
+			}
+			@include breakpoint($desktop) {
+				gap: 2rem;
 			}
 
 			.inputContainer {
@@ -114,6 +128,10 @@
 						font-size: 1.2rem;
 					}
 					@include breakpoint($xsLaptop) {
+						font-size: 1.4rem;
+						line-height: 1.8rem;
+					}
+					@include breakpoint($desktop) {
 						font-size: 1.5rem;
 						line-height: 2rem;
 					}
@@ -137,8 +155,11 @@
 			}
 			@include breakpoint($xsLaptop) {
 				border-radius: 1rem;
-				font-size: 1.5rem;
+				font-size: 1.3rem;
 				padding: 0.75rem 2.5rem;
+			}
+			@include breakpoint($desktop) {
+				font-size: 1.5rem;
 			}
 		}
 	}

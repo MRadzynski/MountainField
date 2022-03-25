@@ -22,14 +22,13 @@
 	}
 	@include breakpoint($xsLaptop) {
 		gap: 0;
-		grid-template-areas:
-			'title title'
-			'planL planR'
-			'button button';
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 7fr 1fr;
 		padding: unset;
 	}
+	// @include breakpoint($desktop) {
+	// 	grid-template-rows: 1fr 7fr 1fr;
+	// }
 
 	.stepTitle {
 		color: $primaryColor;
@@ -47,9 +46,12 @@
 			font-size: 1.9rem;
 		}
 		@include breakpoint($xsLaptop) {
-			font-size: 2rem;
+			font-size: 1.8rem;
 			text-align: unset;
 			width: unset;
+		}
+		@include breakpoint($desktop) {
+			font-size: 2rem;
 		}
 		@include breakpoint($desktop2K) {
 			font-size: 2.4rem;
@@ -71,6 +73,10 @@
 					padding: 0.75rem 1.25rem;
 				}
 				@include breakpoint($xsLaptop) {
+					font-size: 0.9rem;
+					padding: 0.75rem 1.5rem;
+				}
+				@include breakpoint($desktop) {
 					padding: 0.75rem 2rem;
 				}
 			}
@@ -87,6 +93,10 @@
 					padding: 0.75rem 1.25rem;
 				}
 				@include breakpoint($xsLaptop) {
+					font-size: 0.9rem;
+					padding: 0.75rem 1.5rem;
+				}
+				@include breakpoint($desktop) {
 					padding: 0.75rem 2rem;
 				}
 			}
@@ -113,7 +123,12 @@
 
 		@include breakpoint($xsLaptop) {
 			grid-template-rows: 2fr 6fr 2fr;
+			width: 75%;
+			padding: 0 0.5rem;
+		}
+		@include breakpoint($desktop) {
 			width: 70%;
+			padding: unset;
 		}
 
 		@include breakpoint($desktop2K) {
@@ -155,7 +170,6 @@
 				font-size: 1.6rem;
 				margin: 0 0 0 1rem;
 			}
-
 			&:before {
 				background: $gradientStart;
 				bottom: 10px;
@@ -185,7 +199,11 @@
 				}
 				@include breakpoint($xsLaptop) {
 					border-radius: 1rem;
+					font-size: 0.9rem;
 					padding: 0.75rem 2rem;
+				}
+				@include breakpoint($desktop) {
+					font-size: 1rem;
 				}
 			}
 		}
@@ -204,6 +222,9 @@
 			.inputContainer {
 				width: 75%;
 				@include breakpoint($xsLaptop) {
+					width: 80%;
+				}
+				@include breakpoint($desktop) {
 					width: 70%;
 				}
 				.inputField {
@@ -260,6 +281,9 @@
 					width: 80%;
 					@include breakpoint($xsPhone) {
 						width: 85%;
+					}
+					@include breakpoint($tablet) {
+						font-size: 0.95rem;
 					}
 					@include breakpoint($xsLaptop) {
 						font-size: unset;
@@ -322,7 +346,7 @@
 				color: $accentColor;
 				font-size: 0.9rem;
 				text-align: center;
-				@include breakpoint($xsLaptop) {
+				@include breakpoint($desktop) {
 					font-size: 1.1rem;
 				}
 				@include breakpoint($desktop2K) {
