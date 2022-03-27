@@ -52,6 +52,12 @@
 		@include breakpointIPadProLandscape() {
 			margin-bottom: 5rem;
 		}
+		@include breakpoint($laptop) {
+			margin-bottom: 3rem;
+		}
+		@include breakpoint($desktop) {
+			margin-bottom: 5rem;
+		}
 		@include breakpointExtended($desktop2K, $height2K) {
 			border-radius: 4rem;
 			margin: 5rem 0 10rem;
@@ -133,7 +139,7 @@
 			height: 60%;
 		}
 		@include breakpoint($laptop) {
-			height: 70%;
+			height: 75%;
 		}
 		@include breakpoint($sDesktop) {
 			width: 70%;

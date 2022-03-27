@@ -126,8 +126,10 @@
 			width: 75%;
 			padding: 0 0.5rem;
 		}
-		@include breakpoint($desktop) {
+		@include breakpoint($laptop) {
 			width: 70%;
+		}
+		@include breakpoint($desktop) {
 			padding: unset;
 		}
 
@@ -289,6 +291,12 @@
 						font-size: unset;
 						width: unset;
 					}
+					@include breakpoint($laptop) {
+						font-size: 1rem;
+					}
+					@include breakpoint($desktop) {
+						font-size: 1.1rem;
+					}
 					@include breakpoint($desktop2K) {
 						font-size: 1.2rem;
 					}
@@ -346,6 +354,9 @@
 				color: $accentColor;
 				font-size: 0.9rem;
 				text-align: center;
+				@include breakpoint($laptop) {
+					font-size: 1rem;
+				}
 				@include breakpoint($desktop) {
 					font-size: 1.1rem;
 				}

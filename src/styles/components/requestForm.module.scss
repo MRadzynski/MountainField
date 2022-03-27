@@ -53,6 +53,9 @@
 			margin: 1rem 0 0 1.5rem;
 			width: 50%;
 		}
+		@include breakpoint($laptop) {
+			font-size: 1.7rem;
+		}
 		@include breakpoint($desktop) {
 			font-size: 1.8rem;
 			margin: 0 0 0 1rem;

@@ -222,7 +222,7 @@
 					@include breakpoint($xsLaptop) {
 						font-size: 1.2rem;
 					}
-					@include breakpoint($desktop) {
+					@include breakpoint($laptop) {
 						font-size: 1.3rem;
 					}
 					@include breakpoint($desktop2K) {
@@ -249,7 +249,7 @@
 					@include breakpoint($xsLaptop) {
 						font-size: 1.4rem;
 					}
-					@include breakpoint($desktop2K) {
+					@include breakpoint($laptop) {
 						font-size: 1.5rem;
 					}
 				}
@@ -264,7 +264,7 @@
 					@include breakpoint($xsLaptop) {
 						font-size: 1.4rem;
 					}
-					@include breakpoint($desktop2K) {
+					@include breakpoint($laptop) {
 						font-size: 1.5rem;
 					}
 				}
@@ -278,7 +278,7 @@
 					@include breakpoint($xsLaptop) {
 						font-size: 1.4rem;
 					}
-					@include breakpoint($desktop2K) {
+					@include breakpoint($laptop) {
 						font-size: 1.5rem;
 					}
 				}
@@ -287,6 +287,9 @@
 
 		.formButton {
 			grid-area: button;
+			@include breakpoint($laptop) {
+				font-size: 1.1rem;
+			}
 		}
 	}
 	.selectedItem {
