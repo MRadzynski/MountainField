@@ -55,12 +55,11 @@
 		@include breakpoint($laptop) {
 			margin-bottom: 3rem;
 		}
-		@include breakpoint($desktop) {
-			margin-bottom: 5rem;
-		}
 		@include breakpointExtended($desktop2K, $height2K) {
 			border-radius: 4rem;
-			margin: 5rem 0 10rem;
+			margin-bottom: 0;
+			padding: 0;
+			margin-top: 2rem;
 		}
 		@include breakpoint($desktop4K) {
 			border-radius: 5rem;

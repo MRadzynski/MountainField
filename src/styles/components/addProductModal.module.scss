@@ -39,7 +39,6 @@
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		// justify-content: space-evenly;
 		padding: 1.5rem 0;
 		width: 100%;
 		@include breakpoint($tablet) {
@@ -50,7 +49,8 @@
 			padding: 1rem;
 		}
 		@include breakpoint($desktop) {
-			padding: 3rem;
+			justify-content: space-between;
+			padding: 2rem;
 		}
 
 		.modalTitle {
@@ -66,8 +66,15 @@
 				font-size: 2rem;
 				width: unset;
 			}
-			@include breakpoint($desktop2K) {
+			@include breakpoint($lLaptop) {
+				font-size: 2.2rem;
+				padding: 0;
+			}
+			@include breakpoint($desktop) {
 				font-size: 2.4rem;
+			}
+			@include breakpoint($desktop2K) {
+				font-size: 2.5rem;
 			}
 		}
 
@@ -89,6 +96,9 @@
 			@include breakpoint($xsLaptop) {
 				max-height: 400px;
 				padding-right: 1rem;
+			}
+			@include breakpoint($desktop) {
+				max-height: 470px;
 			}
 
 			&::-webkit-scrollbar-track {
@@ -146,8 +156,11 @@
 					min-height: 110px;
 					gap: 1rem;
 				}
+				@include breakpoint($lLaptop) {
+					height: 120px;
+					min-height: 120px;
+				}
 				@include breakpoint($desktop) {
-					gap: 1.5rem;
 					padding: 1rem;
 				}
 				.productImg {
@@ -163,9 +176,9 @@
 						height: 70px;
 						width: 70px;
 					}
-					@include breakpoint($desktop) {
-						height: 80px;
-						width: 80px;
+					@include breakpoint($lLaptop) {
+						height: 90px;
+						width: 90px;
 					}
 				}
 			}
@@ -200,7 +213,7 @@
 					@include breakpoint($xsLaptop) {
 						font-size: 0.8rem;
 					}
-					@include breakpoint($desktop) {
+					@include breakpoint($lLaptop) {
 						font-size: 0.9rem;
 					}
 					@include breakpoint($desktop2K) {
@@ -224,6 +237,9 @@
 					}
 					@include breakpoint($laptop) {
 						font-size: 1.3rem;
+					}
+					@include breakpoint($lLaptop) {
+						font-size: 1.4rem;
 					}
 					@include breakpoint($desktop2K) {
 						font-size: 1.5rem;
@@ -252,6 +268,9 @@
 					@include breakpoint($laptop) {
 						font-size: 1.5rem;
 					}
+					@include breakpoint($lLaptop) {
+						font-size: 1.7rem;
+					}
 				}
 
 				.plusSign {
@@ -267,6 +286,9 @@
 					@include breakpoint($laptop) {
 						font-size: 1.5rem;
 					}
+					@include breakpoint($lLaptop) {
+						font-size: 1.7rem;
+					}
 				}
 
 				.productQuantity {
@@ -281,6 +303,9 @@
 					@include breakpoint($laptop) {
 						font-size: 1.5rem;
 					}
+					@include breakpoint($lLaptop) {
+						font-size: 1.7rem;
+					}
 				}
 			}
 		}
@@ -289,6 +314,15 @@
 			grid-area: button;
 			@include breakpoint($laptop) {
 				font-size: 1.1rem;
+			}
+			@include breakpoint($lLaptop) {
+				font-size: 1.2rem;
+			}
+			@include breakpoint($desktop) {
+				font-size: 1.3rem;
+			}
+			@include breakpoint($desktop2K) {
+				font-size: 1.4rem;
 			}
 		}
 	}

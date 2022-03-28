@@ -21,6 +21,9 @@
 		@include breakpoint($desktop2K) {
 			font-size: 1.1rem;
 		}
+		@include breakpointExtended($desktop2K, $height2K) {
+			border-radius: 1.25rem;
+		}
 
 		&:disabled {
 			cursor: not-allowed;
