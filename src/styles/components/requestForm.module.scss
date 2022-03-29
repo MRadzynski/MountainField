@@ -70,6 +70,11 @@
 		@include breakpoint($desktop2K) {
 			font-size: 2.2rem;
 		}
+		@include breakpointExtended($desktop2K, $height2K) {
+			font-size: 2.6rem;
+			width: 60%;
+			margin: 1rem 0 0 2rem;
+		}
 		&:before {
 			background-color: $primaryColor;
 			bottom: -1rem;
@@ -117,7 +122,7 @@
 					font-size: 1.2rem;
 				}
 				@include breakpointExtended($desktop2K, $height2K) {
-					font-size: 1.4rem;
+					font-size: 1.5rem;
 				}
 			}
 			&#submit {
@@ -145,6 +150,11 @@
 				@include breakpoint($desktop2K) {
 					font-size: 2.1rem;
 					line-height: 2.4rem;
+				}
+				@include breakpointExtended($desktop2K, $height2K) {
+					font-size: 2.4rem;
+					line-height: 3.4rem;
+					padding: 1.25rem 4rem;
 				}
 			}
 		}
@@ -176,6 +186,9 @@
 		}
 		@include breakpoint($desktop2K) {
 			font-size: 2.3rem;
+		}
+		@include breakpointExtended($desktop2K, $height2K) {
+			font-size: 2.8rem;
 		}
 	}
 }

@@ -93,7 +93,7 @@
 					font-size: 1.2rem;
 				}
 				@include breakpointExtended($desktop2K, $height2K) {
-					font-size: 1.4rem;
+					font-size: 1.5rem;
 				}
 			}
 		}
@@ -123,7 +123,7 @@
 					font-size: 1.2rem;
 				}
 				@include breakpointExtended($desktop2K, $height2K) {
-					font-size: 1.4rem;
+					font-size: 1.5rem;
 				}
 			}
 		}
@@ -164,6 +164,9 @@
 			height: 85%;
 			width: 65%;
 		}
+		@include breakpointExtended($desktop2K, $height2K) {
+			border-width: 2px;
+		}
 
 		&:nth-of-type(1) {
 			grid-area: planL;
@@ -201,6 +204,9 @@
 			@include breakpoint($desktop) {
 				font-size: 1.8rem;
 			}
+			@include breakpointExtended($desktop2K, $height2K) {
+				font-size: 2rem;
+			}
 			&:before {
 				background: $gradientStart;
 				bottom: 10px;
@@ -213,6 +219,10 @@
 				}
 				@include breakpoint($xsLaptop) {
 					width: 15%;
+				}
+				@include breakpointExtended($desktop2K, $height2K) {
+					bottom: 1rem;
+					height: 6px;
 				}
 			}
 		}
@@ -240,7 +250,8 @@
 					font-size: 1.2rem;
 				}
 				@include breakpointExtended($desktop2K, $height2K) {
-					font-size: 1.4rem;
+					border-radius: 1rem;
+					font-size: 1.6rem;
 				}
 			}
 		}
@@ -256,6 +267,7 @@
 			@include breakpoint($xsLaptop) {
 				width: unset;
 			}
+
 			.inputContainer {
 				width: 75%;
 				@include breakpoint($xsLaptop) {
@@ -263,6 +275,9 @@
 				}
 				@include breakpoint($desktop) {
 					width: 70%;
+				}
+				@include breakpointExtended($desktop2K, $height2K) {
+					gap: 2rem;
 				}
 				.inputField {
 					font-size: 0.9rem;
@@ -284,6 +299,10 @@
 						font-size: 1.2rem;
 						line-height: 1.6rem;
 					}
+					@include breakpointExtended($desktop2K, $height2K) {
+						font-size: 1.4rem;
+						line-height: 1.9rem;
+					}
 					&::placeholder {
 						font-size: 0.75rem;
 						@include breakpoint($sPhone) {
@@ -294,6 +313,12 @@
 						}
 						@include breakpoint($lLaptop) {
 							font-size: 1.1rem;
+						}
+						@include breakpoint($desktop) {
+							font-size: 1.2rem;
+						}
+						@include breakpointExtended($desktop2K, $height2K) {
+							font-size: 1.4rem;
 						}
 					}
 				}
@@ -351,6 +376,9 @@
 					@include breakpoint($desktop2K) {
 						font-size: 1.2rem;
 					}
+					@include breakpointExtended($desktop2K, $height2K) {
+						font-size: 1.5rem;
+					}
 				}
 				.sliderValue {
 					font-size: 1.1rem;
@@ -366,6 +394,9 @@
 					}
 					@include breakpoint($desktop2K) {
 						font-size: 1.3rem;
+					}
+					@include breakpointExtended($desktop2K, $height2K) {
+						font-size: 1.8rem;
 					}
 				}
 			}
@@ -391,7 +422,7 @@
 					height: 8px;
 				}
 				@include breakpointExtended($desktop2K, $height2K) {
-					height: 10px;
+					height: 12px;
 				}
 				@include breakpoint($desktop4K) {
 					height: 12px;
@@ -404,6 +435,10 @@
 					height: 20px;
 					width: 20px;
 					-webkit-appearance: none;
+					@include breakpointExtended($desktop2K, $height2K) {
+						height: 28px;
+						width: 28px;
+					}
 				}
 			}
 
@@ -422,6 +457,9 @@
 				}
 				@include breakpoint($desktop2K) {
 					font-size: 1.15rem;
+				}
+				@include breakpointExtended($desktop2K, $height2K) {
+					font-size: 1.3rem;
 				}
 			}
 		}

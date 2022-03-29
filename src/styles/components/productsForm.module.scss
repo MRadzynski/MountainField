@@ -65,6 +65,9 @@
 			@include breakpoint($desktop2K) {
 				font-size: 2.2rem;
 			}
+			@include breakpointExtended($desktop2K, $height2K) {
+				font-size: 2.6rem;
+			}
 			&:before {
 				background-color: $primaryColor;
 				box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
@@ -102,6 +105,10 @@
 			@include breakpoint($desktop2K) {
 				max-height: 470px;
 			}
+			@include breakpointExtended($desktop2K, $height2K) {
+				max-height: 570px;
+				gap: 1.25rem;
+			}
 
 			&::-webkit-scrollbar-track {
 				background-color: #f5f5f5;
@@ -117,6 +124,9 @@
 
 				@include breakpoint($xsLaptop) {
 					width: 12px;
+				}
+				@include breakpointExtended($desktop2K, $height2K) {
+					width: 16px;
 				}
 			}
 
@@ -161,6 +171,10 @@
 					padding: 0.75rem;
 					min-height: 88px;
 				}
+				@include breakpointExtended($desktop2K, $height2K) {
+					padding: 1rem;
+					min-height: 105px;
+				}
 
 				.productImg {
 					border-radius: 0.5rem;
@@ -182,6 +196,10 @@
 						border-radius: 0.75rem;
 						height: 65px;
 						width: 65px;
+					}
+					@include breakpointExtended($desktop2K, $height2K) {
+						height: 75px;
+						width: 75px;
 					}
 				}
 				.productInfoContainer {
@@ -212,6 +230,9 @@
 						@include breakpoint($desktop2K) {
 							font-size: 1.1rem;
 						}
+						@include breakpointExtended($desktop2K, $height2K) {
+							font-size: 1.3rem;
+						}
 					}
 
 					.productName {
@@ -237,6 +258,9 @@
 
 						@include breakpoint($desktop2K) {
 							font-size: 1.4rem;
+						}
+						@include breakpointExtended($desktop2K, $height2K) {
+							font-size: 1.6rem;
 						}
 					}
 				}
@@ -265,8 +289,8 @@
 						@include breakpoint($desktop) {
 							font-size: 1.5rem;
 						}
-						@include breakpoint($desktop2K) {
-							font-size: 1.5rem;
+						@include breakpointExtended($desktop2K, $height2K) {
+							font-size: 1.9rem;
 						}
 					}
 
@@ -286,8 +310,8 @@
 						@include breakpoint($desktop) {
 							font-size: 1.5rem;
 						}
-						@include breakpoint($desktop2K) {
-							font-size: 1.5rem;
+						@include breakpointExtended($desktop2K, $height2K) {
+							font-size: 1.9rem;
 						}
 					}
 
@@ -306,8 +330,8 @@
 						@include breakpoint($desktop) {
 							font-size: 1.5rem;
 						}
-						@include breakpoint($desktop2K) {
-							font-size: 1.5rem;
+						@include breakpointExtended($desktop2K, $height2K) {
+							font-size: 1.9rem;
 						}
 					}
 				}
@@ -340,7 +364,9 @@
 							font-size: 1.3rem;
 						}
 						@include breakpoint($desktop2K) {
-							font-size: 1.4rem;
+							font-size: 1.6rem;
+							padding: 1rem 2rem;
+							border-radius: 1.25rem;
 						}
 					}
 				}
@@ -427,6 +453,9 @@
 				@include breakpoint($desktop2K) {
 					font-size: 2.2rem;
 				}
+				@include breakpointExtended($desktop2K, $height2K) {
+					font-size: 2.6rem;
+				}
 			}
 			.summarySubHeading {
 				font-size: 0.9rem;
@@ -449,6 +478,9 @@
 				}
 				@include breakpoint($desktop2K) {
 					font-size: 1.4rem;
+				}
+				@include breakpointExtended($desktop2K, $height2K) {
+					font-size: 1.6rem;
 				}
 			}
 		}
@@ -483,6 +515,9 @@
 		}
 		@include breakpoint($desktop2K) {
 			font-size: 2.4rem;
+		}
+		@include breakpointExtended($desktop2K, $height2K) {
+			font-size: 2.8rem;
 		}
 	}
 	.summaryProducts {
@@ -522,6 +557,9 @@
 			@include breakpoint($desktop2K) {
 				font-size: 1.7rem;
 			}
+			@include breakpointExtended($desktop2K, $height2K) {
+				font-size: 2rem;
+			}
 		}
 	}
 	> .buttonContainer {
@@ -552,7 +590,7 @@
 					font-size: 1.2rem;
 				}
 				@include breakpointExtended($desktop2K, $height2K) {
-					font-size: 1.4rem;
+					font-size: 1.5rem;
 				}
 			}
 		}
@@ -580,7 +618,7 @@
 					font-size: 1.2rem;
 				}
 				@include breakpointExtended($desktop2K, $height2K) {
-					font-size: 1.4rem;
+					font-size: 1.5rem;
 				}
 			}
 		}

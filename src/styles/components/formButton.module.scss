@@ -23,6 +23,7 @@
 		}
 		@include breakpointExtended($desktop2K, $height2K) {
 			border-radius: 1.25rem;
+			border-width: 3px;
 		}
 
 		&:disabled {
