@@ -10,50 +10,69 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import NotAllowedOverlay from './components/NotAllowedOverlay/NotAllowedOverlay';
 import { smoothNavScroll } from './utils/smoothNavScroll';
 import { useEffect, useState } from 'react';
+import { isAppleDevice } from './utils';
 
 const {
-	breakpoints: { tablet },
+  breakpoints: { tablet },
 } = breakpointsData;
 
 const App = () => {
-	const [displayArrow, setDisplayArrow] = useState(false);
-	const [noSupportedOrientation, setNoSupportedOrientation] = useState(false);
+  const [displayArrow, setDisplayArrow] = useState(false);
+  const [noSupportedOrientation, setNoSupportedOrientation] = useState(false);
 
-	useEffect(() => {
-		smoothNavScroll();
-		document.addEventListener('scroll', displayArrowHandler);
+  const appleOrientationChangeDetector = () => {
+    const isLandscape = window.matchMedia('(orientation: landscape)');
 
-		window.screen.orientation?.addEventListener('change', (e) => {
-			if (
-				e.currentTarget.type === 'landscape-primary' &&
-				window.screen.height < tablet
-			) {
-				document.querySelector('#app').classList.add(classes.stopScrolling);
-				setNoSupportedOrientation(true);
-			} else {
-				document.querySelector('#app').classList.remove(classes.stopScrolling);
-				setNoSupportedOrientation(false);
-			}
-		});
+    if (isLandscape.matches) {
+      document.querySelector('#app').classList.add(classes.stopScrolling);
+      setNoSupportedOrientation(true);
+    } else {
+      document.querySelector('#app').classList.remove(classes.stopScrolling);
+      setNoSupportedOrientation(false);
+    }
+  };
 
-		return () => document.removeEventListener('scroll', displayArrowHandler);
-	}, []);
+  const orientationChangeDetector = () => {
+    window.screen.orientation?.addEventListener('change', (e) => {
+      if (
+        e.currentTarget.type === 'landscape-primary' &&
+        window.screen.height < tablet
+      ) {
+        document.querySelector('#app').classList.add(classes.stopScrolling);
+        setNoSupportedOrientation(true);
+      } else {
+        document.querySelector('#app').classList.remove(classes.stopScrolling);
+        setNoSupportedOrientation(false);
+      }
+    });
+  };
 
-	const displayArrowHandler = (e) =>
-		window.scrollY > 500 ? setDisplayArrow(true) : setDisplayArrow(false);
+  useEffect(() => {
+    smoothNavScroll();
+    document.addEventListener('scroll', displayArrowHandler);
 
-	return (
-		<div className={classes.appContainer} id="app">
-			<Header />
-			<Welcome />
-			<About />
-			<Offer />
-			<Contact />
-			<Footer />
-			{displayArrow && <ScrollToTop />}
-			{noSupportedOrientation && <NotAllowedOverlay />}
-		</div>
-	);
+    isAppleDevice()
+      ? appleOrientationChangeDetector()
+      : orientationChangeDetector();
+
+    return () => document.removeEventListener('scroll', displayArrowHandler);
+  }, []);
+
+  const displayArrowHandler = (e) =>
+    window.scrollY > 500 ? setDisplayArrow(true) : setDisplayArrow(false);
+
+  return (
+    <div className={classes.appContainer} id='app'>
+      <Header />
+      <Welcome />
+      <About />
+      <Offer />
+      <Contact />
+      <Footer />
+      {displayArrow && <ScrollToTop />}
+      {noSupportedOrientation && <NotAllowedOverlay />}
+    </div>
+  );
 };
 
 export default App;
