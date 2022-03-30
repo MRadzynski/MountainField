@@ -11,10 +11,13 @@ import NotAllowedOverlay from './components/NotAllowedOverlay/NotAllowedOverlay'
 import { smoothNavScroll } from './utils/smoothNavScroll';
 import { useEffect, useState } from 'react';
 import { isAppleDevice } from './utils';
+import smoothscroll from 'smoothscroll-polyfill';
 
 const {
   breakpoints: { tablet },
 } = breakpointsData;
+
+smoothscroll.polyfill();
 
 const App = () => {
   const [displayArrow, setDisplayArrow] = useState(false);
