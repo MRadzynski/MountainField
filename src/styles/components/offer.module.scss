@@ -33,6 +33,9 @@
 	@include breakpoint($laptop) {
 		margin-bottom: 6rem;
 	}
+	@include breakpoint($desktop4K) {
+		margin-bottom: 0;
+	}
 
 	.headingContainer {
 		border-radius: 3rem;
@@ -63,8 +66,8 @@
 		}
 		@include breakpoint($desktop4K) {
 			border-radius: 5rem;
-			margin: 10rem 0 12rem;
-			padding: 3rem 6rem;
+			margin: 2rem 0 0;
+			padding: 3rem 0 0;
 		}
 
 		.heading {
@@ -110,6 +113,7 @@
 			@include breakpoint($desktop4K) {
 				font-size: 6rem;
 				line-height: 7rem;
+				margin: 6rem auto 10rem;
 			}
 		}
 	}

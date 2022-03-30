@@ -62,6 +62,9 @@
 		@include breakpointExtended($desktop2K, $height2K) {
 			font-size: 3rem;
 		}
+		@include breakpoint($desktop4K) {
+			font-size: 4.4rem;
+		}
 	}
 
 	> .buttonContainer {
@@ -95,6 +98,10 @@
 				@include breakpointExtended($desktop2K, $height2K) {
 					font-size: 1.5rem;
 				}
+				@include breakpoint($desktop4K) {
+					font-size: 2.4rem;
+					padding: 1rem 3rem;
+				}
 			}
 		}
 		&:nth-of-type(4) {
@@ -124,6 +131,10 @@
 				}
 				@include breakpointExtended($desktop2K, $height2K) {
 					font-size: 1.5rem;
+				}
+				@include breakpoint($desktop4K) {
+					font-size: 2.4rem;
+					padding: 1rem 3rem;
 				}
 			}
 		}
@@ -167,6 +178,10 @@
 		@include breakpointExtended($desktop2K, $height2K) {
 			border-width: 2px;
 		}
+		@include breakpoint($desktop4K) {
+			border-radius: 2rem;
+			border-width: 3px;
+		}
 
 		&:nth-of-type(1) {
 			grid-area: planL;
@@ -207,6 +222,11 @@
 			@include breakpointExtended($desktop2K, $height2K) {
 				font-size: 2rem;
 			}
+			@include breakpoint($desktop4K) {
+				font-size: 3.2rem;
+				margin-left: 2rem;
+			}
+
 			&:before {
 				background: $gradientStart;
 				bottom: 10px;
@@ -223,6 +243,10 @@
 				@include breakpointExtended($desktop2K, $height2K) {
 					bottom: 1rem;
 					height: 6px;
+				}
+				@include breakpoint($desktop4K) {
+					bottom: 2rem;
+					height: 8px;
 				}
 			}
 		}
@@ -253,6 +277,11 @@
 					border-radius: 1rem;
 					font-size: 1.6rem;
 				}
+				@include breakpoint($desktop4K) {
+					border-radius: 1.5rem;
+					font-size: 2rem;
+					padding: 1rem 3rem;
+				}
 			}
 		}
 
@@ -267,7 +296,9 @@
 			@include breakpoint($xsLaptop) {
 				width: unset;
 			}
-
+			@include breakpoint($desktop4K) {
+				gap: 2rem;
+			}
 			.inputContainer {
 				width: 75%;
 				@include breakpoint($xsLaptop) {
@@ -279,6 +310,7 @@
 				@include breakpointExtended($desktop2K, $height2K) {
 					gap: 2rem;
 				}
+
 				.inputField {
 					font-size: 0.9rem;
 					padding: 0.5rem 0.75rem;
@@ -303,6 +335,11 @@
 						font-size: 1.4rem;
 						line-height: 1.9rem;
 					}
+					@include breakpoint($desktop4K) {
+						font-size: 2.4rem;
+						line-height: 3.2rem;
+						padding: 0.6rem 1.25rem;
+					}
 					&::placeholder {
 						font-size: 0.75rem;
 						@include breakpoint($sPhone) {
@@ -319,6 +356,9 @@
 						}
 						@include breakpointExtended($desktop2K, $height2K) {
 							font-size: 1.4rem;
+						}
+						@include breakpoint($desktop4K) {
+							font-size: 2.2rem;
 						}
 					}
 				}
@@ -341,6 +381,9 @@
 			}
 			@include breakpoint($desktop) {
 				padding: 0 0.5rem;
+			}
+			@include breakpoint($desktop4K) {
+				gap: 2.25rem;
 			}
 
 			.sliderInfo {
@@ -379,6 +422,9 @@
 					@include breakpointExtended($desktop2K, $height2K) {
 						font-size: 1.5rem;
 					}
+					@include breakpoint($desktop4K) {
+						font-size: 2.5rem;
+					}
 				}
 				.sliderValue {
 					font-size: 1.1rem;
@@ -397,6 +443,9 @@
 					}
 					@include breakpointExtended($desktop2K, $height2K) {
 						font-size: 1.8rem;
+					}
+					@include breakpoint($desktop4K) {
+						font-size: 2.9rem;
 					}
 				}
 			}
@@ -425,7 +474,8 @@
 					height: 12px;
 				}
 				@include breakpoint($desktop4K) {
-					height: 12px;
+					border-radius: 8px;
+					height: 14px;
 				}
 
 				&::-webkit-slider-thumb {
@@ -438,6 +488,10 @@
 					@include breakpointExtended($desktop2K, $height2K) {
 						height: 28px;
 						width: 28px;
+					}
+					@include breakpoint($desktop4K) {
+						height: 40px;
+						width: 40px;
 					}
 				}
 			}
@@ -461,10 +515,17 @@
 				@include breakpointExtended($desktop2K, $height2K) {
 					font-size: 1.3rem;
 				}
+				@include breakpoint($desktop4K) {
+					font-size: 2rem;
+					margin-top: 1rem;
+				}
 			}
 		}
 	}
 	.pickedPlan {
 		outline: 3px solid $gradientStart;
+		@include breakpoint($desktop4K) {
+			outline-width: 6px;
+		}
 	}
 }

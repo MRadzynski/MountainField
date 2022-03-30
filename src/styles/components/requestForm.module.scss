@@ -75,6 +75,10 @@
 			width: 60%;
 			margin: 1rem 0 0 2rem;
 		}
+		@include breakpoint($desktop4K) {
+			font-size: 4rem;
+			margin: 2rem 0 0 3rem;
+		}
 		&:before {
 			background-color: $primaryColor;
 			bottom: -1rem;
@@ -86,6 +90,10 @@
 			width: 20%;
 			@include breakpoint($xsLaptop) {
 				height: 0.5rem;
+			}
+			@include breakpoint($desktop4K) {
+				height: 0.7rem;
+				bottom: -1.5rem;
 			}
 		}
 	}
@@ -124,6 +132,10 @@
 				@include breakpointExtended($desktop2K, $height2K) {
 					font-size: 1.5rem;
 				}
+				@include breakpoint($desktop4K) {
+					font-size: 2.4rem;
+					padding: 1rem 3rem;
+				}
 			}
 			&#submit {
 				font-size: 0.9rem;
@@ -155,6 +167,13 @@
 					font-size: 2.4rem;
 					line-height: 3.4rem;
 					padding: 1.25rem 4rem;
+				}
+				@include breakpoint($desktop4K) {
+					border-width: 6px;
+					border-radius: 2rem;
+					font-size: 4rem;
+					line-height: 4.6rem;
+					padding: 2rem 4rem;
 				}
 			}
 		}
@@ -189,6 +208,10 @@
 		}
 		@include breakpointExtended($desktop2K, $height2K) {
 			font-size: 2.8rem;
+		}
+		@include breakpoint($desktop4K) {
+			font-size: 4.2rem;
+			padding: 0 6rem;
 		}
 	}
 }

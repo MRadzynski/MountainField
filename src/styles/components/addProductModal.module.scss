@@ -31,6 +31,10 @@
 		@include breakpointExtended($desktop2K, $height2K) {
 			font-size: 3rem;
 		}
+		@include breakpoint($desktop4K) {
+			font-size: 4.5rem;
+			top: 1rem;
+		}
 
 		&:hover {
 			color: $accentColor;
@@ -54,6 +58,9 @@
 		@include breakpoint($desktop) {
 			justify-content: space-between;
 			padding: 2rem;
+		}
+		@include breakpoint($desktop4K) {
+			padding: 3rem 4rem;
 		}
 
 		.modalTitle {
@@ -82,6 +89,9 @@
 			@include breakpointExtended($desktop2K, $height2K) {
 				font-size: 3rem;
 			}
+			@include breakpoint($desktop4K) {
+				font-size: 4.4rem;
+			}
 		}
 
 		.productList {
@@ -109,6 +119,11 @@
 			@include breakpointExtended($desktop2K, $height2K) {
 				max-height: 580px;
 			}
+			@include breakpoint($desktop4K) {
+				max-height: 900px;
+				gap: 2rem;
+				padding-right: 2rem;
+			}
 
 			&::-webkit-scrollbar-track {
 				background-color: #f5f5f5;
@@ -126,6 +141,9 @@
 				}
 				@include breakpointExtended($desktop2K, $height2K) {
 					width: 16px;
+				}
+				@include breakpoint($desktop4K) {
+					width: 20px;
 				}
 			}
 
@@ -179,6 +197,14 @@
 					height: 140px;
 					min-height: 140px;
 				}
+				@include breakpoint($desktop4K) {
+					height: 170px;
+					min-height: 170px;
+					padding: 1.5rem;
+					border-radius: 1.5rem;
+					gap: 2rem;
+					outline-width: 2px;
+				}
 				.productImg {
 					border-radius: 0.5rem;
 					height: 50px;
@@ -200,6 +226,10 @@
 						height: 100px;
 						width: 100px;
 					}
+					@include breakpoint($desktop4K) {
+						height: 120px;
+						width: 120px;
+					}
 				}
 			}
 			.productInfoContainer {
@@ -219,6 +249,9 @@
 				}
 				@include breakpointExtended($desktop2K, $height2K) {
 					gap: 0.5rem;
+				}
+				@include breakpoint($desktop4K) {
+					gap: 0.75rem;
 				}
 
 				.productDescription {
@@ -244,6 +277,10 @@
 					}
 					@include breakpointExtended($desktop2K, $height2K) {
 						font-size: 1.15rem;
+					}
+					@include breakpoint($desktop4K) {
+						font-size: 1.4rem;
+						letter-spacing: 0.1rem;
 					}
 				}
 
@@ -273,6 +310,9 @@
 					@include breakpointExtended($desktop2K, $height2K) {
 						font-size: 1.7rem;
 					}
+					@include breakpoint($desktop4K) {
+						font-size: 2.4rem;
+					}
 				}
 			}
 			.productControls {
@@ -282,6 +322,9 @@
 				@include no-selectable;
 				@include breakpoint($xsLaptop) {
 					gap: 0.5rem;
+				}
+				@include breakpoint($desktop4K) {
+					gap: 1rem;
 				}
 
 				.minusSign {
@@ -302,6 +345,9 @@
 					}
 					@include breakpointExtended($desktop2K, $height2K) {
 						font-size: 2.2rem;
+					}
+					@include breakpoint($desktop4K) {
+						font-size: 3rem;
 					}
 				}
 
@@ -324,6 +370,9 @@
 					@include breakpointExtended($desktop2K, $height2K) {
 						font-size: 2.2rem;
 					}
+					@include breakpoint($desktop4K) {
+						font-size: 3rem;
+					}
 				}
 
 				.productQuantity {
@@ -343,6 +392,9 @@
 					}
 					@include breakpointExtended($desktop2K, $height2K) {
 						font-size: 2.2rem;
+					}
+					@include breakpoint($desktop4K) {
+						font-size: 3rem;
 					}
 				}
 			}
@@ -367,9 +419,17 @@
 				border-radius: 1.25rem;
 				padding: 0.75rem 2.5rem;
 			}
+			@include breakpoint($desktop4K) {
+				font-size: 2.6rem;
+				padding: 1rem 3rem;
+				border-radius: 1.5rem;
+			}
 		}
 	}
 	.selectedItem {
 		outline: 3px solid $gradientStart !important;
+		@include breakpoint($desktop4K) {
+			outline-width: 5px !important;
+		}
 	}
 }

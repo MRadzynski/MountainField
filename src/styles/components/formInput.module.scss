@@ -21,6 +21,9 @@
 			@include breakpoint($desktop) {
 				outline-width: 3px;
 			}
+			@include breakpoint($desktop4K) {
+				outline-width: 5px;
+			}
 		}
 	}
 }
