@@ -3,17 +3,27 @@ import Navbar from '../Navbar/Navbar';
 import { useState } from 'react';
 
 const MobileNav = () => {
-	const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-	const closeMobileMenu = () => setIsOpen(false);
-	const toggleSetIsOpen = () => setIsOpen(!isOpen);
+  const closeMobileMenu = (e) => {
+    e.preventDefault();
 
-	return (
-		<>
-			<Hamburger isOpen={isOpen} toggleSetIsOpen={toggleSetIsOpen} />
-			{isOpen && <Navbar closeMobileMenu={closeMobileMenu} />}
-		</>
-	);
+    setIsOpen(false);
+
+    const hash = e.target.parentElement.hash.substring(1);
+    const sectionToScroll = document.getElementById(hash);
+
+    sectionToScroll.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const toggleSetIsOpen = () => setIsOpen(!isOpen);
+
+  return (
+    <>
+      <Hamburger isOpen={isOpen} toggleSetIsOpen={toggleSetIsOpen} />
+      {isOpen && <Navbar closeMobileMenu={closeMobileMenu} />}
+    </>
+  );
 };
 
 export default MobileNav;

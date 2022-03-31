@@ -8,7 +8,6 @@ import Offer from './components/Sections/Offer/Offer';
 import Contact from './components/Sections/Contact/Contact';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import NotAllowedOverlay from './components/NotAllowedOverlay/NotAllowedOverlay';
-import { smoothNavScroll } from './utils/smoothNavScroll';
 import { useEffect, useState } from 'react';
 import { isAppleDevice, isSafari } from './utils';
 import smoothscroll from 'smoothscroll-polyfill';
@@ -52,7 +51,6 @@ const App = () => {
   };
 
   useEffect(() => {
-    smoothNavScroll();
     document.addEventListener('scroll', displayArrowHandler);
 
     isAppleDevice()

@@ -1,14 +1,12 @@
-export const smoothNavScroll = () =>
-	document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-		anchor.addEventListener('click', function (e) {
-			e.preventDefault();
+export const smoothNavScroll = (e) => {
+  e.preventDefault();
 
-			document.querySelector(this.getAttribute('href')).scrollIntoView({
-				behavior: 'smooth',
-			});
-		});
-	});
+  const hash = e.target.parentElement.hash.substring(1);
+  const sectionToScroll = document.getElementById(hash);
+
+  sectionToScroll.scrollIntoView({ behavior: 'smooth' });
+};
 
 export const smoothOfferFormScroll = () => {
-	document.getElementById('offer').scrollIntoView({ behavior: 'smooth' });
+  document.getElementById('offer').scrollIntoView({ behavior: 'smooth' });
 };
