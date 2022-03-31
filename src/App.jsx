@@ -9,9 +9,10 @@ import Contact from './components/Sections/Contact/Contact';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import NotAllowedOverlay from './components/NotAllowedOverlay/NotAllowedOverlay';
 import { useEffect, useState } from 'react';
-import { isAppleDevice, isSafari } from './utils';
+import { isAppleDevice, isMobile, isSafari } from './utils';
 import smoothscroll from 'smoothscroll-polyfill';
 import clsx from 'clsx';
+import { useWindowDimensions } from './hooks/useWindowDimensions';
 
 const {
   breakpoints: { tablet },
@@ -22,21 +23,11 @@ smoothscroll.polyfill();
 const App = () => {
   const [displayArrow, setDisplayArrow] = useState(false);
   const [noSupportedOrientation, setNoSupportedOrientation] = useState(false);
-
-  const appleOrientationChangeDetector = () => {
-    const isLandscape = window.matchMedia('(orientation: landscape)');
-
-    if (isLandscape.matches) {
-      document.querySelector('#app').classList.add(classes.stopScrolling);
-      setNoSupportedOrientation(true);
-    } else {
-      document.querySelector('#app').classList.remove(classes.stopScrolling);
-      setNoSupportedOrientation(false);
-    }
-  };
+  const { width, height } = useWindowDimensions();
 
   const orientationChangeDetector = () => {
     window.screen.orientation?.addEventListener('change', (e) => {
+      console.log('change', e);
       if (
         e.currentTarget.type === 'landscape-primary' &&
         window.screen.height < tablet
@@ -53,14 +44,20 @@ const App = () => {
   useEffect(() => {
     document.addEventListener('scroll', displayArrowHandler);
 
-    isAppleDevice()
-      ? appleOrientationChangeDetector()
-      : orientationChangeDetector();
+    isAppleDevice() && orientationChangeDetector();
 
     return () => document.removeEventListener('scroll', displayArrowHandler);
   }, []);
 
-  const displayArrowHandler = (e) =>
+  useEffect(() => {
+    if (isMobile() && isAppleDevice() && width < 1024) {
+      width > height
+        ? setNoSupportedOrientation(true)
+        : setNoSupportedOrientation(false);
+    }
+  }, [width, height]);
+
+  const displayArrowHandler = () =>
     window.scrollY > 500 ? setDisplayArrow(true) : setDisplayArrow(false);
 
   return (

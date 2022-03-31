@@ -2,7 +2,6 @@ import classes from '../../../styles/components/header.module.scss';
 import MobileNav from '../../MobileNav/MobileNav';
 import Navbar from '../../Navbar/Navbar';
 import useWindowWidth from '../../../hooks/useWindowWidth';
-import { isMobile } from '../../../utils';
 
 const Header = () => {
   const { width: windowWidth } = useWindowWidth();
@@ -16,7 +15,7 @@ const Header = () => {
           src='/assets/logo/logo.svg'
         />
       </div>
-      {isMobile() && windowWidth < 1024 ? <MobileNav /> : <Navbar />}
+      {windowWidth < 1024 ? <MobileNav /> : <Navbar />}
     </header>
   );
 };
