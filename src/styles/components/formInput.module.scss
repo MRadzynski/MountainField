@@ -1,29 +1,32 @@
 @import '../main.scss';
 
 .inputContainer {
-	.inputField {
-		background-color: white;
-		border: 0;
-		border-radius: 0.75rem;
-		box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.1);
-		color: $accentColor;
-		font-size: 1rem;
-		line-height: 1.3rem;
-		outline: 0;
-		padding: 0.5rem 1rem;
-		@include breakpointExtended($desktop2K, $height2K) {
-			border-radius: 1rem;
-			padding: 0.5rem 1.25rem;
-		}
+  .inputField {
+    background-color: white;
+    border: 0;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.1);
+    color: $accentColor;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    outline: 0;
+    padding: 0.5rem 1rem;
+    @include breakpointExtended($desktop2K, $height2K) {
+      border-radius: 1rem;
+      padding: 0.5rem 1.25rem;
+    }
 
-		&:focus {
-			outline: 2px solid $gradientStart;
-			@include breakpoint($desktop) {
-				outline-width: 3px;
-			}
-			@include breakpoint($desktop4K) {
-				outline-width: 5px;
-			}
-		}
-	}
+    &:focus {
+      outline: 2px solid $gradientStart;
+      :global(.ios) & {
+        outline: 0;
+      }
+      @include breakpoint($desktop) {
+        outline-width: 3px;
+      }
+      @include breakpoint($desktop4K) {
+        outline-width: 5px;
+      }
+    }
+  }
 }

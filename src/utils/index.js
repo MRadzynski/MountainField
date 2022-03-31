@@ -8,3 +8,6 @@ export const isMobile = () => {
 export const isAppleDevice = () => {
   return /iPhone|iPad|iPod/i.test(navigator.userAgent);
 };
+
+export const isSafari = () =>
+  navigator.vendor && navigator.vendor.indexOf('Apple') > -1;

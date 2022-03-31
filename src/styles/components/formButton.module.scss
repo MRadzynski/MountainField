@@ -1,58 +1,64 @@
 @import '../main.scss';
 
 .buttonContainer {
-	.formButton {
-		background-color: $primaryColor;
-		border: 2px solid $gradientStart;
-		border-radius: 1rem;
-		color: $gradientStart;
-		cursor: pointer;
-		font-size: 0.9rem;
-		font-weight: 600;
-		letter-spacing: 0.1rem;
-		padding: 0.75rem 2rem;
-		transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-		@include no-selectable;
+  .formButton {
+    background-color: $primaryColor;
+    border: 2px solid $gradientStart;
+    border-radius: 1rem;
+    color: $gradientStart;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    @include no-selectable;
 
-		@include breakpoint($xsLaptop) {
-			font-size: 1rem;
-		}
+    @include breakpoint($xsLaptop) {
+      font-size: 1rem;
+    }
 
-		@include breakpoint($desktop2K) {
-			font-size: 1.1rem;
-		}
-		@include breakpointExtended($desktop2K, $height2K) {
-			border-radius: 1.25rem;
-			border-width: 3px;
-		}
-		@include breakpoint($desktop4K) {
-			border-width: 4px;
-			border-radius: 1.5rem;
-		}
+    @include breakpoint($desktop2K) {
+      font-size: 1.1rem;
+    }
+    @include breakpointExtended($desktop2K, $height2K) {
+      border-radius: 1.25rem;
+      border-width: 3px;
+    }
+    @include breakpoint($desktop4K) {
+      border-width: 4px;
+      border-radius: 1.5rem;
+    }
 
-		&:disabled {
-			cursor: not-allowed;
+    &:disabled {
+      cursor: not-allowed;
 
-			&:hover {
-				background-color: #9e9e9e;
-				border: 2px solid $gradientStart;
-				color: $gradientStart;
+      &:hover {
+        background-color: #9e9e9e;
+        border: 2px solid $gradientStart;
+        color: $gradientStart;
 
-				@include breakpointExtended($desktop2K, $height2K) {
-					border-width: 3px;
-				}
-				@include breakpoint($desktop4K) {
-					border-width: 4px;
-				}
-			}
-		}
-
-		&:focus-visible,
-		&:hover {
-			background-color: $gradientStart;
-			border-color: $primaryColor;
-			color: $primaryColor;
-			outline: transparent;
-		}
-	}
+        @include breakpointExtended($desktop2K, $height2K) {
+          border-width: 3px;
+        }
+        @include breakpoint($desktop4K) {
+          border-width: 4px;
+        }
+      }
+    }
+    &:hover {
+      background-color: $gradientStart;
+      border-color: $primaryColor;
+      color: $primaryColor;
+      outline: transparent;
+    }
+    &:not(:global(.ios) &) {
+      &:focus-visible {
+        background-color: $gradientStart;
+        border-color: $primaryColor;
+        color: $primaryColor;
+        outline: transparent;
+      }
+    }
+  }
 }

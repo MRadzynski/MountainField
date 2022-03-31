@@ -10,8 +10,9 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import NotAllowedOverlay from './components/NotAllowedOverlay/NotAllowedOverlay';
 import { smoothNavScroll } from './utils/smoothNavScroll';
 import { useEffect, useState } from 'react';
-import { isAppleDevice } from './utils';
+import { isAppleDevice, isSafari } from './utils';
 import smoothscroll from 'smoothscroll-polyfill';
+import clsx from 'clsx';
 
 const {
   breakpoints: { tablet },
@@ -65,7 +66,12 @@ const App = () => {
     window.scrollY > 500 ? setDisplayArrow(true) : setDisplayArrow(false);
 
   return (
-    <div className={classes.appContainer} id='app'>
+    <div
+      className={clsx(classes.appContainer, {
+        ios: isSafari(),
+      })}
+      id='app'
+    >
       <Header />
       <Welcome />
       <About />

@@ -1,435 +1,471 @@
 @import '../main.scss';
 
 .modalContainer {
-	background: linear-gradient(#81c8a7f8, #7fb8b4f6);
-	border-radius: 2rem;
-	display: flex;
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: 5;
-	@include breakpoint($xsLaptop) {
-		border-radius: 3rem;
-	}
+  background: linear-gradient(#81c8a7f8, #7fb8b4f6);
+  border-radius: 2rem;
+  display: flex;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  @include breakpoint($xsLaptop) {
+    border-radius: 3rem;
+  }
 
-	.exitCross {
-		color: $primaryColor;
-		cursor: pointer;
-		font-size: 1.5rem;
-		position: absolute;
-		right: 1.25rem;
-		top: 0.75rem;
-		@include no-selectable;
+  .exitCross {
+    color: $primaryColor;
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 1.25rem;
+    top: 0.75rem;
+    @include no-selectable;
 
-		@include breakpoint($xsLaptop) {
-			font-size: 2.2rem;
-			right: 2.5rem;
-			top: 1.5rem;
-		}
-		@include breakpointExtended($desktop2K, $height2K) {
-			font-size: 3rem;
-		}
-		@include breakpoint($desktop4K) {
-			font-size: 4.5rem;
-			top: 1rem;
-		}
+    @include breakpoint($xsLaptop) {
+      font-size: 2.2rem;
+      right: 2.5rem;
+      top: 1.5rem;
+    }
+    @include breakpointExtended($desktop2K, $height2K) {
+      font-size: 3rem;
+    }
+    @include breakpoint($desktop4K) {
+      font-size: 4.5rem;
+      top: 1rem;
+    }
 
-		&:hover {
-			color: $accentColor;
-		}
-	}
+    &:hover {
+      color: $accentColor;
+    }
+  }
 
-	.contentContainer {
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-		padding: 1.5rem 0;
-		width: 100%;
-		@include breakpoint($tablet) {
-			padding: 0.75rem 0 1.5rem;
-		}
-		@include breakpoint($xsLaptop) {
-			justify-content: space-evenly;
-			padding: 1rem;
-		}
-		@include breakpoint($desktop) {
-			justify-content: space-between;
-			padding: 2rem;
-		}
-		@include breakpoint($desktop4K) {
-			padding: 3rem 4rem;
-		}
+  .contentContainer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.5rem 0;
+    width: 100%;
+    @include breakpoint($tablet) {
+      padding: 0.75rem 0 1.5rem;
+    }
+    @include breakpoint($xsLaptop) {
+      justify-content: space-evenly;
+      padding: 1rem;
+    }
+    @include breakpoint($desktop) {
+      justify-content: space-between;
+      padding: 2rem;
+    }
+    @include breakpoint($desktop4K) {
+      padding: 3rem 4rem;
+    }
 
-		.modalTitle {
-			color: $primaryColor;
-			font-size: 1.7rem;
-			text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-			width: 80%;
-			text-align: center;
-			@include breakpoint($phone) {
-				padding: 0.75rem 0 0;
-			}
-			@include breakpoint($xsLaptop) {
-				font-size: 2rem;
-				width: unset;
-			}
-			@include breakpoint($lLaptop) {
-				font-size: 2.2rem;
-				padding: 0;
-			}
-			@include breakpoint($desktop) {
-				font-size: 2.4rem;
-			}
-			@include breakpoint($desktop2K) {
-				font-size: 2.5rem;
-			}
-			@include breakpointExtended($desktop2K, $height2K) {
-				font-size: 3rem;
-			}
-			@include breakpoint($desktop4K) {
-				font-size: 4.4rem;
-			}
-		}
+    .modalTitle {
+      color: $primaryColor;
+      font-size: 1.7rem;
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      text-align: center;
+      @include breakpoint($phone) {
+        padding: 0.75rem 0 0;
+      }
+      @include breakpoint($xsLaptop) {
+        font-size: 2rem;
+        width: unset;
+      }
+      @include breakpoint($lLaptop) {
+        font-size: 2.2rem;
+        padding: 0;
+      }
+      @include breakpoint($desktop) {
+        font-size: 2.4rem;
+      }
+      @include breakpoint($desktop2K) {
+        font-size: 2.5rem;
+      }
+      @include breakpointExtended($desktop2K, $height2K) {
+        font-size: 3rem;
+      }
+      @include breakpoint($desktop4K) {
+        font-size: 4.4rem;
+      }
+    }
 
-		.productList {
-			display: flex;
-			flex-direction: column;
-			gap: 1rem;
-			height: 85%;
-			list-style: none;
-			margin: 2rem 3rem 3rem;
-			max-height: 80%;
-			overflow-y: auto;
-			padding: 0.25rem 0.5rem 0.25rem 0.25rem;
-			width: 90%;
-			position: relative;
-			@include breakpoint($tablet) {
-				margin: 1rem 3rem;
-			}
-			@include breakpoint($xsLaptop) {
-				max-height: 400px;
-				padding-right: 1rem;
-			}
-			@include breakpoint($desktop) {
-				max-height: 470px;
-			}
-			@include breakpointExtended($desktop2K, $height2K) {
-				max-height: 580px;
-			}
-			@include breakpoint($desktop4K) {
-				max-height: 900px;
-				gap: 2rem;
-				padding-right: 2rem;
-			}
+    .productList {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      height: 85%;
+      list-style: none;
+      margin: 2rem 3rem 3rem;
+      max-height: 80%;
+      overflow-y: auto;
+      padding: 0.25rem 0.5rem 0.25rem 0.25rem;
+      width: 90%;
+      position: relative;
+      @include breakpoint($tablet) {
+        margin: 1rem 3rem;
+      }
+      @include breakpoint($xsLaptop) {
+        max-height: 400px;
+        padding-right: 1rem;
+      }
+      @include breakpoint($desktop) {
+        max-height: 470px;
+      }
+      @include breakpointExtended($desktop2K, $height2K) {
+        max-height: 580px;
+      }
+      @include breakpoint($desktop4K) {
+        max-height: 900px;
+        gap: 2rem;
+        padding-right: 2rem;
+      }
 
-			&::-webkit-scrollbar-track {
-				background-color: #f5f5f5;
-				border-radius: 10px;
-				box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-				-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-			}
+      &::-webkit-scrollbar-track {
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
 
-			&::-webkit-scrollbar {
-				background-color: #f5f5f5;
-				border-radius: 10px;
-				width: 10px;
-				@include breakpoint($xsLaptop) {
-					width: 12px;
-				}
-				@include breakpointExtended($desktop2K, $height2K) {
-					width: 16px;
-				}
-				@include breakpoint($desktop4K) {
-					width: 20px;
-				}
-			}
+      &::-webkit-scrollbar {
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        width: 10px;
+        @include breakpoint($xsLaptop) {
+          width: 12px;
+        }
+        @include breakpointExtended($desktop2K, $height2K) {
+          width: 16px;
+        }
+        @include breakpoint($desktop4K) {
+          width: 20px;
+        }
+      }
 
-			&::-webkit-scrollbar-thumb {
-				background-color: #555;
-				border-radius: 10px;
-				box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-				-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-			}
+      &::-webkit-scrollbar-thumb {
+        background-color: #555;
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
 
-			.productListItem {
-				align-items: center;
-				outline: 1px solid $primaryColor;
-				border-radius: 1rem;
-				color: $primaryColor;
-				display: flex;
-				justify-content: space-between;
-				gap: 0.5rem;
-				padding: 0.75rem 0.5rem;
-				@include breakpoint($xsPhone) {
-					height: 80px;
-					min-height: 80px;
-				}
-				@include breakpoint($phone) {
-					height: 110px;
-					min-height: 110px;
-				}
-				@include breakpoint($lPhone) {
-					height: 100px;
-					min-height: 100px;
-				}
-				@include breakpoint($tablet) {
-					gap: 0.75rem;
-					height: 75px;
-					min-height: 75px;
-					padding: 0.75rem;
-				}
-				@include breakpoint($xsLaptop) {
-					height: 110px;
-					min-height: 110px;
-					gap: 1rem;
-				}
-				@include breakpoint($lLaptop) {
-					height: 120px;
-					min-height: 120px;
-				}
-				@include breakpoint($desktop) {
-					padding: 1rem;
-				}
-				@include breakpointExtended($desktop2K, $height2K) {
-					height: 140px;
-					min-height: 140px;
-				}
-				@include breakpoint($desktop4K) {
-					height: 170px;
-					min-height: 170px;
-					padding: 1.5rem;
-					border-radius: 1.5rem;
-					gap: 2rem;
-					outline-width: 2px;
-				}
-				.productImg {
-					border-radius: 0.5rem;
-					height: 50px;
-					width: 50px;
-					@include breakpoint($tablet) {
-						height: 55px;
-						width: 55px;
-					}
-					@include breakpoint($xsLaptop) {
-						border-radius: 1rem;
-						height: 70px;
-						width: 70px;
-					}
-					@include breakpoint($lLaptop) {
-						height: 90px;
-						width: 90px;
-					}
-					@include breakpointExtended($desktop2K, $height2K) {
-						height: 100px;
-						width: 100px;
-					}
-					@include breakpoint($desktop4K) {
-						height: 120px;
-						width: 120px;
-					}
-				}
-			}
-			.productInfoContainer {
-				display: flex;
-				flex-direction: column;
-				gap: 0.2rem;
-				text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-				width: 100%;
-				@include breakpoint($xsPhone) {
-					gap: 0.4rem;
-				}
-				@include breakpoint($phone) {
-					gap: 0;
-				}
-				@include breakpoint($lPhone) {
-					gap: 0.25rem;
-				}
-				@include breakpointExtended($desktop2K, $height2K) {
-					gap: 0.5rem;
-				}
-				@include breakpoint($desktop4K) {
-					gap: 0.75rem;
-				}
+      .productListItem {
+        align-items: center;
+        outline: 1px solid $primaryColor;
+        border-radius: 1rem;
+        color: $primaryColor;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+        padding: 0.75rem 0.5rem;
+        position: relative;
+        :global(.ios) & {
+          outline: 0;
+          &:after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            bottom: -2px;
+            left: -2px;
+            right: -2px;
+            border: 1px solid $primaryColor;
+            z-index: -2;
+            border-radius: 1rem;
+            @include breakpoint($desktop4K) {
+              border-radius: 1.5rem;
+              border-width: 2px;
+            }
+          }
+        }
+        @include breakpoint($xsPhone) {
+          height: 80px;
+          min-height: 80px;
+        }
+        @include breakpoint($phone) {
+          height: 110px;
+          min-height: 110px;
+        }
+        @include breakpoint($lPhone) {
+          height: 100px;
+          min-height: 100px;
+        }
+        @include breakpoint($tablet) {
+          gap: 0.75rem;
+          height: 75px;
+          min-height: 75px;
+          padding: 0.75rem;
+        }
+        @include breakpoint($xsLaptop) {
+          height: 110px;
+          min-height: 110px;
+          gap: 1rem;
+        }
+        @include breakpoint($lLaptop) {
+          height: 120px;
+          min-height: 120px;
+        }
+        @include breakpoint($desktop) {
+          padding: 1rem;
+        }
+        @include breakpointExtended($desktop2K, $height2K) {
+          height: 140px;
+          min-height: 140px;
+        }
+        @include breakpoint($desktop4K) {
+          height: 170px;
+          min-height: 170px;
+          padding: 1.5rem;
+          border-radius: 1.5rem;
+          gap: 2rem;
+          outline-width: 2px;
+        }
+        &.selectedItem {
+          outline: 3px solid $gradientStart !important;
+          @include breakpoint($desktop4K) {
+            outline-width: 5px !important;
+          }
+          :global(.ios) & {
+            outline: 0 !important;
+            &:after {
+              content: '';
+              position: absolute;
+              top: -2px;
+              bottom: -2px;
+              left: -2px;
+              right: -2px;
+              border: 3px solid $gradientStart;
+              z-index: -2;
+              border-radius: 1rem;
+              @include breakpoint($desktop4K) {
+                border-width: 5px;
+              }
+            }
+          }
+        }
+        .productImg {
+          border-radius: 0.5rem;
+          height: 50px;
+          width: 50px;
+          @include breakpoint($tablet) {
+            height: 55px;
+            width: 55px;
+          }
+          @include breakpoint($xsLaptop) {
+            border-radius: 1rem;
+            height: 70px;
+            width: 70px;
+          }
+          @include breakpoint($lLaptop) {
+            height: 90px;
+            width: 90px;
+          }
+          @include breakpointExtended($desktop2K, $height2K) {
+            height: 100px;
+            width: 100px;
+          }
+          @include breakpoint($desktop4K) {
+            height: 120px;
+            width: 120px;
+          }
+        }
+        .productInfoContainer {
+          display: flex;
+          flex-direction: column;
+          gap: 0.2rem;
+          text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+          width: 100%;
+          @include breakpoint($xsPhone) {
+            gap: 0.4rem;
+          }
+          @include breakpoint($phone) {
+            gap: 0;
+          }
+          @include breakpoint($lPhone) {
+            gap: 0.25rem;
+          }
+          @include breakpointExtended($desktop2K, $height2K) {
+            gap: 0.5rem;
+          }
+          @include breakpoint($desktop4K) {
+            gap: 0.75rem;
+          }
 
-				.productDescription {
-					font-size: 0.55rem;
-					letter-spacing: 0.05rem;
-					@include breakpoint($xsPhone) {
-						font-size: 0.8rem;
-					}
-					@include breakpoint($phone) {
-						font-size: 0.5rem;
-					}
-					@include breakpoint($tablet) {
-						font-size: 0.6rem;
-					}
-					@include breakpoint($xsLaptop) {
-						font-size: 0.8rem;
-					}
-					@include breakpoint($lLaptop) {
-						font-size: 0.9rem;
-					}
-					@include breakpoint($desktop2K) {
-						font-size: 1rem;
-					}
-					@include breakpointExtended($desktop2K, $height2K) {
-						font-size: 1.15rem;
-					}
-					@include breakpoint($desktop4K) {
-						font-size: 1.4rem;
-						letter-spacing: 0.1rem;
-					}
-				}
+          .productDescription {
+            font-size: 0.55rem;
+            letter-spacing: 0.05rem;
+            @include breakpoint($xsPhone) {
+              font-size: 0.8rem;
+            }
+            @include breakpoint($phone) {
+              font-size: 0.5rem;
+            }
+            @include breakpoint($tablet) {
+              font-size: 0.6rem;
+            }
+            @include breakpoint($xsLaptop) {
+              font-size: 0.8rem;
+            }
+            @include breakpoint($lLaptop) {
+              font-size: 0.9rem;
+            }
+            @include breakpoint($desktop2K) {
+              font-size: 1rem;
+            }
+            @include breakpointExtended($desktop2K, $height2K) {
+              font-size: 1.15rem;
+            }
+            @include breakpoint($desktop4K) {
+              font-size: 1.4rem;
+              letter-spacing: 0.1rem;
+            }
+          }
 
-				.productName {
-					font-size: 0.75rem;
-					@include breakpoint($xsPhone) {
-						font-size: 1rem;
-					}
-					@include breakpoint($phone) {
-						font-size: 0.8rem;
-					}
-					@include breakpoint($tablet) {
-						font-size: 0.9rem;
-					}
-					@include breakpoint($xsLaptop) {
-						font-size: 1.2rem;
-					}
-					@include breakpoint($laptop) {
-						font-size: 1.3rem;
-					}
-					@include breakpoint($lLaptop) {
-						font-size: 1.4rem;
-					}
-					@include breakpoint($desktop2K) {
-						font-size: 1.5rem;
-					}
-					@include breakpointExtended($desktop2K, $height2K) {
-						font-size: 1.7rem;
-					}
-					@include breakpoint($desktop4K) {
-						font-size: 2.4rem;
-					}
-				}
-			}
-			.productControls {
-				align-items: center;
-				display: flex;
-				gap: 0.25rem;
-				@include no-selectable;
-				@include breakpoint($xsLaptop) {
-					gap: 0.5rem;
-				}
-				@include breakpoint($desktop4K) {
-					gap: 1rem;
-				}
+          .productName {
+            font-size: 0.75rem;
+            @include breakpoint($xsPhone) {
+              font-size: 1rem;
+            }
+            @include breakpoint($phone) {
+              font-size: 0.8rem;
+            }
+            @include breakpoint($tablet) {
+              font-size: 0.9rem;
+            }
+            @include breakpoint($xsLaptop) {
+              font-size: 1.2rem;
+            }
+            @include breakpoint($laptop) {
+              font-size: 1.3rem;
+            }
+            @include breakpoint($lLaptop) {
+              font-size: 1.4rem;
+            }
+            @include breakpoint($desktop2K) {
+              font-size: 1.5rem;
+            }
+            @include breakpointExtended($desktop2K, $height2K) {
+              font-size: 1.7rem;
+            }
+            @include breakpoint($desktop4K) {
+              font-size: 2.4rem;
+            }
+          }
+        }
+        .productControls {
+          align-items: center;
+          display: flex;
+          gap: 0.25rem;
+          @include no-selectable;
+          @include breakpoint($xsLaptop) {
+            gap: 0.5rem;
+          }
+          @include breakpoint($desktop4K) {
+            gap: 1rem;
+          }
 
-				.minusSign {
-					cursor: pointer;
-					font-size: 0.9rem;
-					font-weight: 500;
-					@include breakpoint($xsPhone) {
-						font-size: 1.1rem;
-					}
-					@include breakpoint($xsLaptop) {
-						font-size: 1.4rem;
-					}
-					@include breakpoint($laptop) {
-						font-size: 1.5rem;
-					}
-					@include breakpoint($lLaptop) {
-						font-size: 1.7rem;
-					}
-					@include breakpointExtended($desktop2K, $height2K) {
-						font-size: 2.2rem;
-					}
-					@include breakpoint($desktop4K) {
-						font-size: 3rem;
-					}
-				}
+          .minusSign {
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            @include breakpoint($xsPhone) {
+              font-size: 1.1rem;
+            }
+            @include breakpoint($xsLaptop) {
+              font-size: 1.4rem;
+            }
+            @include breakpoint($laptop) {
+              font-size: 1.5rem;
+            }
+            @include breakpoint($lLaptop) {
+              font-size: 1.7rem;
+            }
+            @include breakpointExtended($desktop2K, $height2K) {
+              font-size: 2.2rem;
+            }
+            @include breakpoint($desktop4K) {
+              font-size: 3rem;
+            }
+          }
 
-				.plusSign {
-					cursor: pointer;
-					font-size: 0.9rem;
-					font-weight: 500;
-					@include breakpoint($xsPhone) {
-						font-size: 1.1rem;
-					}
-					@include breakpoint($xsLaptop) {
-						font-size: 1.4rem;
-					}
-					@include breakpoint($laptop) {
-						font-size: 1.5rem;
-					}
-					@include breakpoint($lLaptop) {
-						font-size: 1.7rem;
-					}
-					@include breakpointExtended($desktop2K, $height2K) {
-						font-size: 2.2rem;
-					}
-					@include breakpoint($desktop4K) {
-						font-size: 3rem;
-					}
-				}
+          .plusSign {
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            @include breakpoint($xsPhone) {
+              font-size: 1.1rem;
+            }
+            @include breakpoint($xsLaptop) {
+              font-size: 1.4rem;
+            }
+            @include breakpoint($laptop) {
+              font-size: 1.5rem;
+            }
+            @include breakpoint($lLaptop) {
+              font-size: 1.7rem;
+            }
+            @include breakpointExtended($desktop2K, $height2K) {
+              font-size: 2.2rem;
+            }
+            @include breakpoint($desktop4K) {
+              font-size: 3rem;
+            }
+          }
 
-				.productQuantity {
-					font-size: 0.9rem;
-					font-weight: 500;
-					@include breakpoint($xsPhone) {
-						font-size: 1.1rem;
-					}
-					@include breakpoint($xsLaptop) {
-						font-size: 1.4rem;
-					}
-					@include breakpoint($laptop) {
-						font-size: 1.5rem;
-					}
-					@include breakpoint($lLaptop) {
-						font-size: 1.7rem;
-					}
-					@include breakpointExtended($desktop2K, $height2K) {
-						font-size: 2.2rem;
-					}
-					@include breakpoint($desktop4K) {
-						font-size: 3rem;
-					}
-				}
-			}
-		}
+          .productQuantity {
+            font-size: 0.9rem;
+            font-weight: 500;
+            @include breakpoint($xsPhone) {
+              font-size: 1.1rem;
+            }
+            @include breakpoint($xsLaptop) {
+              font-size: 1.4rem;
+            }
+            @include breakpoint($laptop) {
+              font-size: 1.5rem;
+            }
+            @include breakpoint($lLaptop) {
+              font-size: 1.7rem;
+            }
+            @include breakpointExtended($desktop2K, $height2K) {
+              font-size: 2.2rem;
+            }
+            @include breakpoint($desktop4K) {
+              font-size: 3rem;
+            }
+          }
+        }
+      }
 
-		.formButton {
-			grid-area: button;
-			@include breakpoint($laptop) {
-				font-size: 1.1rem;
-			}
-			@include breakpoint($lLaptop) {
-				font-size: 1.2rem;
-			}
-			@include breakpoint($desktop) {
-				font-size: 1.3rem;
-			}
-			@include breakpoint($desktop2K) {
-				font-size: 1.4rem;
-			}
-			@include breakpointExtended($desktop2K, $height2K) {
-				font-size: 1.7rem;
-				border-radius: 1.25rem;
-				padding: 0.75rem 2.5rem;
-			}
-			@include breakpoint($desktop4K) {
-				font-size: 2.6rem;
-				padding: 1rem 3rem;
-				border-radius: 1.5rem;
-			}
-		}
-	}
-	.selectedItem {
-		outline: 3px solid $gradientStart !important;
-		@include breakpoint($desktop4K) {
-			outline-width: 5px !important;
-		}
-	}
+      .formButton {
+        grid-area: button;
+        @include breakpoint($laptop) {
+          font-size: 1.1rem;
+        }
+        @include breakpoint($lLaptop) {
+          font-size: 1.2rem;
+        }
+        @include breakpoint($desktop) {
+          font-size: 1.3rem;
+        }
+        @include breakpoint($desktop2K) {
+          font-size: 1.4rem;
+        }
+        @include breakpointExtended($desktop2K, $height2K) {
+          font-size: 1.7rem;
+          border-radius: 1.25rem;
+          padding: 0.75rem 2.5rem;
+        }
+        @include breakpoint($desktop4K) {
+          font-size: 2.6rem;
+          padding: 1rem 3rem;
+          border-radius: 1.5rem;
+        }
+      }
+    }
+  }
 }
