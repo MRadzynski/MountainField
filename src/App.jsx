@@ -29,8 +29,9 @@ const App = () => {
     window.screen.orientation?.addEventListener('change', (e) => {
       console.log('change', e);
       if (
-        e.currentTarget.type === 'landscape-primary' &&
-        window.screen.height < tablet
+        e.currentTarget.type === 'landscape-primary' ||
+        (e.currentTarget.type === 'landscape-secondary' &&
+          window.screen.height < tablet)
       ) {
         document.querySelector('#app').classList.add(classes.stopScrolling);
         setNoSupportedOrientation(true);
@@ -44,7 +45,7 @@ const App = () => {
   useEffect(() => {
     document.addEventListener('scroll', displayArrowHandler);
 
-    isAppleDevice() && orientationChangeDetector();
+    !isAppleDevice() && orientationChangeDetector();
 
     return () => document.removeEventListener('scroll', displayArrowHandler);
   }, []);
