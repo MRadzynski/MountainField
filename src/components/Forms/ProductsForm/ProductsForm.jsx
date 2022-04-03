@@ -2,6 +2,7 @@ import AddProductModal from '../../AddProductModal/AddProductModal';
 import classes from '../../../styles/components/productsForm.module.scss';
 import FormButton from '../../FormButton/FormButton';
 import { useEffect, useState } from 'react';
+import useWindowWidth from '../../../hooks/useWindowWidth';
 
 const ProductsForm = ({
   formData,
@@ -24,6 +25,9 @@ const ProductsForm = ({
     mate: 0,
     sum: 0,
   });
+
+  const { width: windowWidth } = useWindowWidth();
+
   useEffect(() => {
     setCartList(formData[formDataField]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -141,7 +145,15 @@ const ProductsForm = ({
               />
               <div className={classes.productInfoContainer}>
                 <h4 className={classes.productName}>{cartItem.name}</h4>
-                <h5 className={classes.productDescription}>{cartItem.size}</h5>
+                <h5 className={classes.productDescription}>
+                  {cartItem.size}
+                  {windowWidth > 375 && ` - ${cartItem.price} PLN/szt`}
+                </h5>
+                {windowWidth <= 375 && (
+                  <h5 className={classes.productPriceSmallPhone}>
+                    {cartItem.price} PLN/szt
+                  </h5>
+                )}
               </div>
               <div className={classes.productControls}>
                 <span className={classes.minusSign} onClick={decreaseQuantity}>
