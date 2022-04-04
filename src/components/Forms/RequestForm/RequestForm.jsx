@@ -55,9 +55,10 @@ const RequestForm = ({ formData, prevStep }) => {
 			method: 'POST',
 		};
 
-		const res = await fetch('https://mfpr.toadres.pl/send_inquiry', options);
+		// const res = await fetch('https://mfpr.toadres.pl/send_inquiry', options);
 
-		if (res.status === 200) {
+		// if (res.status === 200) {
+		if (true) {
 			setMessage(
 				'Dziękujemy za przesłanie zapytania, odezwiemy się niezwłocznie! 👋'
 			);

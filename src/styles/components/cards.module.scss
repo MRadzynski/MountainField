@@ -10,6 +10,12 @@
 	@include breakpoint($xsLaptop) {
 		width: 30rem;
 	}
+	@include breakpointExtended($sLaptop, $heightSmallSLaptop) {
+		width: 20rem;
+	}
+	@include breakpointExtended($sLaptop, $heightStandardSLaptop) {
+		width: 30rem;
+	}
 	@include breakpoint($laptop) {
 		width: auto;
 	}
@@ -51,6 +57,9 @@
 		@include breakpoint($laptop) {
 			right: -100px;
 		}
+		@include breakpoint($lLaptop) {
+			right: -120px;
+		}
 		@include breakpoint($sDesktop) {
 			right: -105px;
 		}
@@ -86,12 +95,16 @@
 			height: 30rem;
 			width: 100%;
 		}
-		@include breakpoint($sLaptop) {
-			height: 32rem;
+		@include breakpointExtended($sLaptop, $heightSmallSLaptop) {
+			height: 24rem;
 			width: 20rem;
 		}
+		@include breakpointExtended($sLaptop, $heightStandardSLaptop) {
+			height: 32rem;
+			// width: 20rem;
+		}
 		@include breakpoint($sDesktop) {
-			width: 24rem;
+			width: 28rem;
 		}
 		@include breakpointExtended($desktop2K, $height2K) {
 			height: 100%;
@@ -180,10 +193,16 @@
 				margin: 0;
 				padding: 0 2rem;
 			}
-			@include breakpoint($sLaptop) {
+			@include breakpointExtended($sLaptop, $heightSmallSLaptop) {
+				font-size: 1.15rem;
+				line-height: 1.7rem;
+				min-height: 14rem;
+			}
+			@include breakpointExtended($sLaptop, $heightStandardSLaptop) {
 				font-size: 1.3rem;
 				line-height: 1.9rem;
 				padding: 0 2rem;
+				min-height: 16rem;
 			}
 			@include breakpoint($desktop) {
 				font-size: 1.3rem;
@@ -210,7 +229,10 @@
 			@include breakpoint($xsLaptop) {
 				height: 8rem;
 			}
-			@include breakpoint($sLaptop) {
+			@include breakpointExtended($sLaptop, $heightSmallSLaptop) {
+				height: 8rem;
+			}
+			@include breakpointExtended($sLaptop, $heightStandardSLaptop) {
 				height: 12rem;
 			}
 			@include breakpointExtended($desktop2K, $height2K) {
@@ -257,8 +279,12 @@
 		@include breakpoint($xsLaptop) {
 			bottom: -110px;
 		}
-		@include breakpoint($sLaptop) {
+		@include breakpointExtended($sLaptop, $heightSmallSLaptop) {
+			bottom: -160px;
 			right: -80px;
+		}
+		@include breakpointExtended($sLaptop, $heightStandardSLaptop) {
+			bottom: -110px;
 		}
 		@include breakpoint($desktop) {
 			bottom: -140px;

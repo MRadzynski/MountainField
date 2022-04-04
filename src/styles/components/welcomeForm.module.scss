@@ -62,7 +62,13 @@
 			font-size: 1.8rem;
 			line-height: 2.4rem;
 		}
-
+		@include breakpointExtended($lLaptop, $heightSmallLLaptop) {
+			font-size: 1.6rem;
+		}
+		@include breakpointExtended($lLaptop, $heightStandardLLaptop) {
+			font-size: 1.8rem;
+			line-height: 2.4rem;
+		}
 		@include breakpoint($desktop) {
 			font-size: 1.9rem;
 			line-height: 2.7rem;

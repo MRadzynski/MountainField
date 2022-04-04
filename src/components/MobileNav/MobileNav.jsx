@@ -1,29 +1,38 @@
+import appStyles from '../../styles/components/app.module.scss';
 import Hamburger from '../Hamburger/Hamburger';
 import Navbar from '../Navbar/Navbar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const MobileNav = () => {
-  const [isOpen, setIsOpen] = useState(false);
+	const [isOpen, setIsOpen] = useState(false);
 
-  const closeMobileMenu = (e) => {
-    e.preventDefault();
+	useEffect(() => {
+		if (isOpen) {
+			document.querySelector('#app').classList.add(appStyles.stopScrolling);
+		} else {
+			document.querySelector('#app').classList.remove(appStyles.stopScrolling);
+		}
+	}, [isOpen]);
 
-    setIsOpen(false);
+	const closeMobileMenu = (e) => {
+		e.preventDefault();
 
-    const hash = e.target.parentElement.hash.substring(1);
-    const sectionToScroll = document.getElementById(hash);
+		setIsOpen(false);
 
-    sectionToScroll.scrollIntoView({ behavior: 'smooth' });
-  };
+		const hash = e.target.parentElement.hash.substring(1);
+		const sectionToScroll = document.getElementById(hash);
 
-  const toggleSetIsOpen = () => setIsOpen(!isOpen);
+		sectionToScroll.scrollIntoView({ behavior: 'smooth' });
+	};
 
-  return (
-    <>
-      <Hamburger isOpen={isOpen} toggleSetIsOpen={toggleSetIsOpen} />
-      {isOpen && <Navbar closeMobileMenu={closeMobileMenu} />}
-    </>
-  );
+	const toggleSetIsOpen = () => setIsOpen(!isOpen);
+
+	return (
+		<>
+			<Hamburger isOpen={isOpen} toggleSetIsOpen={toggleSetIsOpen} />
+			{isOpen && <Navbar closeMobileMenu={closeMobileMenu} />}
+		</>
+	);
 };
 
 export default MobileNav;

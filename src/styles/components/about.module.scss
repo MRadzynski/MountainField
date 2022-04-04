@@ -60,7 +60,11 @@
 		@include breakpoint($xsLaptop) {
 			font-size: 2.5rem;
 		}
-		@include breakpoint($sLaptop) {
+		@include breakpointExtended($sLaptop, $heightSmallSLaptop) {
+			font-size: 2.6rem;
+			line-height: 3.4rem;
+		}
+		@include breakpointExtended($sLaptop, $heightStandardSLaptop) {
 			font-size: 3.2rem;
 			line-height: 4rem;
 		}
@@ -96,8 +100,11 @@
 			gap: 3rem;
 			width: 100%;
 		}
-		@include breakpoint($sLaptop) {
+		@include breakpointExtended($sLaptop, $heightSmallSLaptop) {
+			margin-top: 1rem;
 			gap: 5rem;
+		}
+		@include breakpointExtended($sLaptop, $heightStandardSLaptop) {
 			margin-top: 3rem;
 		}
 		@include breakpoint($laptop) {

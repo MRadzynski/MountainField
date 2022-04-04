@@ -17,7 +17,10 @@
 	@include breakpointIPadProPortrait() {
 		height: 40rem;
 	}
-	@include breakpoint($sLaptop) {
+	@include breakpointExtended($sLaptop, $heightSmallSLaptop) {
+		height: 100vh;
+	}
+	@include breakpointExtended($sLaptop, $heightStandardSLaptop) {
 		height: calc(100vh - 10rem);
 	}
 	@include breakpointIPadProLandscape() {
