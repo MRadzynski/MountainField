@@ -1,11 +1,13 @@
 import classes from '../../styles/components/addProductModal.module.scss';
 import clsx from 'clsx';
 import FormButton from '../FormButton/FormButton';
+import Loader from '../Loader/Loader';
 import useWindowWidth from '../../hooks/useWindowWidth';
 import { useEffect, useState } from 'react';
 
 const AddProductModal = ({ cartList, onClose, products, setCartList }) => {
   const [productsList, setProductsList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const { width: windowWidth } = useWindowWidth();
 
@@ -21,6 +23,8 @@ const AddProductModal = ({ cartList, onClose, products, setCartList }) => {
       return product;
     });
     setProductsList(updatedProductsList);
+    setIsLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const decreaseQuantity = (e) => {
@@ -72,49 +76,56 @@ const AddProductModal = ({ cartList, onClose, products, setCartList }) => {
       <div className={classes.contentContainer}>
         <h1 className={classes.modalTitle}>Wybierz Produkty</h1>
         <ul className={classes.productList}>
-          {productsList.map((product, i) => (
-            <li
-              className={clsx(classes.productListItem, {
-                [classes.selectedItem]: product.quantity,
-              })}
-              id={product.id}
-              key={i}
-            >
-              <img
-                alt={product.name}
-                className={classes.productImg}
-                src={product.photoBin}
-              />
-              <div className={classes.productInfoContainer}>
-                <h4 className={classes.productName}>
-                  {product.name}
-                  {windowWidth >= 768 &&
-                    ` - ${product.size} - ${product.price} PLN/szt`}
-                </h4>
-                <h5 className={classes.productDescription}>
-                  {windowWidth >= 768
-                    ? product.description
-                    : `${product.size} ${
-                        windowWidth > 320 ? `- ${product.price} PLN/szt` : ''
-                      }`}
-                </h5>
-                {windowWidth <= 320 && (
-                  <h5 className={classes.productPriceSmallPhone}>
-                    {product.price} PLN/szt
+          {isLoading ? (
+            <Loader />
+          ) : (
+            productsList.map((product, i) => (
+              <li
+                className={clsx(classes.productListItem, {
+                  [classes.selectedItem]: product.quantity,
+                })}
+                id={product.id}
+                key={i}
+              >
+                <img
+                  alt={product.name}
+                  className={classes.productImg}
+                  src={product.photoBin}
+                />
+                <div className={classes.productInfoContainer}>
+                  <h4 className={classes.productName}>
+                    {product.name}
+                    {windowWidth >= 768 &&
+                      ` - ${product.size} - ${product.price} PLN/szt`}
+                  </h4>
+                  <h5 className={classes.productDescription}>
+                    {windowWidth >= 768
+                      ? product.description
+                      : `${product.size} ${
+                          windowWidth > 320 ? `- ${product.price} PLN/szt` : ''
+                        }`}
                   </h5>
-                )}
-              </div>
-              <div className={classes.productControls}>
-                <span className={classes.minusSign} onClick={decreaseQuantity}>
-                  -
-                </span>
-                <p className={classes.productQuantity}>{product.quantity}</p>
-                <span className={classes.plusSign} onClick={increaseQuantity}>
-                  +
-                </span>
-              </div>
-            </li>
-          ))}
+                  {windowWidth <= 320 && (
+                    <h5 className={classes.productPriceSmallPhone}>
+                      {product.price} PLN/szt
+                    </h5>
+                  )}
+                </div>
+                <div className={classes.productControls}>
+                  <span
+                    className={classes.minusSign}
+                    onClick={decreaseQuantity}
+                  >
+                    -
+                  </span>
+                  <p className={classes.productQuantity}>{product.quantity}</p>
+                  <span className={classes.plusSign} onClick={increaseQuantity}>
+                    +
+                  </span>
+                </div>
+              </li>
+            ))
+          )}
         </ul>
         <FormButton
           classes={classes}
