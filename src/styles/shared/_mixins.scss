@@ -1,33 +1,33 @@
 @mixin breakpoint($breakpoint) {
-	@media (min-width: $breakpoint) {
-		@content;
-	}
+  @media (min-width: $breakpoint) {
+    @content;
+  }
 }
 
 @mixin breakpointExtended($breakpointWidth, $breakpointHeight) {
-	@media (min-width: $breakpointWidth) and (min-height: $breakpointHeight) {
-		@content;
-	}
+  @media (min-width: $breakpointWidth) and (min-height: $breakpointHeight) {
+    @content;
+  }
 }
 
 @mixin breakpointIPadProPortrait() {
-	@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-		@content;
-	}
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    @content;
+  }
 }
 
 @mixin breakpointIPadProLandscape() {
-	@media only screen and (min-device-width: 1366px) and (max-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-		@content;
-	}
+  @media only screen and (min-device-width: 1366px) and (min-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    @content;
+  }
 }
 
 @mixin no-selectable {
-	-webkit-tap-highlight-color: transparent;
-	-webkit-touch-callout: none;
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

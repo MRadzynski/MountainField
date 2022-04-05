@@ -1,21 +1,24 @@
 @import '../main.scss';
 
 .formContainer {
-	background: linear-gradient(#7fb8b4, #81c8a7);
-	border-radius: 2rem;
-	display: grid;
-	height: 100%;
-	// padding: 1.5rem;
-	position: relative;
-	// width: 90%;
-	z-index: 4;
-	width: 100%;
-	@include breakpoint($sPhone) {
-		padding: 0;
-	}
-	@include breakpoint($xsLaptop) {
-		border-radius: 3rem;
-		padding: 1rem;
-		// padding: 2rem 4rem;
-	}
+  background: linear-gradient(#7fb8b4, #81c8a7);
+  border-radius: 2rem;
+  display: grid;
+  height: 100%;
+  // padding: 1.5rem;
+  position: relative;
+  // width: 90%;
+  z-index: 4;
+  width: 100%;
+  @include breakpoint($sPhone) {
+    padding: 0;
+  }
+  @include breakpoint($xsLaptop) {
+    border-radius: 3rem;
+    padding: 1rem;
+    // padding: 2rem 4rem;
+  }
+  @include breakpoint($desktop4K) {
+    border-radius: 5rem;
+  }
 }

@@ -47,6 +47,12 @@
       text-align: unset;
       width: unset;
     }
+    @include breakpoint($laptop) {
+      font-size: 1.8rem;
+    }
+    @include breakpointIPadProLandscape() {
+      font-size: 2.1rem;
+    }
     @include breakpoint($lLaptop) {
       font-size: 2.2rem;
     }
@@ -60,7 +66,7 @@
       font-size: 3rem;
     }
     @include breakpoint($desktop4K) {
-      font-size: 4.4rem;
+      font-size: 4.8rem;
     }
   }
 
@@ -93,7 +99,7 @@
           font-size: 1.2rem;
         }
         @include breakpointExtended($desktop2K, $height2K) {
-          font-size: 1.5rem;
+          font-size: 1.8rem;
         }
         @include breakpoint($desktop4K) {
           font-size: 2.4rem;
@@ -127,7 +133,7 @@
           font-size: 1.2rem;
         }
         @include breakpointExtended($desktop2K, $height2K) {
-          font-size: 1.5rem;
+          font-size: 1.8rem;
         }
         @include breakpoint($desktop4K) {
           font-size: 2.4rem;
@@ -329,6 +335,9 @@
             font-size: 1.2rem;
             line-height: 1.6rem;
           }
+          @include breakpoint($desktop2K) {
+            font-size: 1.3rem;
+          }
           @include breakpointExtended($desktop2K, $height2K) {
             font-size: 1.4rem;
             line-height: 1.9rem;
@@ -351,6 +360,9 @@
             }
             @include breakpoint($desktop) {
               font-size: 1.2rem;
+            }
+            @include breakpoint($desktop2K) {
+              font-size: 1.3rem;
             }
             @include breakpointExtended($desktop2K, $height2K) {
               font-size: 1.4rem;
@@ -415,13 +427,13 @@
             font-size: 1.3rem;
           }
           @include breakpoint($desktop2K) {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
           }
           @include breakpointExtended($desktop2K, $height2K) {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
           }
           @include breakpoint($desktop4K) {
-            font-size: 2.5rem;
+            font-size: 2.7rem;
           }
         }
         .sliderValue {
@@ -437,13 +449,13 @@
             font-size: 1.6rem;
           }
           @include breakpoint($desktop2K) {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
           }
           @include breakpointExtended($desktop2K, $height2K) {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
           }
           @include breakpoint($desktop4K) {
-            font-size: 2.9rem;
+            font-size: 3rem;
           }
         }
       }
@@ -468,12 +480,16 @@
         @include breakpoint($desktop) {
           height: 8px;
         }
+        @include breakpoint($desktop2K) {
+          height: 10px;
+        }
         @include breakpointExtended($desktop2K, $height2K) {
           height: 12px;
+          margin: 3rem 0;
         }
         @include breakpoint($desktop4K) {
           border-radius: 8px;
-          height: 14px;
+          height: 18px;
         }
 
         &::-webkit-slider-thumb {
@@ -483,13 +499,17 @@
           height: 20px;
           width: 20px;
           -webkit-appearance: none;
+          @include breakpoint($desktop2K) {
+            height: 24px;
+            width: 24px;
+          }
           @include breakpointExtended($desktop2K, $height2K) {
             height: 28px;
             width: 28px;
           }
           @include breakpoint($desktop4K) {
-            height: 40px;
-            width: 40px;
+            height: 44px;
+            width: 44px;
           }
         }
       }
@@ -501,20 +521,23 @@
         @include breakpoint($laptop) {
           font-size: 1rem;
         }
-        @include breakpoint($lLaptop) {
+        @include breakpointExtended($lLaptop, $heightSmallLLaptop) {
+          font-size: 1rem;
+        }
+        @include breakpointExtended($lLaptop, $heightStandardLLaptop) {
           font-size: 1.1rem;
         }
         @include breakpoint($desktop) {
           font-size: 1.2rem;
         }
         @include breakpoint($desktop2K) {
-          font-size: 1.15rem;
-        }
-        @include breakpointExtended($desktop2K, $height2K) {
           font-size: 1.3rem;
         }
+        @include breakpointExtended($desktop2K, $height2K) {
+          font-size: 1.5rem;
+        }
         @include breakpoint($desktop4K) {
-          font-size: 2rem;
+          font-size: 2.2rem;
           margin-top: 1rem;
         }
       }

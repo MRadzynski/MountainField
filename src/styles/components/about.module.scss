@@ -1,120 +1,126 @@
 @import '../main.scss';
 
 .aboutContainer {
-	background-color: $primaryColor;
-	height: max-content;
-	padding: 4rem 2rem;
-	@include breakpoint($tablet) {
-		padding: 6rem 2rem;
-	}
-	@include breakpoint($xsLaptop) {
-		height: 100vh;
-		padding: 0 5rem;
-	}
-	@include breakpointIPadProPortrait() {
-		height: max-content;
-		margin-bottom: 10rem;
-	}
-	@include breakpoint($sLaptop) {
-		height: 100vh;
-		margin-bottom: 6rem;
-		padding: 1rem 5rem 0;
-	}
-	@include breakpointIPadProLandscape() {
-		height: max-content;
-		margin-bottom: 10rem;
-	}
-	@include breakpoint($desktop2K) {
-		height: 100vh;
-		margin: 0 auto;
-		max-width: 2000px;
-	}
-	@include breakpoint($desktop4K) {
-		max-width: 3000px;
-	}
-	.heading {
-		border-bottom: 2px solid $secondaryColor;
-		border-top: 2px solid $secondaryColor;
-		font-family: 'BookmanOldStyle, Bookman Old Style';
-		font-size: 1.4rem;
-		font-weight: 400;
-		line-height: 2rem;
-		margin: 0 auto;
-		text-align: center;
-		width: 100%;
-		@include breakpoint($xsPhone) {
-			font-size: 1.3rem;
-			line-height: 2rem;
-		}
-		@include breakpoint($phone) {
-			line-height: 2.5rem;
-		}
-		@include breakpoint($lPhone) {
-			font-size: 1.4rem;
-			line-height: 3rem;
-			width: max-content;
-		}
-		@include breakpoint($tablet) {
-			font-size: 2.2rem;
-		}
-		@include breakpoint($xsLaptop) {
-			font-size: 2.5rem;
-		}
-		@include breakpointExtended($sLaptop, $heightSmallSLaptop) {
-			font-size: 2.6rem;
-			line-height: 3.4rem;
-		}
-		@include breakpointExtended($sLaptop, $heightStandardSLaptop) {
-			font-size: 3.2rem;
-			line-height: 4rem;
-		}
-		@include breakpoint($desktop2K) {
-			font-size: 3.6rem;
-			line-height: 4.2rem;
-		}
-		@include breakpointExtended($desktop2K, $height2K) {
-			font-size: 4.2rem;
-			line-height: 5rem;
-			margin: 6rem auto 12rem;
-		}
-		@include breakpoint($desktop4K) {
-			font-size: 6rem;
-			line-height: 7rem;
-			margin: 8rem auto 20rem;
-			max-width: 3000px;
-		}
-	}
+  background-color: $primaryColor;
+  height: max-content;
+  padding: 4rem 2rem;
+  @include breakpoint($tablet) {
+    padding: 6rem 2rem;
+  }
+  @include breakpoint($xsLaptop) {
+    height: 100vh;
+    padding: 0 5rem;
+  }
+  @include breakpointIPadProPortrait() {
+    height: max-content;
+    margin-bottom: 10rem;
+  }
+  @include breakpoint($sLaptop) {
+    height: 100vh;
+    margin-bottom: 6rem;
+    padding: 1rem 5rem 0;
+  }
+  @include breakpointIPadProLandscape() {
+    height: max-content;
+    margin-bottom: 10rem;
+  }
+  @include breakpoint($sDesktop) {
+    margin-bottom: 0;
+  }
+  @include breakpoint($desktop) {
+    margin-bottom: 6rem;
+  }
+  @include breakpoint($desktop2K) {
+    height: 100vh;
+    margin: 0 auto;
+    max-width: 2000px;
+  }
+  @include breakpoint($desktop4K) {
+    max-width: 3000px;
+  }
+  .heading {
+    border-bottom: 2px solid $secondaryColor;
+    border-top: 2px solid $secondaryColor;
+    font-family: 'BookmanOldStyle, Bookman Old Style';
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2rem;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    @include breakpoint($xsPhone) {
+      font-size: 1.3rem;
+      line-height: 2rem;
+    }
+    @include breakpoint($phone) {
+      line-height: 2.5rem;
+    }
+    @include breakpoint($lPhone) {
+      font-size: 1.4rem;
+      line-height: 3rem;
+      width: max-content;
+    }
+    @include breakpoint($tablet) {
+      font-size: 2.2rem;
+    }
+    @include breakpoint($xsLaptop) {
+      font-size: 2.5rem;
+    }
+    @include breakpointExtended($sLaptop, $heightSmallSLaptop) {
+      font-size: 2.6rem;
+      line-height: 3.4rem;
+    }
+    @include breakpointExtended($sLaptop, $heightStandardSLaptop) {
+      font-size: 3.2rem;
+      line-height: 4rem;
+    }
+    @include breakpoint($desktop2K) {
+      font-size: 3.6rem;
+      line-height: 4.2rem;
+    }
+    @include breakpointExtended($desktop2K, $height2K) {
+      font-size: 4.2rem;
+      line-height: 5rem;
+      margin: 6rem auto 12rem;
+    }
+    @include breakpoint($desktop4K) {
+      font-size: 6rem;
+      line-height: 8rem;
+      margin: 8rem auto 20rem;
+      max-width: 3000px;
+    }
+  }
 
-	.cardsContainer {
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
-		@include breakpoint($tablet) {
-			gap: 7rem;
-			margin: 2rem auto 0;
-			width: 70%;
-		}
-		@include breakpoint($xsLaptop) {
-			align-items: center;
-			flex-direction: row;
-			gap: 3rem;
-			width: 100%;
-		}
-		@include breakpointExtended($sLaptop, $heightSmallSLaptop) {
-			margin-top: 1rem;
-			gap: 5rem;
-		}
-		@include breakpointExtended($sLaptop, $heightStandardSLaptop) {
-			margin-top: 3rem;
-		}
-		@include breakpoint($laptop) {
-			justify-content: space-between;
-		}
-		@include breakpoint($sDesktop) {
-			justify-content: space-evenly;
-		}
-		@include breakpoint($desktop) {
-			margin-top: 5rem;
-		}
-	}
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    @include breakpoint($tablet) {
+      gap: 7rem;
+      margin: 2rem auto 0;
+      width: 70%;
+    }
+    @include breakpoint($xsLaptop) {
+      align-items: center;
+      flex-direction: row;
+      gap: 3rem;
+      width: 100%;
+    }
+    @include breakpointExtended($sLaptop, $heightSmallSLaptop) {
+      margin-top: 1rem;
+      gap: 5rem;
+    }
+    @include breakpointExtended($sLaptop, $heightStandardSLaptop) {
+      margin-top: 3rem;
+    }
+    @include breakpoint($laptop) {
+      justify-content: space-between;
+    }
+    @include breakpoint($sDesktop) {
+      justify-content: space-evenly;
+    }
+    @include breakpoint($desktop) {
+      margin-top: 5rem;
+    }
+  }
 }
