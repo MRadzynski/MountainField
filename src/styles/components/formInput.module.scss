@@ -1,6 +1,33 @@
 @import '../main.scss';
 
 .inputContainer {
+  position: relative;
+  :global(.ios) & {
+    outline: 0;
+    &:focus-within {
+      &:after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        bottom: -2px;
+        left: -2px;
+        right: -2px;
+        border: 2px solid $gradientStart;
+        z-index: 0;
+        border-radius: 0.75rem;
+        @include breakpoint($desktop) {
+          border-width: 3px;
+        }
+        @include breakpointExtended($desktop2K, $height2K) {
+          border-radius: 1rem;
+        }
+        @include breakpoint($desktop4K) {
+          border-radius: 1.75rem;
+          border-width: 5px;
+        }
+      }
+    }
+  }
   .inputField {
     background-color: white;
     border: 0;
