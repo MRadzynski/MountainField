@@ -46,7 +46,7 @@
     }
 
     &:hover {
-      color: $accentColor;
+      color: $gradientStart;
     }
   }
 
@@ -330,13 +330,13 @@
             }
             @include breakpoint($tablet) {
               font-size: 0.6rem;
-              width:90%;
+              width: 90%;
             }
             @include breakpoint($xsLaptop) {
               font-size: 0.8rem;
             }
             @include breakpoint($sLaptop) {
-              width:95%;
+              width: 95%;
             }
             @include breakpoint($lLaptop) {
               font-size: 0.9rem;
@@ -485,11 +485,11 @@
             }
             @include breakpoint($lLaptop) {
               font-size: 1.7rem;
-              min-width:30px;
+              min-width: 30px;
             }
             @include breakpointExtended($desktop2K, $height2K) {
               font-size: 2.2rem;
-              min-width:42px;
+              min-width: 42px;
             }
             @include breakpoint($desktop4K) {
               font-size: 3rem;
@@ -499,31 +499,28 @@
         }
       }
     }
-      .formButton {
-        grid-area: button;
-        @include breakpoint($lLaptop) {
-          font-size: 1.2rem;
-        }
-        @include breakpoint($desktop) {
-          font-size: 1.3rem;
-        }
-        @include breakpoint($desktop2K) {
-          font-size: 1.6rem;
-        }
-        @include breakpointExtended($desktop2K, $height2K) {
-          border-radius: 1.25rem;
-          font-size: 2rem;
-          font-weight: 500;
-          padding: 1rem 3rem;
-        }
-        @include breakpoint($desktop4K) {
-          font-size: 2.8rem;
-          padding: 1.25rem 4rem;
-          border-radius: 1.75rem;
-        }
+    .formButton {
+      grid-area: button;
+      @include breakpoint($lLaptop) {
+        font-size: 1.2rem;
       }
-    
+      @include breakpoint($desktop) {
+        font-size: 1.3rem;
+      }
+      @include breakpoint($desktop2K) {
+        font-size: 1.6rem;
+      }
+      @include breakpointExtended($desktop2K, $height2K) {
+        border-radius: 1.25rem;
+        font-size: 2rem;
+        font-weight: 500;
+        padding: 1rem 3rem;
+      }
+      @include breakpoint($desktop4K) {
+        font-size: 2.8rem;
+        padding: 1.25rem 4rem;
+        border-radius: 1.75rem;
+      }
+    }
   }
 }
-
-      

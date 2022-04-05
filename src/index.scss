@@ -17,6 +17,28 @@ html {
       outline-color: #0d9065;
     }
 
+    a,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    input,
+    p,
+    span {
+      &::selection {
+        background-color: #0d7775;
+        color: white;
+      }
+    }
+
+    img {
+      &::selection {
+        background-color: transparent;
+      }
+    }
+
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 
