@@ -32,9 +32,9 @@
   }
   .slider {
     align-items: center;
-    background: linear-gradient(#81c8a7, #7fb8b4);
+    background: linear-gradient($gradientPastelGreen, $gradientPastelBlue);
     border-radius: 3rem;
-    box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 8px 8px $blackTransparent01;
     display: flex;
     height: 100%;
     justify-content: center;
@@ -70,7 +70,4 @@
       width: 80%;
     }
   }
-}
-.activeSlide {
-  opacity: 1;
 }

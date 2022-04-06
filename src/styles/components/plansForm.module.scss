@@ -99,11 +99,11 @@
     }
   }
   .pickedPlan {
-    outline: 3px solid $gradientStart;
+    outline: 3px solid $darkTurquoise;
     :global(.ios) & {
       outline: 0;
       &:after {
-        border: 3px solid $gradientStart;
+        border: 3px solid $darkTurquoise;
         border-radius: 1rem;
         bottom: -2px;
         content: '';
@@ -126,8 +126,8 @@
     }
   }
   .planTile {
-    background-color: rgba($primaryColor, 0.5);
-    border: 1px solid $gradientStart;
+    background-color: rgba($ivory, 0.5);
+    border: 1px solid $darkTurquoise;
     border-radius: 1rem;
     display: grid;
     grid-area: plan;
@@ -293,13 +293,13 @@
     }
     .planTitle {
       align-items: center;
-      color: $gradientStart;
+      color: $darkTurquoise;
       display: flex;
       font-size: 1.35rem;
       margin: 0 auto;
       min-width: 175px;
       position: relative;
-      text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+      text-shadow: 0 2px 2px $blackTransparent01;
       @include breakpoint($xsPhone) {
         font-size: 1.5rem;
         min-width: 200px;
@@ -325,7 +325,7 @@
         margin-left: 2rem;
       }
       &:before {
-        background: $gradientStart;
+        background: $darkTurquoise;
         bottom: 10px;
         content: '';
         height: 4px;
@@ -369,9 +369,9 @@
       }
       .inputSlider {
         appearance: none;
-        background-color: $secondaryColor;
+        background-color: $pastelGreen;
         border-radius: 4px;
-        box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 1px 0px $blackTransparent01;
         height: 6px;
         margin: 2rem 0 1rem;
         @include breakpoint($phone) {
@@ -511,11 +511,11 @@
     }
   }
   .stepTitle {
-    color: $primaryColor;
+    color: $ivory;
     font-size: 1.5rem;
     grid-area: title;
     text-align: center;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 4px 4px $blackTransparent01;
     @include breakpoint($xsPhone) {
       width: 80%;
     }

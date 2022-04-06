@@ -7,7 +7,7 @@
   padding: 0 2rem;
   @include breakpoint($xsLaptop) {
     align-items: center;
-    background-color: $primaryColor;
+    background-color: $ivory;
     flex-direction: row;
     height: calc(100vh - 7.5rem);
     justify-content: space-evenly;
@@ -140,7 +140,7 @@
       .descriptionBox {
         background-color: white;
         border-radius: 2rem;
-        box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 8px 8px $blackTransparent01;
         padding: 2rem;
         position: relative;
         z-index: 2;
@@ -207,8 +207,8 @@
       }
     }
     .heading {
-      border-bottom: 2px solid $secondaryColor;
-      border-top: 2px solid $secondaryColor;
+      border-bottom: 2px solid $pastelGreen;
+      border-top: 2px solid $pastelGreen;
       font-family: 'BookmanOldStyle, Bookman Old Style';
       font-size: 1.4rem;
       font-weight: 400;

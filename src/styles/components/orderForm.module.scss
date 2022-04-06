@@ -1,7 +1,7 @@
 @import '../main.scss';
 
 .formContainer {
-  background: linear-gradient(#7fb8b4, #81c8a7);
+  background: linear-gradient($gradientPastelBlue, $gradientPastelGreen);
   border-radius: 2rem;
   display: grid;
   height: 100%;

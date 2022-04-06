@@ -1,11 +1,11 @@
 @import '../main.scss';
 
 .scrollArrowContainer {
-  background: linear-gradient($secondaryColor, $gradientStart);
-  border: 1px solid $gradientStart;
+  background: linear-gradient($pastelGreen, $darkTurquoise);
+  border: 1px solid $darkTurquoise;
   border-radius: 50%;
   bottom: 24px;
-  box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 4px 2px $blackTransparent01;
   cursor: pointer;
   display: grid;
   height: 50px;

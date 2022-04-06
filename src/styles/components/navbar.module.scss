@@ -39,7 +39,7 @@
     }
     .navLink {
       border: 0;
-      color: $secondaryColor;
+      color: $pastelGreen;
       font-family: 'BookmanOldStyle, Bookman Old Style';
       font-size: 1.25rem;
       font-weight: 400;
@@ -82,12 +82,12 @@
         font-size: 2.8rem;
       }
       &:hover {
-        border-bottom: 2px solid $secondaryColor;
-        border-top: 2px solid $secondaryColor;
+        border-bottom: 2px solid $pastelGreen;
+        border-top: 2px solid $pastelGreen;
       }
       &.active {
-        border-bottom: 2px solid $secondaryColor;
-        border-top: 2px solid $secondaryColor;
+        border-bottom: 2px solid $pastelGreen;
+        border-top: 2px solid $pastelGreen;
       }
     }
   }

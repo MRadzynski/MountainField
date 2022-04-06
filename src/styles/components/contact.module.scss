@@ -2,7 +2,7 @@
 
 .contactContainer {
   align-items: center;
-  background: linear-gradient(#7fb8b4, #81c8a7);
+  background: linear-gradient($gradientPastelBlue, $gradientPastelGreen);
   display: flex;
   flex-direction: column;
   height: max-content;
@@ -33,7 +33,7 @@
     align-items: center;
     background-color: white;
     border-radius: 3rem;
-    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 8px 0 $blackTransparent01;
     display: flex;
     flex-direction: column;
     font-family: 'AllRoundGothic-Book, All Round Gothic';
@@ -191,13 +191,13 @@
         font-size: 7rem;
       }
       &:first-child {
-        border-top: 2px solid #bfddd8;
+        border-top: 2px solid $lightAccentColor;
         padding-top: 1rem;
         position: relative;
         z-index: 1;
       }
       &:last-child {
-        border-bottom: 2px solid #bfddd8;
+        border-bottom: 2px solid $lightAccentColor;
         padding-bottom: 1rem;
       }
     }

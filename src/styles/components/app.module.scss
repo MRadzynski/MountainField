@@ -1,7 +1,7 @@
 @import '../main.scss';
 
 .appContainer {
-  background-color: $primaryColor;
+  background-color: $ivory;
   overflow-x: hidden;
   @include breakpoint($xsLaptop) {
     overflow-x: auto;

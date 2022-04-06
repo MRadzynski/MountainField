@@ -153,13 +153,13 @@
     }
   }
   .heading {
-    color: $primaryColor;
+    color: $ivory;
     font-size: 1.3rem;
     font-weight: 500;
     grid-area: heading;
     margin-left: 1.5rem;
     position: relative;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 4px 4px $blackTransparent01;
     width: 80%;
     @include breakpoint($sPhone) {
       width: 70%;
@@ -210,9 +210,9 @@
       font-size: 4rem;
     }
     &:before {
-      background-color: $primaryColor;
+      background-color: $ivory;
       bottom: -1rem;
-      box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1px 2px 1px $blackTransparent01;
       content: '';
       height: 0.25rem;
       left: 0;
@@ -232,14 +232,14 @@
   }
   .responseMessage {
     align-self: center;
-    color: $primaryColor;
+    color: $ivory;
     display: flex;
     font-size: 1.2rem;
     font-weight: 500;
     justify-self: center;
     padding: 0 1rem;
     text-align: center;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 4px 4px $blackTransparent01;
     @include breakpoint($phone) {
       font-size: 1.3rem;
       padding: 0 1.5rem;

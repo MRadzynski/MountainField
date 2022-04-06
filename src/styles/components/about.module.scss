@@ -1,7 +1,7 @@
 @import '../main.scss';
 
 .aboutContainer {
-  background-color: $primaryColor;
+  background-color: $ivory;
   height: max-content;
   padding: 4rem 2rem;
   @include breakpoint($tablet) {
@@ -71,8 +71,8 @@
     }
   }
   .heading {
-    border-bottom: 2px solid $secondaryColor;
-    border-top: 2px solid $secondaryColor;
+    border-bottom: 2px solid $pastelGreen;
+    border-top: 2px solid $pastelGreen;
     font-family: 'BookmanOldStyle, Bookman Old Style';
     font-size: 1.4rem;
     font-weight: 400;

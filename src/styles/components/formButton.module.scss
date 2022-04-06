@@ -2,10 +2,10 @@
 
 .buttonContainer {
   .formButton {
-    background-color: $primaryColor;
-    border: 2px solid $gradientStart;
+    background-color: $ivory;
+    border: 2px solid $darkTurquoise;
     border-radius: 1rem;
-    color: $gradientStart;
+    color: $darkTurquoise;
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: 600;
@@ -30,9 +30,9 @@
     &:disabled {
       cursor: not-allowed;
       &:hover {
-        background-color: #9e9e9e;
-        border: 2px solid $gradientStart;
-        color: $gradientStart;
+        background-color: $lightGray;
+        border: 2px solid $darkTurquoise;
+        color: $darkTurquoise;
         @include breakpointExtended($desktop2K, $height2K) {
           border-width: 3px;
         }
@@ -42,16 +42,16 @@
       }
     }
     &:hover {
-      background-color: $gradientStart;
-      border-color: $primaryColor;
-      color: $primaryColor;
+      background-color: $darkTurquoise;
+      border-color: $ivory;
+      color: $ivory;
       outline: transparent;
     }
     &:not(:global(.ios) &) {
       &:focus-visible {
-        background-color: $gradientStart;
-        border-color: $primaryColor;
-        color: $primaryColor;
+        background-color: $darkTurquoise;
+        border-color: $ivory;
+        color: $ivory;
         outline: transparent;
       }
     }
