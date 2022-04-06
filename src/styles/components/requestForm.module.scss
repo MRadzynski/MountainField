@@ -103,6 +103,56 @@
       }
     }
   }
+  .contentContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .buttonContainer {
+      .formButton {
+        grid-area: button;
+        position: absolute;
+        &#submit {
+          font-size: 0.9rem;
+          grid-area: submitBtn;
+          padding: 0.75rem 1rem;
+          place-self: center;
+          @include breakpoint($xsPhone) {
+            font-size: 1rem;
+          }
+          @include breakpoint($tablet) {
+            font-size: 1.2rem;
+          }
+          @include breakpoint($xsLaptop) {
+            font-size: 1.3rem;
+            padding: 1rem 2.5rem;
+          }
+          @include breakpoint($lLaptop) {
+            font-size: 1.6rem;
+          }
+          @include breakpoint($desktop) {
+            font-size: 1.8rem;
+            padding: 1rem 3rem;
+          }
+          @include breakpoint($desktop2K) {
+            font-size: 2.1rem;
+            line-height: 2.4rem;
+          }
+          @include breakpointExtended($desktop2K, $height2K) {
+            font-size: 2.4rem;
+            line-height: 3.4rem;
+            padding: 1.25rem 4rem;
+          }
+          @include breakpoint($desktop4K) {
+            border-width: 6px;
+            border-radius: 2rem;
+            font-size: 4rem;
+            line-height: 4.6rem;
+            padding: 2rem 4rem;
+          }
+        }
+      }
+    }
+  }
 
   .buttonContainer {
     display: grid;

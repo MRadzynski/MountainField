@@ -1,9 +1,11 @@
 import classes from '../../../styles/components/requestForm.module.scss';
 import FormButton from '../../FormButton/FormButton';
+import Loader from '../../Loader/Loader';
 import { useState } from 'react';
 
 const RequestForm = ({ formData, prevStep }) => {
   const [message, setMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const getSpecifiedReqObject = (type) => {
     const commonData = {
@@ -47,6 +49,8 @@ const RequestForm = ({ formData, prevStep }) => {
   };
 
   const formatRequestData = async () => {
+    setIsLoading(true);
+
     const options = {
       body: JSON.stringify(generateReqBody()),
       headers: {
@@ -56,6 +60,8 @@ const RequestForm = ({ formData, prevStep }) => {
     };
 
     const res = await fetch('https://mfpr.toadres.pl/send_inquiry', options);
+
+    setIsLoading(false);
 
     if (res.status === 200) {
       setMessage(
@@ -70,21 +76,27 @@ const RequestForm = ({ formData, prevStep }) => {
 
   const getMessage = <p className={classes.responseMessage}>{message}</p>;
 
+  const getContent = () => {
+    if (isLoading) return <Loader />;
+
+    return message ? (
+      getMessage
+    ) : (
+      <FormButton
+        classes={classes}
+        id={classes.submit}
+        onClick={handleSubmit}
+        text='Wyślij Zapytanie 📧'
+      />
+    );
+  };
+
   return (
     <div className={classes.requestFormContainer}>
       <h1 className={classes.heading}>
         Dziękujemy za skorzystanie z naszego kreatora
       </h1>
-      {message ? (
-        getMessage
-      ) : (
-        <FormButton
-          classes={classes}
-          id={classes.submit}
-          onClick={handleSubmit}
-          text='Wyślij Zapytanie 📧'
-        />
-      )}
+      <div className={classes.contentContainer}>{getContent()}</div>
       <FormButton
         classes={classes}
         id={classes.back}
