@@ -1,79 +1,76 @@
 @import '../main.scss';
 
 .sliderContainer {
-	display: flex;
-	justify-content: center;
-	height: 90vw;
-	margin-top: 5rem;
-	width: 100%;
-	@include breakpoint($tablet) {
-		height: 70vw;
-		margin: 5rem auto 0;
-		width: 70vw;
-	}
-	@include breakpoint($xsLaptop) {
-		height: fit-content;
-		justify-content: flex-end;
-		margin: 0;
-		padding-left: 5rem;
-		width: 50%;
-	}
-	@include breakpoint($sLaptop) {
-		height: 100%;
-		margin-top: 10rem;
-		padding: 0;
-	}
-	@include breakpoint($desktop) {
-		margin-top: 15rem;
-	}
-	@include breakpointExtended($desktop2K, $height2K) {
-		height: 50%;
-		margin: auto;
-	}
-
-	.slider {
-		align-items: center;
-		background: linear-gradient(#81c8a7, #7fb8b4);
-		border-radius: 3rem;
-		box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.1);
-		display: flex;
-		height: 100%;
-		justify-content: center;
-		width: 100%;
-		@include breakpoint($xsLaptop) {
-			height: 35vw;
-			width: 35vw;
-		}
-		@include breakpoint($sLaptop) {
-			height: 30vw;
-			width: 30vw;
-		}
-		@include breakpoint($desktop) {
-			height: 27vw;
-			width: 27vw;
-		}
-		@include breakpoint($desktop2K) {
-			height: 23vw;
-			width: 23vw;
-		}
-		@include breakpointExtended($desktop2K, $height2K) {
-			height: 27vw;
-			width: 27vw;
-		}
-		@include breakpoint($desktop4K) {
-			border-radius: 6rem;
-			height: 29vw;
-			width: 29vw;
-		}
-
-		.slideImage {
-			height: 80%;
-			transition: all 1s linear;
-			width: 80%;
-			// opacity: 1;
-		}
-	}
+  display: flex;
+  height: 90vw;
+  justify-content: center;
+  margin-top: 5rem;
+  width: 100%;
+  @include breakpoint($tablet) {
+    height: 70vw;
+    margin: 5rem auto 0;
+    width: 70vw;
+  }
+  @include breakpoint($xsLaptop) {
+    height: fit-content;
+    justify-content: flex-end;
+    margin: 0;
+    padding-left: 5rem;
+    width: 50%;
+  }
+  @include breakpoint($sLaptop) {
+    height: 100%;
+    margin-top: 10rem;
+    padding: 0;
+  }
+  @include breakpoint($desktop) {
+    margin-top: 15rem;
+  }
+  @include breakpointExtended($desktop2K, $height2K) {
+    height: 50%;
+    margin: auto;
+  }
+  .slider {
+    align-items: center;
+    background: linear-gradient(#81c8a7, #7fb8b4);
+    border-radius: 3rem;
+    box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+    @include breakpoint($xsLaptop) {
+      height: 35vw;
+      width: 35vw;
+    }
+    @include breakpoint($sLaptop) {
+      height: 30vw;
+      width: 30vw;
+    }
+    @include breakpoint($desktop) {
+      height: 27vw;
+      width: 27vw;
+    }
+    @include breakpoint($desktop2K) {
+      height: 23vw;
+      width: 23vw;
+    }
+    @include breakpointExtended($desktop2K, $height2K) {
+      height: 27vw;
+      width: 27vw;
+    }
+    @include breakpoint($desktop4K) {
+      border-radius: 6rem;
+      height: 29vw;
+      width: 29vw;
+    }
+    .slideImage {
+      height: 80%;
+      transition: all 1s linear;
+      width: 80%;
+    }
+  }
 }
 .activeSlide {
-	opacity: 1;
+  opacity: 1;
 }

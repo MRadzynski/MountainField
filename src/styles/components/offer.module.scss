@@ -46,7 +46,6 @@
   @include breakpoint($desktop4K) {
     margin-bottom: 0;
   }
-
   .headingContainer {
     border-radius: 3rem;
     margin-bottom: 5rem;
@@ -59,12 +58,12 @@
       padding: 1.75rem 3.5rem;
     }
     @include breakpointExtended($sLaptop, $heightSmallSLaptop) {
-      margin-top: 1rem;
       margin-bottom: 1rem;
+      margin-top: 1rem;
     }
     @include breakpointExtended($sLaptop, $heightStandardSLaptop) {
-      margin-top: 0;
       margin-bottom: 2rem;
+      margin-top: 0;
       padding: 2rem 4.5rem;
     }
     @include breakpointIPadProLandscape() {
@@ -82,15 +81,14 @@
     @include breakpointExtended($desktop2K, $height2K) {
       border-radius: 4rem;
       margin-bottom: 0;
-      padding: 0;
       margin-top: 2rem;
+      padding: 0;
     }
     @include breakpoint($desktop4K) {
       border-radius: 5rem;
       margin: 2rem 0 0;
       padding: 3rem 0 0;
     }
-
     .heading {
       border-bottom: 2px solid $secondaryColor;
       border-top: 2px solid $secondaryColor;
@@ -141,8 +139,7 @@
       }
     }
   }
-
-  .subscriptionsContainer {
+  .orderFormContainer {
     align-items: center;
     background: linear-gradient(#7fb8b4, #81c8a7);
     border-radius: 3rem;
@@ -200,41 +197,6 @@
       border-radius: 7rem;
       height: 60%;
     }
-
-    .subscriptionsBox {
-      background-color: white;
-      border-radius: 3rem;
-      box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      height: max-content;
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      z-index: 2;
-      @include breakpoint($xsLaptop) {
-        box-shadow: unset;
-        flex-direction: row;
-        height: max-content;
-        width: 85%;
-      }
-      @include breakpoint($sLaptop) {
-        width: 80%;
-      }
-      @include breakpointIPadProLandscape() {
-        height: 30rem;
-      }
-      @include breakpoint($desktop) {
-        height: 32rem;
-      }
-      @include breakpointExtended($desktop2K, $height2K) {
-        height: 70%;
-      }
-      @include breakpoint($desktop4K) {
-        height: 80%;
-      }
-    }
-
     .decorationLeavesLeft {
       left: -90px;
       position: absolute;
@@ -255,7 +217,6 @@
         transform: scale(2);
       }
     }
-
     .decorationLeavesRight {
       bottom: -110px;
       position: absolute;

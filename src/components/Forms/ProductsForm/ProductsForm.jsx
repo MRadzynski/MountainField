@@ -1,7 +1,8 @@
+import { useEffect, useState } from 'react';
+
 import AddProductModal from '../../AddProductModal/AddProductModal';
 import classes from '../../../styles/components/productsForm.module.scss';
 import FormButton from '../../FormButton/FormButton';
-import { useEffect, useState } from 'react';
 import useWindowWidth from '../../../hooks/useWindowWidth';
 
 const ProductsForm = ({
@@ -10,20 +11,20 @@ const ProductsForm = ({
   prevStep,
   productsList,
   setFormData,
-  type,
+  type
 }) => {
   const formDataField = type === 'home' ? 'homeOfficeCart' : 'standardCart';
   const formDataSum = type === 'home' ? 'homeOfficeSum' : 'standardSum';
   const headingText = type === 'home' ? 'Home Office' : 'Standard';
   const subHeadingText = type === 'home' ? 'Na osobę' : 'Do Twojego biura';
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [cartList, setCartList] = useState(formData[formDataField]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [summaryData, setSummaryData] = useState({
     coffee: 0,
     tea: 0,
     mate: 0,
-    sum: 0,
+    sum: 0
   });
 
   const { width: windowWidth } = useWindowWidth();
@@ -46,24 +47,24 @@ const ProductsForm = ({
         coffee: 0,
         tea: 0,
         mate: 0,
-        sum: 0,
+        sum: 0
       }
     );
 
     setSummaryData(newSummaryData);
-    setFormData((prevData) => ({
+    setFormData(prevData => ({
       ...prevData,
       [formDataField]: cartList,
-      [formDataSum]: newSummaryData.sum,
+      [formDataSum]: newSummaryData.sum
     }));
   }, [cartList, formDataField, formDataSum, setFormData]);
 
   const closeModal = () => setIsModalOpen(false);
 
-  const decreaseQuantity = (e) => {
+  const decreaseQuantity = e => {
     const selectedProductId = e.target.closest('li').id;
     const selectedProduct = cartList.find(
-      (cartItem) => cartItem.id === selectedProductId
+      cartItem => cartItem.id === selectedProductId
     );
 
     selectedProduct.quantity =
@@ -73,10 +74,10 @@ const ProductsForm = ({
 
     if (!selectedProduct.quantity) {
       updatedProducts = cartList.filter(
-        (cartItem) => cartItem.id !== selectedProduct.id
+        cartItem => cartItem.id !== selectedProduct.id
       );
     } else {
-      updatedProducts = cartList.map((cartItem) =>
+      updatedProducts = cartList.map(cartItem =>
         cartItem.id !== selectedProduct.id ? cartItem : selectedProduct
       );
     }
@@ -84,15 +85,15 @@ const ProductsForm = ({
     setCartList(updatedProducts);
   };
 
-  const increaseQuantity = (e) => {
+  const increaseQuantity = e => {
     const selectedProductId = e.target.closest('li').id;
     const selectedProduct = cartList.find(
-      (cartItem) => cartItem.id === selectedProductId
+      cartItem => cartItem.id === selectedProductId
     );
 
     selectedProduct.quantity = selectedProduct.quantity + 1;
 
-    const updatedProducts = cartList.map((cartItem) =>
+    const updatedProducts = cartList.map(cartItem =>
       cartItem.id !== selectedProduct.id ? cartItem : selectedProduct
     );
 
@@ -170,18 +171,18 @@ const ProductsForm = ({
             <FormButton
               classes={classes}
               onClick={() => setIsModalOpen(true)}
-              text='Dodaj Nowy Produkt +'
+              text="Dodaj Nowy Produkt +"
             />
           </li>
         </ul>
       </div>
 
-      <FormButton classes={classes} onClick={prevStep} text='Wróć' />
+      <FormButton classes={classes} onClick={prevStep} text="Wróć" />
       <FormButton
         classes={classes}
         disabled={isNextButtonDisabled}
         onClick={nextStep}
-        text='Dalej'
+        text="Dalej"
       />
       {isModalOpen && (
         <AddProductModal

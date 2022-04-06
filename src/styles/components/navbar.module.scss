@@ -21,7 +21,6 @@
   @include breakpoint($sLaptop) {
     padding-right: 7rem;
   }
-
   .navList {
     align-items: center;
     display: flex;
@@ -59,7 +58,7 @@
       }
       @include breakpoint($xsLaptop) {
         color: black;
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         font-weight: 400;
         letter-spacing: unset;
         padding: 0.5rem 0;

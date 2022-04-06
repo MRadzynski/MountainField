@@ -1,16 +1,16 @@
 {
-	"navLinks": [
-		{
-			"label": "O NAS",
-			"path": "#about"
-		},
-		{
-			"label": "OFERTA",
-			"path": "#offer"
-		},
-		{
-			"label": "KONTAKT",
-			"path": "#contact"
-		}
-	]
+  "navLinks": [
+    {
+      "label": "O NAS",
+      "path": "#about"
+    },
+    {
+      "label": "OFERTA",
+      "path": "#offer"
+    },
+    {
+      "label": "KONTAKT",
+      "path": "#contact"
+    }
+  ]
 }

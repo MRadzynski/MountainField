@@ -1,13 +1,13 @@
 @import '../main.scss';
 
 .appContainer {
-	background-color: $primaryColor;
-	overflow-x: hidden;
-	@include breakpoint($xsLaptop) {
-		overflow-x: auto;
-	}
+  background-color: $primaryColor;
+  overflow-x: hidden;
+  @include breakpoint($xsLaptop) {
+    overflow-x: auto;
+  }
 }
 .stopScrolling {
-	height: 100%;
-	overflow: hidden;
+  height: 100%;
+  overflow: hidden;
 }

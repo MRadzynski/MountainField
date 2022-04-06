@@ -31,7 +31,6 @@
     height: 60rem;
     width: 40rem;
   }
-
   &:after {
     bottom: -130px;
     content: '>';
@@ -47,8 +46,8 @@
       font-size: 4rem;
       left: unset;
       right: -45px;
-      top: 40%;
       transform: unset;
+      top: 40%;
     }
     @include breakpoint($sLaptop) {
       font-size: 6rem;
@@ -78,13 +77,11 @@
       right: -200px;
     }
   }
-
   &:last-child {
     &:after {
       content: '';
     }
   }
-
   .card {
     display: flex;
     flex-direction: column;
@@ -101,7 +98,6 @@
     }
     @include breakpointExtended($sLaptop, $heightStandardSLaptop) {
       height: 32rem;
-      // width: 20rem;
     }
     @include breakpoint($sDesktop) {
       width: 24rem;
@@ -109,54 +105,9 @@
     @include breakpoint($desktop) {
       width: 26rem;
     }
-    // @include breakpoint($desktop2K) {
-    //   width: 28rem;
-    // }
     @include breakpointExtended($desktop2K, $height2K) {
       height: 100%;
       width: 100%;
-    }
-
-    .cardHeading {
-      background: linear-gradient($secondaryColor, $gradientEnd);
-      border-radius: 2rem;
-      font-size: 1.5rem;
-      height: 4rem;
-      margin: 2rem auto 0;
-      padding: 0.5rem 1.5rem;
-      width: max-content;
-      @include breakpoint($xsPhone) {
-        font-size: 1.75rem;
-      }
-      @include breakpoint($lPhone) {
-        font-size: 2rem;
-      }
-      @include breakpoint($tablet) {
-        font-size: 2.3rem;
-      }
-      @include breakpoint($xsLaptop) {
-        align-items: center;
-        display: flex;
-        font-size: 1.8rem;
-        height: 4rem;
-        padding: 0.25rem 1.25rem;
-      }
-      @include breakpoint($sLaptop) {
-        padding: 0.5rem 1.5rem;
-      }
-      @include breakpointExtended($desktop2K, $height2K) {
-        border-radius: 3rem;
-        font-size: 2.4rem;
-        height: 5rem;
-        padding: 0.5rem 2.5rem;
-      }
-      @include breakpoint($desktop4K) {
-        border-radius: 4rem;
-        font-size: 3.2rem;
-        height: 10rem;
-        margin-top: 4rem;
-        padding: 0.5rem 3rem;
-      }
     }
     .cardDescription {
       align-items: center;
@@ -207,8 +158,8 @@
       @include breakpointExtended($sLaptop, $heightStandardSLaptop) {
         font-size: 1.3rem;
         line-height: 1.9rem;
-        padding: 0 2rem;
         min-height: 16rem;
+        padding: 0 2rem;
       }
       @include breakpoint($desktop) {
         font-size: 1.4rem;
@@ -231,10 +182,50 @@
         padding: 0 4rem;
       }
     }
+    .cardHeading {
+      background: linear-gradient($secondaryColor, $gradientEnd);
+      border-radius: 2rem;
+      font-size: 1.5rem;
+      height: 4rem;
+      margin: 2rem auto 0;
+      padding: 0.5rem 1.5rem;
+      width: max-content;
+      @include breakpoint($xsPhone) {
+        font-size: 1.75rem;
+      }
+      @include breakpoint($lPhone) {
+        font-size: 2rem;
+      }
+      @include breakpoint($tablet) {
+        font-size: 2.3rem;
+      }
+      @include breakpoint($xsLaptop) {
+        align-items: center;
+        display: flex;
+        font-size: 1.8rem;
+        height: 4rem;
+        padding: 0.25rem 1.25rem;
+      }
+      @include breakpoint($sLaptop) {
+        padding: 0.5rem 1.5rem;
+      }
+      @include breakpointExtended($desktop2K, $height2K) {
+        border-radius: 3rem;
+        font-size: 2.4rem;
+        height: 5rem;
+        padding: 0.5rem 2.5rem;
+      }
+      @include breakpoint($desktop4K) {
+        border-radius: 4rem;
+        font-size: 3.2rem;
+        height: 10rem;
+        margin-top: 4rem;
+        padding: 0.5rem 3rem;
+      }
+    }
     .cardImage {
       height: 12rem;
       width: 100%;
-
       @include breakpoint($xsLaptop) {
         height: 8rem;
       }

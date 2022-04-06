@@ -1,9 +1,9 @@
 import clsx from 'clsx';
-import FormButton from '../../FormButton/FormButton';
-import FormInput from '../../FormInput/FormInput';
+import { useEffect, useState } from 'react';
 
 import classes from '../../../styles/components/plansForm.module.scss';
-import { useEffect, useState } from 'react';
+import FormButton from '../../FormButton/FormButton';
+import FormInput from '../../FormInput/FormInput';
 
 const zipCodeRegex = /^[0-9]{2}-[0-9]{3}$/;
 
@@ -12,7 +12,7 @@ const PlansForm = ({
   handleChange,
   handleChoose,
   nextStep,
-  prevStep,
+  prevStep
 }) => {
   const [isNextButtonDisabled, setIsNextButtonDisabled] = useState(false);
 
@@ -50,7 +50,7 @@ const PlansForm = ({
       <h2 className={classes.stepTitle}>WYBIERZ SUBSKRYPCJE</h2>
       <div
         className={clsx(classes.planTile, {
-          [classes.pickedPlan]: data.homeOfficeOffer,
+          [classes.pickedPlan]: data.homeOfficeOffer
         })}
       >
         <h2 className={classes.planTitle}>
@@ -64,12 +64,12 @@ const PlansForm = ({
           <input
             className={classes.inputSlider}
             defaultValue={data.workersAmount}
-            max='30'
-            min='0'
-            name='workersAmount'
+            max="30"
+            min="0"
+            name="workersAmount"
             onChange={handleChange}
-            step='1'
-            type='range'
+            step="1"
+            type="range"
           />
           <p className={classes.inputSliderDescription}>
             Podaj liczbę pracowników, którzy pracują w trybie zdalnym a co
@@ -80,12 +80,12 @@ const PlansForm = ({
         <FormButton
           classes={classes}
           onClick={() => handleChoose('home')}
-          text='Wybieram'
+          text="Wybieram"
         />
       </div>
       <div
         className={clsx(classes.planTile, {
-          [classes.pickedPlan]: data.standardOffer,
+          [classes.pickedPlan]: data.standardOffer
         })}
       >
         <h2 className={classes.planTitle}>
@@ -94,40 +94,40 @@ const PlansForm = ({
         <div className={classes.inputsContainer}>
           <FormInput
             classes={classes}
-            name='city'
+            name="city"
             onChange={handleChange}
-            placeholder='Miasto'
-            title='Miasto'
-            type='text'
+            placeholder="Miasto"
+            title="Miasto"
+            type="text"
             value={data.address.city}
           />
           <FormInput
             classes={classes}
-            name='street'
+            name="street"
             onChange={handleChange}
-            placeholder='Ulica i numer lokalu'
-            title='Ulica'
-            type='text'
+            placeholder="Ulica i numer lokalu"
+            title="Ulica"
+            type="text"
             value={data.address.street}
           />
           <FormInput
             classes={classes}
-            name='zipCode'
+            name="zipCode"
             onChange={handleChange}
-            placeholder='Kod pocztowy 04-457'
-            title='Kod pocztowy'
-            type='text'
+            placeholder="Kod pocztowy 04-457"
+            title="Kod pocztowy"
+            type="text"
             value={data.address.zipCode}
           />
         </div>
-        <FormButton classes={classes} onClick={handleChoose} text='Wybieram' />
+        <FormButton classes={classes} onClick={handleChoose} text="Wybieram" />
       </div>
-      <FormButton classes={classes} onClick={prevStep} text='Wróć' />
+      <FormButton classes={classes} onClick={prevStep} text="Wróć" />
       <FormButton
         classes={classes}
         disabled={isNextButtonDisabled}
         onClick={nextStep}
-        text='Dalej'
+        text="Dalej"
       />
     </div>
   );

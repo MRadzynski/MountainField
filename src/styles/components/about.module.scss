@@ -38,6 +38,38 @@
   @include breakpoint($desktop4K) {
     max-width: 3000px;
   }
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    @include breakpoint($tablet) {
+      gap: 7rem;
+      margin: 2rem auto 0;
+      width: 70%;
+    }
+    @include breakpoint($xsLaptop) {
+      align-items: center;
+      flex-direction: row;
+      gap: 3rem;
+      width: 100%;
+    }
+    @include breakpointExtended($sLaptop, $heightSmallSLaptop) {
+      gap: 5rem;
+      margin-top: 1rem;
+    }
+    @include breakpointExtended($sLaptop, $heightStandardSLaptop) {
+      margin-top: 3rem;
+    }
+    @include breakpoint($laptop) {
+      justify-content: space-between;
+    }
+    @include breakpoint($sDesktop) {
+      justify-content: space-evenly;
+    }
+    @include breakpoint($desktop) {
+      margin-top: 5rem;
+    }
+  }
   .heading {
     border-bottom: 2px solid $secondaryColor;
     border-top: 2px solid $secondaryColor;
@@ -88,39 +120,6 @@
       line-height: 8rem;
       margin: 8rem auto 20rem;
       max-width: 3000px;
-    }
-  }
-
-  .cardsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    @include breakpoint($tablet) {
-      gap: 7rem;
-      margin: 2rem auto 0;
-      width: 70%;
-    }
-    @include breakpoint($xsLaptop) {
-      align-items: center;
-      flex-direction: row;
-      gap: 3rem;
-      width: 100%;
-    }
-    @include breakpointExtended($sLaptop, $heightSmallSLaptop) {
-      margin-top: 1rem;
-      gap: 5rem;
-    }
-    @include breakpointExtended($sLaptop, $heightStandardSLaptop) {
-      margin-top: 3rem;
-    }
-    @include breakpoint($laptop) {
-      justify-content: space-between;
-    }
-    @include breakpoint($sDesktop) {
-      justify-content: space-evenly;
-    }
-    @include breakpoint($desktop) {
-      margin-top: 5rem;
     }
   }
 }

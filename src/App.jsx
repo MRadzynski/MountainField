@@ -1,21 +1,22 @@
+import clsx from 'clsx';
+import smoothscroll from 'smoothscroll-polyfill';
+import { useEffect, useState } from 'react';
+
+import About from './components/Sections/About/About';
 import breakpointsData from './data/breakpoints.json';
 import classes from './styles/components/app.module.scss';
-import Header from './components/Layout/Header/Header';
-import Footer from './components/Layout/Footer/Footer';
-import Welcome from './components/Sections/Welcome/Welcome';
-import About from './components/Sections/About/About';
-import Offer from './components/Sections/Offer/Offer';
 import Contact from './components/Sections/Contact/Contact';
-import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import Footer from './components/Layout/Footer/Footer';
+import Header from './components/Layout/Header/Header';
 import NotAllowedOverlay from './components/NotAllowedOverlay/NotAllowedOverlay';
-import { useEffect, useState } from 'react';
+import Offer from './components/Sections/Offer/Offer';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import Welcome from './components/Sections/Welcome/Welcome';
 import { isAppleDevice, isMobile, isSafari } from './utils';
-import smoothscroll from 'smoothscroll-polyfill';
-import clsx from 'clsx';
 import { useWindowDimensions } from './hooks/useWindowDimensions';
 
 const {
-  breakpoints: { tablet },
+  breakpoints: { tablet }
 } = breakpointsData;
 
 smoothscroll.polyfill();
@@ -26,7 +27,7 @@ const App = () => {
   const { width, height } = useWindowDimensions();
 
   const orientationChangeDetector = () => {
-    window.screen.orientation?.addEventListener('change', (e) => {
+    window.screen.orientation?.addEventListener('change', e => {
       if (
         (e.currentTarget.type === 'landscape-primary' ||
           e.currentTarget.type === 'landscape-secondary') &&
@@ -63,9 +64,9 @@ const App = () => {
   return (
     <div
       className={clsx(classes.appContainer, {
-        ios: isSafari(),
+        ios: isSafari()
       })}
-      id='app'
+      id="app"
     >
       <Header />
       <Welcome />

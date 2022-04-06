@@ -10,9 +10,9 @@ const Header = () => {
     <header className={classes.headerContainer}>
       <div className={classes.logoContainer}>
         <img
-          alt='Mountain Field'
+          alt="Mountain Field"
           className={classes.logo}
-          src='/assets/logo/logo.svg'
+          src="/assets/logo/logo.svg"
         />
       </div>
       {windowWidth < 1024 ? <MobileNav /> : <Navbar />}

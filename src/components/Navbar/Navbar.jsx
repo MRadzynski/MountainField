@@ -1,5 +1,5 @@
-import navLinksData from '../../data/nav.json';
 import classes from '../../styles/components/navbar.module.scss';
+import navLinksData from '../../data/nav.json';
 import { smoothNavScroll } from '../../utils/smoothNavScroll';
 
 const Navbar = ({ closeMobileMenu }) => {
@@ -8,7 +8,7 @@ const Navbar = ({ closeMobileMenu }) => {
   return (
     <nav className={classes.navContainer}>
       <ul className={classes.navList}>
-        {navLinks.map((link) => (
+        {navLinks.map(link => (
           <a
             alt={`${link.label} section`}
             className={classes.navLink}

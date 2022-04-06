@@ -10,14 +10,14 @@
   }
 }
 
-@mixin breakpointIPadProPortrait() {
-  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+@mixin breakpointIPadProLandscape() {
+  @media only screen and (min-device-width: 1366px) and (min-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
     @content;
   }
 }
 
-@mixin breakpointIPadProLandscape() {
-  @media only screen and (min-device-width: 1366px) and (min-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+@mixin breakpointIPadProPortrait() {
+  @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
     @content;
   }
 }

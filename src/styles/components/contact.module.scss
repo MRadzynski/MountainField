@@ -29,6 +29,128 @@
   @include breakpoint($desktop4K) {
     height: calc(100vh - 12rem);
   }
+  .contactBox {
+    align-items: center;
+    background-color: white;
+    border-radius: 3rem;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    font-family: 'AllRoundGothic-Book, All Round Gothic';
+    font-size: 1.1rem;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: -4rem 0 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    @include breakpoint($xsPhone) {
+      font-size: 1.2rem;
+    }
+    @include breakpoint($lPhone) {
+      font-size: 1.25rem;
+      padding: 1.5rem 2.5rem;
+    }
+    @include breakpoint($tablet) {
+      font-size: 1.4rem;
+      width: 90%;
+    }
+    @include breakpoint($xsLaptop) {
+      font-size: 1.5rem;
+      gap: 2rem;
+      margin: -4rem 0 0 0;
+      padding: 2rem 3rem;
+      width: 70%;
+    }
+    @include breakpoint($sLaptop) {
+      width: 60%;
+    }
+    @include breakpoint($desktop) {
+      font-size: 1.6rem;
+      width: 50%;
+    }
+    @include breakpoint($desktop2K) {
+      font-size: 1.7rem;
+      width: 40%;
+    }
+    @include breakpointExtended($desktop2K, $height2K) {
+      font-size: 2rem;
+      width: 50%;
+    }
+    @include breakpoint($desktop4K) {
+      border-radius: 5rem;
+      font-size: 3.6rem;
+      gap: 5rem;
+      padding: 4rem 3rem;
+    }
+    .calendarInfo {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .contactLink {
+        @include breakpoint($tablet) {
+          font-size: 1.5rem;
+        }
+        @include breakpointExtended($desktop2K, $height2K) {
+          font-size: 2.2rem;
+        }
+        @include breakpoint($desktop4K) {
+          font-size: 3.2rem;
+          margin-top: 1.5rem;
+        }
+      }
+    }
+    .contactLink {
+      color: #0d9065;
+      cursor: pointer;
+      display: flex;
+      margin-top: 0.25rem;
+      text-decoration: none;
+      @include breakpoint($lPhone) {
+        margin-top: 0.5rem;
+      }
+    }
+    .emailInfo {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .decorationLeavesLeft {
+    filter: brightness(0) invert(1);
+    left: -145px;
+    position: absolute;
+    top: -150px;
+    transform: scale(0.3);
+    @include breakpoint($xsLaptop) {
+      left: -50px;
+      top: -40px;
+      transform: scale(1);
+    }
+    @include breakpointExtended($desktop2K, $height2K) {
+      left: 70px;
+      top: 20px;
+      transform: scale(1.5);
+    }
+  }
+  .decorationLeavesRight {
+    bottom: -150px;
+    filter: brightness(0) invert(1);
+    position: absolute;
+    right: -145px;
+    transform: scale(0.3);
+    @include breakpoint($xsLaptop) {
+      bottom: -40px;
+      right: -50px;
+      transform: scale(1);
+    }
+    @include breakpointExtended($desktop2K, $height2K) {
+      bottom: 20px;
+      right: 70px;
+      transform: scale(1.5);
+    }
+  }
   .headingContainer {
     padding: 2rem 0 6rem;
     @include breakpoint($xsLaptop) {
@@ -78,130 +200,6 @@
         border-bottom: 2px solid #bfddd8;
         padding-bottom: 1rem;
       }
-    }
-  }
-  .contactBox {
-    align-items: center;
-    background-color: white;
-    border-radius: 3rem;
-    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    font-family: 'AllRoundGothic-Book, All Round Gothic';
-    font-size: 1.1rem;
-    gap: 1.5rem;
-    justify-content: center;
-    margin: -4rem 0 3rem;
-    padding: 1.5rem;
-    text-align: center;
-    width: 100%;
-
-    @include breakpoint($xsPhone) {
-      font-size: 1.2rem;
-    }
-    @include breakpoint($lPhone) {
-      font-size: 1.25rem;
-      padding: 1.5rem 2.5rem;
-    }
-    @include breakpoint($tablet) {
-      font-size: 1.4rem;
-      width: 90%;
-    }
-    @include breakpoint($xsLaptop) {
-      font-size: 1.5rem;
-      gap: 2rem;
-      margin: -4rem 0 0 0;
-      padding: 2rem 3rem;
-      width: 70%;
-    }
-    @include breakpoint($sLaptop) {
-      width: 60%;
-    }
-    @include breakpoint($desktop) {
-      font-size: 1.6rem;
-      width: 50%;
-    }
-    @include breakpoint($desktop2K) {
-      font-size: 1.7rem;
-      width: 40%;
-    }
-    @include breakpointExtended($desktop2K, $height2K) {
-      font-size: 2rem;
-      width: 50%;
-    }
-    @include breakpoint($desktop4K) {
-      border-radius: 5rem;
-      font-size: 3.6rem;
-      gap: 5rem;
-      padding: 4rem 3rem;
-    }
-    .emailInfo {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-    }
-    .calendarInfo {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      .contactLink {
-        @include breakpoint($tablet) {
-          font-size: 1.5rem;
-        }
-        @include breakpointExtended($desktop2K, $height2K) {
-          font-size: 2.2rem;
-        }
-        @include breakpoint($desktop4K) {
-          font-size: 3.2rem;
-          margin-top: 1.5rem;
-        }
-      }
-    }
-    .contactLink {
-      color: #0d9065;
-      cursor: pointer;
-      display: flex;
-      margin-top: 0.25rem;
-      text-decoration: none;
-      @include breakpoint($lPhone) {
-        margin-top: 0.5rem;
-      }
-    }
-  }
-  .decorationLeavesLeft {
-    filter: brightness(0) invert(1);
-    left: -145px;
-    position: absolute;
-    top: -150px;
-    transform: scale(0.3);
-    @include breakpoint($xsLaptop) {
-      left: -50px;
-      top: -40px;
-      transform: scale(1);
-    }
-    @include breakpointExtended($desktop2K, $height2K) {
-      left: 70px;
-      top: 20px;
-      transform: scale(1.5);
-    }
-  }
-
-  .decorationLeavesRight {
-    bottom: -150px;
-    filter: brightness(0) invert(1);
-    position: absolute;
-    transform: scale(0.3);
-    right: -145px;
-    @include breakpoint($xsLaptop) {
-      bottom: -40px;
-      right: -50px;
-      transform: scale(1);
-    }
-    @include breakpointExtended($desktop2K, $height2K) {
-      right: 70px;
-      bottom: 20px;
-      transform: scale(1.5);
     }
   }
 }

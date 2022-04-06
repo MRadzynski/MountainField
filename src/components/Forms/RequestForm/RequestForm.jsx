@@ -1,41 +1,39 @@
+import { useState } from 'react';
+
 import classes from '../../../styles/components/requestForm.module.scss';
 import FormButton from '../../FormButton/FormButton';
 import Loader from '../../Loader/Loader';
-import { useState } from 'react';
 
 const RequestForm = ({ formData, prevStep }) => {
-  const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState('');
 
-  const getSpecifiedReqObject = (type) => {
-    const commonData = {
-      companyName: formData.company,
-      email: formData.email.toLowerCase(),
-    };
+  const formatRequestData = async () => {
+    try {
+      setIsLoading(true);
 
-    return type === 'home'
-      ? {
-          ...commonData,
-          type: 0,
-          inquiry: {
-            workersAmount: Number(formData.workersAmount),
-            cart: formData.homeOfficeCart,
-            sum: formData.homeOfficeSum,
-          },
-        }
-      : {
-          ...commonData,
-          type: 1,
-          inquiry: {
-            address: {
-              city: formData.address.city,
-              street: formData.address.street,
-              zipCode: formData.address.zipCode,
-            },
-            cart: formData.standardCart,
-            sum: formData.standardSum,
-          },
-        };
+      const options = {
+        body: JSON.stringify(generateReqBody()),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST'
+      };
+
+      const res = await fetch('https://mfpr.toadres.pl/send_inquiry', options);
+
+      setIsLoading(false);
+
+      if (res.status === 200) {
+        setMessage(
+          'Dziękujemy za przesłanie zapytania, odezwiemy się niezwłocznie! 👋'
+        );
+      } else {
+        setMessage('Przepraszamy wystąpił błąd, proszę spróbować ponownie!');
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const generateReqBody = () => {
@@ -48,34 +46,6 @@ const RequestForm = ({ formData, prevStep }) => {
     }
   };
 
-  const formatRequestData = async () => {
-    setIsLoading(true);
-
-    const options = {
-      body: JSON.stringify(generateReqBody()),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    };
-
-    const res = await fetch('https://mfpr.toadres.pl/send_inquiry', options);
-
-    setIsLoading(false);
-
-    if (res.status === 200) {
-      setMessage(
-        'Dziękujemy za przesłanie zapytania, odezwiemy się niezwłocznie! 👋'
-      );
-    } else {
-      setMessage('Przepraszamy wystąpił błąd, proszę spróbować ponownie!');
-    }
-  };
-
-  const handleSubmit = () => formatRequestData();
-
-  const getMessage = <p className={classes.responseMessage}>{message}</p>;
-
   const getContent = () => {
     if (isLoading) return <Loader />;
 
@@ -86,10 +56,45 @@ const RequestForm = ({ formData, prevStep }) => {
         classes={classes}
         id={classes.submit}
         onClick={handleSubmit}
-        text='Wyślij Zapytanie 📧'
+        text="Wyślij Zapytanie 📧"
       />
     );
   };
+
+  const getMessage = <p className={classes.responseMessage}>{message}</p>;
+
+  const getSpecifiedReqObject = type => {
+    const commonData = {
+      companyName: formData.company,
+      email: formData.email.toLowerCase()
+    };
+
+    return type === 'home'
+      ? {
+          ...commonData,
+          type: 0,
+          inquiry: {
+            workersAmount: Number(formData.workersAmount),
+            cart: formData.homeOfficeCart,
+            sum: formData.homeOfficeSum
+          }
+        }
+      : {
+          ...commonData,
+          type: 1,
+          inquiry: {
+            address: {
+              city: formData.address.city,
+              street: formData.address.street,
+              zipCode: formData.address.zipCode
+            },
+            cart: formData.standardCart,
+            sum: formData.standardSum
+          }
+        };
+  };
+
+  const handleSubmit = () => formatRequestData();
 
   return (
     <div className={classes.requestFormContainer}>
@@ -101,7 +106,7 @@ const RequestForm = ({ formData, prevStep }) => {
         classes={classes}
         id={classes.back}
         onClick={prevStep}
-        text='Wróć'
+        text="Wróć"
       />
     </div>
   );

@@ -1,94 +1,91 @@
 @import '../main.scss';
 
 .scrollArrowContainer {
-	background: linear-gradient($secondaryColor, $gradientStart);
-	border: 1px solid $gradientStart;
-	border-radius: 50%;
-	bottom: 24px;
-	box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.1);
-	cursor: pointer;
-	display: grid;
-	height: 50px;
-	place-content: center;
-	position: fixed;
-	right: 24px;
-	width: 50px;
-	z-index: 5;
-	@include no-selectable;
-	@include breakpoint($lPhone) {
-		bottom: 32px;
-		height: 60px;
-		right: 32px;
-		width: 60px;
-	}
-	@include breakpoint($tablet) {
-		bottom: 32px;
-		height: 70px;
-		right: 32px;
-		width: 70px;
-	}
-	@include breakpoint($xsLaptop) {
-		height: 60px;
-		width: 60px;
-	}
-	@include breakpointIPadProPortrait() {
-		height: 80px;
-		width: 80px;
-	}
-	@include breakpointIPadProLandscape() {
-		height: 75px;
-		width: 75px;
-	}
-	@include breakpoint($desktop) {
-		height: 70px;
-		width: 70px;
-	}
-	@include breakpoint($desktop2K) {
-		height: 80px;
-		width: 80px;
-	}
-	@include breakpointExtended($desktop2K, $height2K) {
-		height: 100px;
-		width: 100px;
-	}
-	@include breakpoint($desktop4K) {
-		bottom: 70px;
-		height: 160px;
-		right: 70px;
-		width: 160px;
-	}
-	&:hover {
-		.scrollArrow {
-			animation: 0.5s infinite alternate arrowUp;
-		}
-	}
-	.scrollArrow {
-		animation: 0.5s arrowDown;
-		font-size: 2.5rem;
-
-		@include breakpoint($desktop) {
-			height: 32px;
-			width: 32px;
-		}
-		@include breakpointExtended($desktop2K, $height2K) {
-			height: 40px;
-			width: 40px;
-		}
-		@include breakpoint($desktop4K) {
-			height: 60px;
-			width: 60px;
-		}
-	}
+  background: linear-gradient($secondaryColor, $gradientStart);
+  border: 1px solid $gradientStart;
+  border-radius: 50%;
+  bottom: 24px;
+  box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: grid;
+  height: 50px;
+  place-content: center;
+  position: fixed;
+  right: 24px;
+  width: 50px;
+  z-index: 5;
+  @include no-selectable;
+  @include breakpoint($lPhone) {
+    bottom: 32px;
+    height: 60px;
+    right: 32px;
+    width: 60px;
+  }
+  @include breakpoint($tablet) {
+    bottom: 32px;
+    height: 70px;
+    right: 32px;
+    width: 70px;
+  }
+  @include breakpoint($xsLaptop) {
+    height: 60px;
+    width: 60px;
+  }
+  @include breakpointIPadProPortrait() {
+    height: 80px;
+    width: 80px;
+  }
+  @include breakpointIPadProLandscape() {
+    height: 75px;
+    width: 75px;
+  }
+  @include breakpoint($desktop) {
+    height: 70px;
+    width: 70px;
+  }
+  @include breakpoint($desktop2K) {
+    height: 80px;
+    width: 80px;
+  }
+  @include breakpointExtended($desktop2K, $height2K) {
+    height: 100px;
+    width: 100px;
+  }
+  @include breakpoint($desktop4K) {
+    bottom: 70px;
+    height: 160px;
+    right: 70px;
+    width: 160px;
+  }
+  &:hover {
+    .scrollArrow {
+      animation: 0.5s infinite alternate arrowUp;
+    }
+  }
+  .scrollArrow {
+    animation: 0.5s arrowDown;
+    font-size: 2.5rem;
+    @include breakpoint($desktop) {
+      height: 32px;
+      width: 32px;
+    }
+    @include breakpointExtended($desktop2K, $height2K) {
+      height: 40px;
+      width: 40px;
+    }
+    @include breakpoint($desktop4K) {
+      height: 60px;
+      width: 60px;
+    }
+  }
 }
-
 @keyframes arrowDown {
-	to {
-		transform: translateY(0);
-	}
+  to {
+    transform: translateY(0);
+  }
 }
-
 @keyframes arrowUp {
-	to {
-		transform: translateY(-5px);
-	}
+  to {
+    transform: translateY(-5px);
+  }
 }

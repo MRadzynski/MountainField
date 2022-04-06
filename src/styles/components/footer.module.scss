@@ -1,49 +1,49 @@
 @import '../main.scss';
 
 .footerContainer {
-	align-items: center;
-	background-color: white;
-	display: flex;
-	height: 4rem;
-	justify-content: center;
-	width: 100%;
-	@include breakpoint($xsLaptop) {
-		height: 6.5rem;
-	}
-	@include breakpointExtended($desktop2K, $height2K) {
-		height: 8rem;
-	}
-	@include breakpoint($desktop4K) {
-		height: 12rem;
-	}
-	.logoContainer {
-		align-items: center;
-		display: flex;
-		height: 100%;
-		width: 50%;
-		@include no-selectable;
-		@include breakpoint($lPhone) {
-			width: 40%;
-		}
-		@include breakpoint($xsLaptop) {
-			width: 25%;
-		}
-		@include breakpoint($sLaptop) {
-			width: 20%;
-		}
-		@include breakpoint($desktop) {
-			width: 15%;
-		}
-		@include breakpoint($desktop2K) {
-			width: 12%;
-		}
-		@include breakpointExtended($desktop2K, $height2K) {
-			width: 15%;
-		}
-		.logo {
-			cursor: pointer;
-			height: 70%;
-			width: 100%;
-		}
-	}
+  align-items: center;
+  background-color: white;
+  display: flex;
+  height: 4rem;
+  justify-content: center;
+  width: 100%;
+  @include breakpoint($xsLaptop) {
+    height: 6.5rem;
+  }
+  @include breakpointExtended($desktop2K, $height2K) {
+    height: 8rem;
+  }
+  @include breakpoint($desktop4K) {
+    height: 12rem;
+  }
+  .logo {
+    cursor: pointer;
+    height: 70%;
+    width: 100%;
+  }
+  .logoContainer {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 50%;
+    @include no-selectable;
+    @include breakpoint($lPhone) {
+      width: 40%;
+    }
+    @include breakpoint($xsLaptop) {
+      width: 25%;
+    }
+    @include breakpoint($sLaptop) {
+      width: 20%;
+    }
+    @include breakpoint($desktop) {
+      width: 15%;
+    }
+    @include breakpoint($desktop2K) {
+      width: 12%;
+    }
+    @include breakpointExtended($desktop2K, $height2K) {
+      width: 15%;
+    }
+  }
 }

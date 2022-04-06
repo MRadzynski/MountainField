@@ -1,59 +1,59 @@
 @import '../main.scss';
 
 .headerContainer {
-	align-items: center;
-	background-color: white;
-	display: flex;
-	flex-direction: row-reverse;
-	height: 5rem;
-	justify-content: center;
-	padding: 0 3rem;
-	position: relative;
-	width: 100%;
-	@include breakpoint($xsLaptop) {
-		flex-direction: row;
-		height: 7.5rem;
-		justify-content: flex-start;
-	}
-	@include breakpoint($desktop2K) {
-		padding: 0 5rem;
-	}
-	@include breakpointExtended($desktop2K, $height2K) {
-		height: 9rem;
-		padding: 0 10rem;
-	}
-	@include breakpoint($desktop4K) {
-		height: 14rem;
-		padding: 0 25rem;
-	}
-	.logoContainer {
-		height: 50%;
-		width: 85%;
-		@include breakpoint($lPhone) {
-			width: 70%;
-		}
-		@include breakpoint($xsLaptop) {
-			height: 70%;
-			width: 35%;
-		}
-		@include breakpoint($sDesktop) {
-			width: 25%;
-		}
-		@include breakpoint($desktop2K) {
-			height: 60%;
-			width: 20%;
-		}
-		@include breakpointExtended($desktop2K, $height2K) {
-			height: 70%;
-		}
-		@include breakpoint($desktop4K) {
-			width: 25%;
-		}
-		.logo {
-			height: 100%;
-			position: relative;
-			width: 100%;
-			z-index: 9;
-		}
-	}
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 5rem;
+  justify-content: center;
+  padding: 0 3rem;
+  position: relative;
+  width: 100%;
+  @include breakpoint($xsLaptop) {
+    flex-direction: row;
+    height: 7.5rem;
+    justify-content: flex-start;
+  }
+  @include breakpoint($desktop2K) {
+    padding: 0 5rem;
+  }
+  @include breakpointExtended($desktop2K, $height2K) {
+    height: 9rem;
+    padding: 0 10rem;
+  }
+  @include breakpoint($desktop4K) {
+    height: 14rem;
+    padding: 0 25rem;
+  }
+  .logoContainer {
+    height: 50%;
+    width: 85%;
+    @include breakpoint($lPhone) {
+      width: 70%;
+    }
+    @include breakpoint($xsLaptop) {
+      height: 70%;
+      width: 35%;
+    }
+    @include breakpoint($sDesktop) {
+      width: 25%;
+    }
+    @include breakpoint($desktop2K) {
+      height: 60%;
+      width: 20%;
+    }
+    @include breakpointExtended($desktop2K, $height2K) {
+      height: 70%;
+    }
+    @include breakpoint($desktop4K) {
+      width: 25%;
+    }
+    .logo {
+      height: 100%;
+      position: relative;
+      width: 100%;
+      z-index: 9;
+    }
+  }
 }
